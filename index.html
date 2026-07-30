@@ -7,7 +7,7 @@
 <meta name="supported-color-schemes" content="light">
 <meta name="theme-color" content="#ECEFE9">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='10' y='10' width='36' height='36' rx='9' fill='%2314594A'/%3E%3Crect x='22' y='22' width='36' height='36' rx='9' fill='%23C98A2B' fill-opacity='.85'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%2314594A'/%3E%3Crect x='17' y='22' width='30' height='22' rx='5' fill='none' stroke='%23F0F3EE' stroke-width='3.2'/%3E%3Cpath d='M17 29h30' stroke='%23F0F3EE' stroke-width='4.4'/%3E%3Ccircle cx='48' cy='18' r='8' fill='%23C98A2B' stroke='%2314594A' stroke-width='3'/%3E%3C/svg%3E">
 <link rel="canonical" href="https://qurb.com.sa/">
 
 <title>قُرب | بطاقة محلك في محفظة جوال عميلك — بدون تطبيق</title>
@@ -38,8 +38,7 @@
       "areaServed": { "@type": "Country", "name": "SA" },
       "offers": [
         { "@type": "Offer", "name": "الأساسية",   "price": "1500", "priceCurrency": "SAR" },
-        { "@type": "Offer", "name": "الاحترافية", "price": "2000", "priceCurrency": "SAR" },
-        { "@type": "Offer", "name": "الشاملة",    "price": "2500", "priceCurrency": "SAR" }
+        { "@type": "Offer", "name": "الاحترافية", "price": "2000", "priceCurrency": "SAR" }
       ]
     },
     {
@@ -63,7 +62,7 @@
         {
           "@type": "Question",
           "name": "كم تكلفة قُرب؟",
-          "acceptedAnswer": { "@type": "Answer", "text": "ثلاث باقات سنوية: الأساسية 1800 ريال، الاحترافية 3000، الشاملة 4800. والمقاعد التأسيسية الخمسة الأولى بـ1200 ريال مثبتة. الشهر الأول مجاني ولا يوجد تجديد تلقائي." }
+          "acceptedAnswer": { "@type": "Answer", "text": "باقتان، وتختار دورة الدفع: شهري أو كل 6 أشهر أو سنوي. سنويًا: الأساسية 1500 ريال والاحترافية 2000 ريال. والمقاعد التأسيسية الخمسة الأولى بـ1200 ريال مثبتة بمزايا الاحترافية. الشهر الأول مجاني ولا يوجد تجديد تلقائي." }
         }
       ]
     }
@@ -142,9 +141,27 @@ a{color:inherit;}
 nav{position:sticky;top:0;z-index:50;background:rgba(236,239,233,.86);backdrop-filter:saturate(150%) blur(14px);border-bottom:1px solid transparent;transition:border-color .35s,box-shadow .35s;}
 nav.stuck{border-bottom-color:var(--line-soft);box-shadow:0 8px 28px -22px rgba(14,21,18,.35);}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:70px;}
-.logo{font-family:"Readex Pro",sans-serif;font-weight:700;font-size:22px;letter-spacing:-.03em;display:flex;align-items:center;gap:9px;}
+.logo{
+  font-family:"Readex Pro",sans-serif;font-weight:600;font-size:23px;letter-spacing:-.035em;
+  display:inline-flex;align-items:center;gap:11px;
+}
 .logo i{font-style:normal;color:var(--pine);}
-.logo::before{content:"";width:10px;height:10px;border-radius:3px;background:var(--pine);box-shadow:3px 3px 0 0 var(--amber);flex:none;}
+.logo .mk{
+  width:34px;height:34px;flex:none;position:relative;
+  border-radius:10px;background:linear-gradient(148deg,var(--pine) 0%,#0C3D32 100%);
+  box-shadow:0 5px 14px -6px rgba(20,89,74,.55);
+  display:grid;place-items:center;
+}
+.logo .mk::before{
+  content:"";width:15px;height:11px;border-radius:2.5px;
+  border:1.6px solid rgba(240,243,238,.94);border-top-width:4px;
+}
+.logo .mk::after{
+  content:"";position:absolute;top:-2px;inset-inline-end:-2px;
+  width:11px;height:11px;border-radius:50%;
+  background:var(--amber);border:2px solid var(--paper);
+}
+nav.stuck .logo .mk::after{animation:pulse 2.6s ease-in-out infinite;}
 .nav-mid{display:flex;gap:26px;}
 .nav-mid a{font-size:14px;color:var(--ink-2);text-decoration:none;border-bottom:1.5px solid transparent;padding-bottom:2px;transition:.2s;}
 .nav-mid a:hover{color:var(--pine);border-bottom-color:var(--amber);}
@@ -527,16 +544,86 @@ h2{font-size:clamp(24px,3.6vw,34px);font-weight:600;margin-bottom:18px;max-width
 
 /* ── onboarding ends ── */
 
+/* ── advisor ── */
+.adv-sec{background:var(--paper-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);}
+.adv-grid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(28px,5vw,60px);align-items:start;margin-top:34px;}
+.adv-why{margin:0;padding:0;list-style:none;}
+.adv-why li{
+  padding:15px 0;border-top:1px solid var(--line-soft);
+  display:grid;grid-template-columns:24px minmax(0,1fr);gap:3px 12px;
+}
+.adv-why li:first-child{border-top:none;}
+.adv-why li::before{
+  content:"";grid-column:1;grid-row:1;width:8px;height:8px;border-radius:2px;
+  background:var(--amber);margin-top:10px;margin-inline-start:8px;
+}
+.adv-why b{grid-column:2;grid-row:1;min-width:0;font-family:"Readex Pro",sans-serif;font-weight:600;font-size:15.5px;}
+.adv-why span{grid-column:2;grid-row:2;min-width:0;font-size:14.5px;color:var(--ink-2);}
+
+.adv-panel{
+  background:var(--ink);border-radius:18px;padding:24px;color:#EDF1EC;
+  box-shadow:0 26px 56px -28px rgba(14,21,18,.6);position:relative;overflow:hidden;
+}
+.adv-panel::before{
+  content:"";position:absolute;inset-inline-end:-12%;top:-40%;width:320px;height:320px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,138,43,.16),transparent 70%);pointer-events:none;
+}
+.adv-head{display:flex;align-items:center;gap:10px;margin-bottom:6px;position:relative;}
+.adv-head .dot2{width:9px;height:9px;border-radius:50%;background:var(--amber);animation:pulse 2.2s ease-in-out infinite;flex:none;}
+.adv-head b{font-family:"Readex Pro",sans-serif;font-weight:600;font-size:15.5px;color:#fff;}
+.adv-sub{font-size:13px;color:rgba(237,241,236,.62);margin:0 0 18px;position:relative;}
+.adv-lbl{font-family:"Readex Pro",sans-serif;font-size:11.5px;letter-spacing:.1em;color:rgba(237,241,236,.5);margin-bottom:10px;position:relative;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;position:relative;}
+.chips button{
+  font-family:inherit;font-size:13.5px;padding:8px 14px;border-radius:100px;cursor:pointer;
+  border:1px solid rgba(237,241,236,.28);background:transparent;color:rgba(237,241,236,.82);transition:.2s;
+}
+.chips button:hover{border-color:var(--amber);color:#fff;}
+.chips button[aria-pressed="true"]{background:#EDF1EC;color:var(--ink);border-color:#EDF1EC;font-weight:600;}
+.drafts{position:relative;}
+.draft{
+  background:rgba(237,241,236,.07);border:1px solid rgba(237,241,236,.14);
+  border-radius:12px;padding:14px 16px;margin-bottom:10px;
+  animation:dIn .4s cubic-bezier(.2,.8,.3,1) backwards;
+}
+.draft:nth-child(1){animation-delay:.02s;}
+.draft:nth-child(2){animation-delay:.1s;}
+.draft:nth-child(3){animation-delay:.18s;}
+@keyframes dIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+.draft .tone{
+  font-family:"Readex Pro",sans-serif;font-size:11px;letter-spacing:.06em;color:var(--amber);
+  margin-bottom:6px;display:block;
+}
+.draft p{margin:0;font-size:14.5px;color:#EDF1EC;line-height:1.7;}
+.adv-when{
+  margin-top:16px;font-size:13px;color:rgba(237,241,236,.7);position:relative;
+  padding-top:14px;border-top:1px solid rgba(237,241,236,.14);
+}
+.adv-when b{color:#fff;font-weight:600;}
+.adv-note{font-size:12.5px;color:var(--muted);margin-top:14px;}
+
+@media (max-width:900px){
+  .adv-grid{grid-template-columns:1fr;}
+}
+
 /* ── value band ── */
-.vband{background:var(--ink);color:rgba(237,241,236,.78);padding:clamp(30px,4vw,44px) 0;}
+.vband{
+  background:linear-gradient(135deg,#14594A 0%,#0F473C 55%,#123F35 100%);
+  color:rgba(240,246,242,.86);padding:clamp(32px,4vw,48px) 0;position:relative;overflow:hidden;
+}
+.vband::before{
+  content:"";position:absolute;inset-inline-end:-6%;top:-70%;width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,138,43,.18),transparent 68%);pointer-events:none;
+}
 .vb{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
-.vb > div{padding:4px 26px;border-inline-start:1px solid rgba(237,241,236,.16);}
+.vb{position:relative;}
+.vb > div{padding:4px 26px;border-inline-start:1px solid rgba(240,246,242,.2);}
 .vb > div:first-child{border-inline-start:none;padding-inline-start:0;}
 .vb .vh{
   font-family:"Readex Pro",sans-serif;font-weight:600;font-size:16.5px;color:#fff;
   margin-bottom:8px;display:flex;align-items:center;gap:9px;
 }
-.vb .vh::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--amber);flex:none;}
+.vb .vh::before{content:"";width:8px;height:8px;border-radius:2px;background:#E8C388;flex:none;}
 .vb p{margin:0;font-size:14.5px;line-height:1.75;}
 
 /* ── billing toggle ── */
@@ -551,7 +638,7 @@ h2{font-size:clamp(24px,3.6vw,34px);font-weight:600;margin-bottom:18px;max-width
 .bill button[aria-pressed="true"] em{color:#E8C388;}
 
 /* ── tiers ── */
-.tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px;align-items:start;}
+.tier-grid{display:grid;grid-template-columns:repeat(2,1fr);max-width:760px;gap:16px;margin-top:34px;align-items:start;}
 .tier{
   background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px 26px;
   display:flex;flex-direction:column;position:relative;
@@ -639,7 +726,7 @@ details p{margin:12px 0 0;animation:faqIn .35s ease;}
 details p{font-size:15px;color:var(--ink-2);max-width:62ch;}
 
 footer{
-  background:linear-gradient(180deg,#101714 0%,#0B100D 100%);
+  background:linear-gradient(180deg,#123F35 0%,#0D2C25 100%);
   color:rgba(237,241,236,.62);padding:46px 0 40px;font-size:13.5px;
 }
 footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:18px 28px;flex-wrap:wrap;}
@@ -690,10 +777,11 @@ footer a:hover{color:#fff !important;}
 
 <nav id="nav">
   <div class="wrap">
-    <div class="logo">قُ<i>رب</i></div>
+    <div class="logo"><span class="mk" aria-hidden="true"></span><span>قُ<i>رب</i></span></div>
     <div class="nav-mid">
       <a href="#how">كيف تشتغل</a>
       <a href="#services">الخدمات</a>
+      <a href="#advisor">المستشار</a>
       <a href="#faq-sec">الأسئلة</a>
     </div>
     <a class="nav-cta" href="#pricing">الباقات</a>
@@ -972,6 +1060,59 @@ footer a:hover{color:#fff !important;}
   </div>
 </section>
 
+<section class="adv-sec" id="advisor">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kicker">ما يميّز قُرب</div>
+      <h2>المشكلة ليست إرسال الرسالة — بل معرفة وش تكتب</h2>
+      <p class="sec-lede">
+        كل المنصات تعطيك زر «إرسال»، ثم تتركك أمام مربع فارغ. وأصحاب المحلات لا يتوقفون عن
+        التواصل لأنهم لا يملكون الأداة — بل لأنهم لا يعرفون ماذا يقولون، ولا متى.
+      </p>
+    </div>
+
+    <div class="adv-grid rv">
+      <div>
+        <ul class="adv-why">
+          <li>
+            <b>يكتب بلهجة عملائك</b>
+            <span>لا عربية فصيحة جافة، ولا ترجمة إنجليزية — كلام يشبه ما تقوله أنت لعميلك في محلك.</span>
+          </li>
+          <li>
+            <b>يعرف حالة العميل قبل ما يكتب</b>
+            <span>باقته قاربت تنتهي؟ غاب شهرًا؟ أول زيارة له؟ الصيغة تختلف في كل حالة — لأن الرسالة الواحدة للجميع هي ما يجعل الناس تحذف بطاقتك.</span>
+          </li>
+          <li>
+            <b>يقترح الوقت أيضًا</b>
+            <span>الرسالة الصحيحة في الوقت الخطأ لا تُقرأ. يخبرك متى ترسل بحسب سلوك عملائك.</span>
+          </li>
+          <li>
+            <b>ثلاث صيغ لا واحدة</b>
+            <span>تختار ما يشبهك، أو تعدّل عليه. القرار لك دائمًا — لا يُرسل شيء بلا موافقتك.</span>
+          </li>
+        </ul>
+        <p class="adv-note">
+          المستشار من مزايا <b>الباقة الاحترافية</b>، ويصل في <b>الإصدار الثاني</b> — ويُضاف لباقتك
+          بلا مقابل إضافي حين يجهز. ولن تُحاسب عليه قبل ذلك.
+        </p>
+      </div>
+
+      <div class="adv-panel">
+        <div class="adv-head"><span class="dot2"></span><b>المستشار</b></div>
+        <p class="adv-sub">اختر الحالة، وشوف وش يكتب لك.</p>
+
+        <div class="adv-lbl">الحالة</div>
+        <div class="chips" role="group" aria-label="حالة العميل" id="advChips"></div>
+
+        <div class="adv-lbl">الصيغ المقترحة</div>
+        <div class="drafts" id="advDrafts"></div>
+
+        <div class="adv-when" id="advWhen"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="dark">
   <div class="wrap">
     <div class="method">
@@ -1080,9 +1221,16 @@ footer a:hover{color:#fff !important;}
 
       <div class="svc later">
         <span class="tag next">لاحقًا</span>
+        <div class="sym">🏢</div>
+        <h3>الفروع وحسابات الشركات</h3>
+        <p>إدارة أكثر من فرع بلوحة واحدة، وحساب لشركة تحمل عدة عملاء بفاتورة شهرية.</p>
+      </div>
+
+      <div class="svc later">
+        <span class="tag next">لاحقًا</span>
         <div class="sym">🧠</div>
         <h3>المستشار الذكي</h3>
-        <p>تقول له «أبي رسالة لعملاء ما مروا من شهر»، فيكتب لك ثلاث صيغ بلهجة عملائك ويقترح وقت الإرسال — بدل ما تحتار وش تكتب.</p>
+        <p>يكتب لك ثلاث صيغ بلهجة عملائك بحسب حالة كل عميل، ويقترح وقت الإرسال. <a href="#advisor" style="color:var(--pine);">شوف مثالًا حيًا ↓</a></p>
       </div>
 
       <div class="svc later">
@@ -1094,7 +1242,7 @@ footer a:hover{color:#fff !important;}
     </div>
 
     <div class="svc-ask rv">
-      <b>وما لا يفعله قُرب — بصراحة:</b> لا ربط مع أنظمة الكاشير، ولا تطبيق مستقل يحمّله عميلك. وإدارة الفروع وحسابات الأساطيل والتقارير ليست جاهزة اليوم — موسومة «قادم» في الباقة الشاملة، ولن أحاسبك عليها قبل أن تجهز. قُرب يفعل شيئًا واحدًا الآن: يوصلك لعميلك بعد ما يطلع من الباب. ولو المنصة اللي عندك تخدمك فعلًا، ابقَ عليها.
+      <b>وما لا يفعله قُرب — بصراحة:</b> لا ربط مع أنظمة الكاشير، ولا تطبيق مستقل يحمّله عميلك. وإدارة الفروع وحسابات الشركات والتقارير ليست جاهزة اليوم — موسومة «لاحقًا»، ولن أحاسبك عليها قبل أن تجهز. قُرب يفعل شيئًا واحدًا الآن: يوصلك لعميلك بعد ما يطلع من الباب. ولو المنصة اللي عندك تخدمك فعلًا، ابقَ عليها.
     </div>
   </div>
 </section>
@@ -1135,7 +1283,7 @@ footer a:hover{color:#fff !important;}
   <div class="wrap">
     <div class="rv">
       <div class="kicker">الباقات</div>
-      <h2>ثلاث باقات — تختار ما يناسب حجم محلك</h2>
+      <h2>باقتان — تختار ما يناسب حجم محلك</h2>
       <p class="sec-lede">التركيب والتدريب في محلك مجانًا في كل باقة، ولا يوجد تجديد تلقائي. اختر دورة الدفع:</p>
       <div class="bill" role="group" aria-label="دورة الدفع">
         <button type="button" data-b="m" aria-pressed="false">شهري</button>
@@ -1175,22 +1323,7 @@ footer a:hover{color:#fff !important;}
           <li>تذكير الغياب تلقائيًا</li>
           <li>بطاقة إحالة وبطاقة هدية</li>
           <li>طلب تقييم قوقل بعد الخدمة</li>
-          <li class="soon">المستشار الذكي <em>— الإصدار الثاني</em></li>
-        </ul>
-      </div>
-
-      <div class="tier">
-        <div class="nm">الشاملة</div>
-        <div class="who">أكثر من فرع، أو عقود مع شركات.</div>
-        <div class="amt"><span class="p" data-m="250" data-h="1,350" data-y="2,500">2,500</span> <small>ريال</small></div>
-        <div class="mo per-note" data-m="تدفع كل شهر" data-h="ما يعادل 225 ريالًا شهريًا" data-y="ما يعادل 208 ريالات شهريًا">ما يعادل 208 ريالات شهريًا</div>
-        <ul>
-          <li class="plus">كل ما في الاحترافية، وزيادة:</li>
-          <li class="soon">فروع متعددة بلوحة واحدة <em>— قادم</em></li>
-          <li class="soon">حسابات الشركات والأساطيل <em>— قادم</em></li>
-          <li class="soon">تقارير العودة وأداء الفروع <em>— قادم</em></li>
-          <li>أولوية في الدعم والتعديلات</li>
-          <li>تدريب لكل فرع على حدة</li>
+          <li class="soon">المستشار الذكي — يكتب رسائلك ويقترح وقتها <em>— الإصدار الثاني</em></li>
         </ul>
       </div>
 
@@ -1270,7 +1403,7 @@ footer a:hover{color:#fff !important;}
       </details>
       <details>
         <summary>كم بتكلفني بعد التجربة؟</summary>
-        <p>ثلاث باقات، وتختار دورة الدفع: شهري أو كل 6 أشهر أو سنوي. سنويًا: الأساسية 1,500 · الاحترافية 2,000 · الشاملة 2,500. وأصحاب المقاعد الخمسة الأولى يدفعون 1,200 للسنة فقط بمزايا الاحترافية، مدى اشتراكهم. الشهر الأول مجاني في كل الحالات، ولا فيه تجديد تلقائي.</p>
+        <p>باقتان، وتختار دورة الدفع: شهري أو كل 6 أشهر أو سنوي. سنويًا: الأساسية 1,500 والاحترافية 2,000. وأصحاب المقاعد الخمسة الأولى يدفعون 1,200 للسنة فقط بمزايا الاحترافية، مدى اشتراكهم. الشهر الأول مجاني في كل الحالات، ولا فيه تجديد تلقائي.</p>
       </details>
       <details>
         <summary>أنا مشترك في منصة ولاء كبيرة، وش يفرق قُرب؟</summary>
@@ -1451,6 +1584,64 @@ addEventListener('scroll', function(){ nav.classList.toggle('stuck', scrollY > 1
     });
   });
   apply('y');
+})();
+
+/* ── المستشار: عرض تفاعلي ── */
+(function(){
+  var cases = [
+    { k:"غاب شهرًا", when:"أفضل وقت: <b>الخميس بعد العصر</b> — قبل نهاية الأسبوع بيوم، حين يخطّط الناس لأعمالهم.",
+      d:[["ودّي","وحشتنا يا خالد — صار لك شهر. مرّ علينا هذا الأسبوع ونسعد بك."],
+         ["مباشر","خالد، آخر زيارة لك كانت قبل شهر. حاب نرتب لك موعد؟"],
+         ["بحافز","خالد، رجعتك علينا — خدمة إضافية مجانًا في زيارتك القادمة، لين الجمعة."]] },
+    { k:"باقته قاربت تنتهي", when:"أفضل وقت: <b>مباشرة بعد الزيارة</b> — وهو ما زال في المحل أو خرج قبل دقائق.",
+      d:[["تذكير هادئ","خالد، باقي لك زيارة واحدة في باقتك. نجدّدها لك؟"],
+         ["مع قيمة","خالد، باقتك على وشك الانتهاء — جدّدها اليوم وخذ زيارة إضافية."],
+         ["قصير","باقي زيارة واحدة يا خالد. جاهزين متى ما تبي."]] },
+    { k:"أول زيارة له", when:"أفضل وقت: <b>بعد ساعتين من خروجه</b> — بعد ما يهدأ، وقبل ما ينسى.",
+      d:[["ترحيب","أهلًا بك يا خالد. بطاقتك محفوظة في جوالك، وكل زيارة تُحسب لك تلقائيًا."],
+         ["مع سؤال","شكرًا لزيارتك يا خالد. كيف كانت الخدمة؟ رأيك يوصلني مباشرة."],
+         ["مع دعوة","سعدنا بك يا خالد. في الزيارة الجاية باقتك تبدأ تجمع — نشوفك قريبًا."]] },
+    { k:"عرض نهاية الأسبوع", when:"أفضل وقت: <b>الأربعاء صباحًا</b> — قبل أن تُحجز خطط نهاية الأسبوع.",
+      d:[["واضح","عرض هذا الأسبوع: خدمة مميزة بسعر العادية. لك يا خالد لين الجمعة."],
+         ["حصري","خالد، عرض خاص لعملاء البطاقة فقط — ساري لين الجمعة."],
+         ["بإلحاح لطيف","باقي يومان على انتهاء العرض يا خالد. لا يفوتك."]] },
+    { k:"طلبه جاهز", when:"أفضل وقت: <b>لحظة الجهوز</b> — كل دقيقة تأخير تعني اتصالًا منه أو طلبًا ينتظر عندك.",
+      d:[["مباشر","طلبك جاهز يا خالد — تقدر تمر عليه اليوم."],
+         ["مع وقت","خالد، طلبك جاهز. نستقبلك حتى 9 المساء."],
+         ["مع شكر","جاهز يا خالد، وشكرًا لصبرك. نشوفك."]] }
+  ];
+
+  var chips = document.getElementById('advChips');
+  var drafts = document.getElementById('advDrafts');
+  var whenEl = document.getElementById('advWhen');
+  if (!chips) return;
+
+  var cur = 0, timer = null;
+
+  function paint(i){
+    cur = i;
+    Array.prototype.forEach.call(chips.children, function(b, n){
+      b.setAttribute('aria-pressed', n === i ? 'true' : 'false');
+    });
+    var c = cases[i];
+    drafts.innerHTML = c.d.map(function(x){
+      return '<div class="draft"><span class="tone">' + x[0] + '</span><p>' + x[1] + '</p></div>';
+    }).join('');
+    whenEl.innerHTML = c.when;
+  }
+
+  chips.innerHTML = cases.map(function(c){ return '<button type="button">' + c.k + '</button>'; }).join('');
+  Array.prototype.forEach.call(chips.children, function(b, n){
+    b.addEventListener('click', function(){
+      if (timer){ clearInterval(timer); timer = null; }
+      paint(n);
+    });
+  });
+  paint(0);
+
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    timer = setInterval(function(){ paint((cur + 1) % cases.length); }, 5200);
+  }
 })();
 
 var tgLink = document.getElementById('tgLink');
