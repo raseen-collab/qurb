@@ -5,487 +5,697 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light only">
 <meta name="supported-color-schemes" content="light">
-<meta name="theme-color" content="#F0F1ED">
-<title>قُرب — بطاقة محلك في محفظة عميلك</title>
-<meta name="description" content="بطاقة تسكن محفظة جوال عميلك من أول زيارة، فتوصل رسالتك إلى شاشة قفله بدون تطبيق وبدون رسائل مدفوعة.">
+<meta name="theme-color" content="#ECEFE9">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='10' y='10' width='36' height='36' rx='9' fill='%2314594A'/%3E%3Crect x='22' y='22' width='36' height='36' rx='9' fill='%23C98A2B' fill-opacity='.85'/%3E%3C/svg%3E">
+<link rel="canonical" href="https://qurb.com.sa/">
+
+<title>قُرب | بطاقة محلك في محفظة جوال عميلك — بدون تطبيق</title>
+<meta name="description" content="قُرب يضع بطاقة محلك في Apple Wallet و Google Wallet، فتوصل رسالتك إلى شاشة قفل عميلك بدون تطبيق وبدون رسائل مدفوعة. للمغاسل والصالونات والمقاهي والمحلات الخدمية في السعودية.">
+<meta name="keywords" content="بطاقة ولاء رقمية, برنامج ولاء العملاء, بطاقة في المحفظة, Apple Wallet السعودية, تذكير العملاء, بطاقة عملاء مغسلة, ولاء الصالونات">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_SA">
+<meta property="og:site_name" content="قُرب">
+<meta property="og:url" content="https://qurb.com.sa/">
+<meta property="og:title" content="قُرب | بطاقة محلك في محفظة جوال عميلك">
+<meta property="og:description" content="بطاقة تسكن محفظة جوال عميلك من أول زيارة، فتوصل رسالتك إلى شاشة قفله — بدون تطبيق وبدون تكلفة على كل رسالة.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="قُرب | بطاقة محلك في محفظة جوال عميلك">
+<meta name="twitter:description" content="بدون تطبيق، وبدون تكلفة على كل رسالة. للمحلات الخدمية الصغيرة في السعودية.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "قُرب",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web, iOS Wallet, Android Wallet",
+      "inLanguage": "ar",
+      "description": "بطاقة عميل تسكن محفظة الجوال، تمكّن أصحاب المحلات الخدمية الصغيرة من الوصول إلى عملائهم عبر شاشة القفل بدون تطبيق.",
+      "areaServed": { "@type": "Country", "name": "SA" },
+      "offers": [
+        { "@type": "Offer", "name": "الأساسية",   "price": "1500", "priceCurrency": "SAR" },
+        { "@type": "Offer", "name": "الاحترافية", "price": "2000", "priceCurrency": "SAR" },
+        { "@type": "Offer", "name": "الشاملة",    "price": "2500", "priceCurrency": "SAR" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "عميلي كبير في السن وما يعرف يستخدم التقنية",
+          "acceptedAnswer": { "@type": "Answer", "text": "ما يحتاج يتعلم شيئًا. يصوّر الباركود بالكاميرا ويكتب اسمه ورقمه، فتدخل البطاقة جواله وتشتغل وحدها — بلا تطبيق يفتحه ولا حساب يتذكره." }
+        },
+        {
+          "@type": "Question",
+          "name": "أحتاج جهازًا أو كاشير معينًا؟",
+          "acceptedAnswer": { "@type": "Answer", "text": "لا. تشتغل من جوالك أو جوال موظفك عبر المتصفح، ولا تحتاج تغيير الكاشير الموجود." }
+        },
+        {
+          "@type": "Question",
+          "name": "وش يصير لبيانات عملائي؟",
+          "acceptedAnswer": { "@type": "Answer", "text": "هي بياناتك أنت، وتقدر تصدّرها متى ما طلبت. لا تُباع ولا تُشارك مع أي جهة، ولا تُستخدم لصالح محل ثاني." }
+        },
+        {
+          "@type": "Question",
+          "name": "كم تكلفة قُرب؟",
+          "acceptedAnswer": { "@type": "Answer", "text": "ثلاث باقات سنوية: الأساسية 1800 ريال، الاحترافية 3000، الشاملة 4800. والمقاعد التأسيسية الخمسة الأولى بـ1200 ريال مثبتة. الشهر الأول مجاني ولا يوجد تجديد تلقائي." }
+        }
+      ]
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-/* ══════════════════════════════════════
-   نظام التصميم
-   ══════════════════════════════════════ */
 :root{
   color-scheme: light only;
-
-  --paper:#F0F1ED;
-  --paper-2:#E7E9E3;
-  --ink:#0E1311;
-  --ink-2:#3A443E;
-  --muted:#6A736C;
-  --hair:#CDD2C8;
-  --hair-soft:#DEE1D9;
-  --deep:#12352C;
-  --brass:#8C6A3A;
-
-  --sp-section:clamp(72px,9vw,132px);
-  --measure:56ch;
+  --ink:#0E1512;
+  --ink-2:#28322D;
+  --paper:#ECEFE9;
+  --paper-2:#F7F8F4;
+  --line:#C6CDBF;
+  --line-soft:#DCE1D6;
+  --pine:#14594A;
+  --pine-lift:#1C7862;
+  --amber:#C98A2B;
+  --muted:#67736C;
 }
-
 *{box-sizing:border-box;}
 html{
-  scroll-behavior:smooth;-webkit-text-size-adjust:100%;
-  background:var(--paper);color:var(--ink);
+  scroll-behavior:smooth;scroll-padding-top:92px;-webkit-text-size-adjust:100%;
+  background:#ECEFE9;color:#0E1512;color-scheme:light only;
+}
+@media (prefers-color-scheme:dark){
+  html,body{background:#ECEFE9 !important;color:#0E1512 !important;}
+  section{background-color:#ECEFE9;}
+  section.compare,section.pilot,section.faq{background-color:#F7F8F4;}
+  section.dark{background:linear-gradient(180deg,#E6ECE4 0%,#DCE4DA 100%) !important;color:#0E1512 !important;}
+  section.dark h2,section.dark .mlist b{color:#0E1512 !important;}
+  section.dark p,section.dark .mlist span{color:#28322D !important;}
+  .cmp-col{background:#fff;}
+  .cmp-col.win{background:#14594A;}
+  .mcta{display:none;}
+@media (max-width:760px){
+  .mcta{
+    display:block;position:fixed;bottom:0;inset-inline:0;z-index:70;
+    padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+    background:linear-gradient(180deg,rgba(236,239,233,0) 0%,rgba(236,239,233,.94) 30%);
+    backdrop-filter:blur(8px);
+  }
+  .mcta .btn{width:100%;}
+  footer{padding-bottom:96px;}
+}
+footer{background:#0E1512 !important;}
+  input{background:#fff !important;color:#0E1512 !important;}
+  details summary{color:#0E1512;}
+  details p{color:#28322D;}
 }
 body{
   margin:0;background:var(--paper);color:var(--ink);
   font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;
-  font-size:16.5px;line-height:1.85;font-weight:400;
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
+  font-size:16px;line-height:1.75;overflow-x:hidden;
 }
-h1,h2,h3,.dsp{
-  font-family:"Alexandria",system-ui,sans-serif;
-  margin:0;line-height:1.24;letter-spacing:-.025em;font-weight:300;
+h1,h2,h3,h4{font-family:"Readex Pro",sans-serif;line-height:1.28;letter-spacing:-.02em;margin:0;}
+p{margin:0 0 14px;}
+a{color:inherit;}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;}
+.skip{position:fixed;top:-60px;inset-inline-start:16px;z-index:100;background:var(--ink);color:var(--paper);padding:10px 18px;border-radius:100px;font-size:14px;text-decoration:none;transition:top .2s;}
+.skip:focus{top:14px;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+.kicker{
+  font-family:"Readex Pro",sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:.09em;color:var(--pine);margin-bottom:14px;
+  display:flex;align-items:center;gap:9px;
 }
-p{margin:0 0 1.05em;}
-a{color:inherit;text-decoration:none;}
-:focus-visible{outline:1.5px solid var(--brass);outline-offset:4px;}
+.kicker::before{content:"";width:22px;height:1.5px;background:var(--pine);flex:none;}
 
-.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(22px,4vw,48px);}
-.measure{max-width:var(--measure);}
-
-/* هوامش الأقسام والفواصل الرقيقة */
-section{padding:var(--sp-section) 0;border-top:1px solid var(--hair);}
-section:first-of-type{border-top:none;}
-
-/* ترويسة القسم: رقم + تسمية + عنوان */
-.sec-head{
-  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);
-  gap:clamp(24px,5vw,64px);align-items:start;margin-bottom:clamp(38px,5vw,64px);
-}
-.sec-meta{display:flex;align-items:baseline;gap:14px;}
-.sec-num{
-  font-family:"Alexandria",sans-serif;font-weight:200;font-size:clamp(30px,4vw,46px);
-  color:var(--brass);line-height:1;letter-spacing:-.03em;
-}
-.sec-label{
-  font-family:"Alexandria",sans-serif;font-weight:500;font-size:11.5px;
-  letter-spacing:.16em;color:var(--muted);padding-top:4px;
-}
-.sec-title{font-size:clamp(25px,3.5vw,38px);}
-.sec-sub{color:var(--ink-2);margin:1.1em 0 0;font-size:16.5px;}
-
-/* حركة هادئة */
-.rv{opacity:0;transform:translateY(16px);transition:opacity 1s cubic-bezier(.22,.7,.28,1),transform 1s cubic-bezier(.22,.7,.28,1);}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1);}
 .rv.in{opacity:1;transform:none;}
 
-/* ══════ الترويسة ══════ */
-nav{
-  position:sticky;top:0;z-index:60;
-  background:color-mix(in srgb,var(--paper) 88%,transparent);
-  backdrop-filter:saturate(140%) blur(14px);
-  border-bottom:1px solid transparent;transition:border-color .4s;
+nav{position:sticky;top:0;z-index:50;background:rgba(236,239,233,.86);backdrop-filter:saturate(150%) blur(14px);border-bottom:1px solid transparent;transition:border-color .35s,box-shadow .35s;}
+nav.stuck{border-bottom-color:var(--line-soft);box-shadow:0 8px 28px -22px rgba(14,21,18,.35);}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:70px;}
+.logo{font-family:"Readex Pro",sans-serif;font-weight:700;font-size:22px;letter-spacing:-.03em;display:flex;align-items:center;gap:9px;}
+.logo i{font-style:normal;color:var(--pine);}
+.logo::before{content:"";width:10px;height:10px;border-radius:3px;background:var(--pine);box-shadow:3px 3px 0 0 var(--amber);flex:none;}
+.nav-mid{display:flex;gap:26px;}
+.nav-mid a{font-size:14px;color:var(--ink-2);text-decoration:none;border-bottom:1.5px solid transparent;padding-bottom:2px;transition:.2s;}
+.nav-mid a:hover{color:var(--pine);border-bottom-color:var(--amber);}
+@media (max-width:760px){.nav-mid{display:none;}}
+.nav-cta{
+  font-size:14px;text-decoration:none;background:var(--ink);color:var(--paper);
+  padding:9px 20px;border-radius:100px;font-weight:600;transition:background .2s;
 }
-nav.stuck{border-bottom-color:var(--hair);}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;height:76px;}
-.logo{
-  font-family:"Alexandria",sans-serif;font-weight:500;font-size:21px;
-  letter-spacing:-.03em;display:flex;align-items:center;gap:9px;
-}
-.logo .mark{
-  width:9px;height:9px;border:1.5px solid var(--brass);border-radius:50%;
-  display:inline-block;flex:none;
-}
-.nav-links{display:flex;gap:30px;align-items:center;}
-.nav-links a{
-  font-size:14.5px;color:var(--ink-2);
-  border-bottom:1px solid transparent;padding-bottom:2px;transition:.25s;
-}
-.nav-links a:hover{color:var(--ink);border-bottom-color:var(--brass);}
+.nav-cta:hover{background:var(--pine);}
 
+.hero{padding:44px 0 76px;position:relative;}
+.hero::before{
+  content:"";position:absolute;inset-inline-end:-14%;top:-16%;
+  width:640px;height:640px;border-radius:50%;
+  background:radial-gradient(circle,rgba(20,89,74,.1) 0%,rgba(20,89,74,0) 66%);
+  pointer-events:none;
+}
+.hero::after{
+  content:"";position:absolute;inset-inline-start:-10%;bottom:-30%;
+  width:460px;height:460px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,138,43,.07) 0%,rgba(201,138,43,0) 70%);
+  pointer-events:none;
+}
+.hero .wrap{display:grid;grid-template-columns:1.06fr .94fr;gap:56px;align-items:center;position:relative;}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;
+  color:var(--pine);background:rgba(20,89,74,.09);border-radius:100px;
+  padding:6px 15px;margin-bottom:22px;
+}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--pine);flex:none;animation:pulse 2.4s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.28;}}
+h1{font-size:clamp(33px,5.6vw,56px);font-weight:700;margin-bottom:22px;line-height:1.18;}
+h1 i{font-style:normal;color:var(--pine);position:relative;white-space:nowrap;}
+h1 i::after{
+  content:"";position:absolute;inset-inline:0;bottom:.04em;height:.28em;
+  background:rgba(201,138,43,.24);z-index:-1;border-radius:2px;
+}
+.lede{font-size:18.5px;color:var(--ink-2);max-width:47ch;}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px;}
 .btn{
-  display:inline-flex;align-items:center;justify-content:center;
-  font-family:"Alexandria",sans-serif;font-weight:400;font-size:14.5px;letter-spacing:-.01em;
-  padding:13px 26px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);
-  border-radius:2px;transition:background .3s,color .3s,border-color .3s;cursor:pointer;
+  display:inline-block;text-decoration:none;font-weight:600;font-size:15.5px;
+  padding:14px 28px;border-radius:100px;border:1.5px solid var(--pine);
+  background:var(--pine);color:#fff;cursor:pointer;font-family:inherit;
+  transition:background .2s,border-color .2s,transform .15s;
 }
-.btn:hover{background:var(--deep);border-color:var(--deep);}
-.btn.line{background:transparent;color:var(--ink);}
-.btn.line:hover{background:var(--ink);color:var(--paper);}
-.btn.pale{background:var(--paper);color:var(--deep);border-color:var(--paper);}
-.btn.pale:hover{background:transparent;color:var(--paper);border-color:var(--paper);}
-.btn.sm{padding:10px 20px;font-size:13.5px;}
+.btn{box-shadow:0 10px 24px -14px rgba(20,89,74,.55);}
+.btn:hover{background:var(--pine-lift);border-color:var(--pine-lift);transform:translateY(-1.5px);box-shadow:0 14px 30px -14px rgba(20,89,74,.6);}
+.btn:active{transform:translateY(0);}
+.btn.ghost{box-shadow:none;}
+.btn.ghost{background:transparent;color:var(--pine);}
+.btn.ghost:hover{background:rgba(20,89,74,.08);}
+.trust-line{margin-top:24px;font-size:13.5px;color:var(--muted);}
+.trust-line b{color:var(--ink-2);font-weight:600;}
 
-/* ══════ البطل ══════ */
-.hero{padding:clamp(48px,7vw,86px) 0 clamp(60px,8vw,104px);}
-.hero .wrap{
-  display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);
-  gap:clamp(34px,6vw,76px);align-items:center;
-}
-.eyebrow{
-  display:inline-flex;align-items:center;gap:10px;
-  font-family:"Alexandria",sans-serif;font-weight:500;font-size:11px;letter-spacing:.16em;
-  color:var(--muted);margin-bottom:26px;
-}
-.eyebrow::before{content:"";width:26px;height:1px;background:var(--brass);}
-h1{font-size:clamp(33px,5.6vw,60px);font-weight:200;letter-spacing:-.035em;}
-h1 b{font-weight:500;}
-h1 .em{color:var(--deep);font-weight:400;}
-.lede{font-size:clamp(16.5px,2vw,19px);color:var(--ink-2);margin:26px 0 0;max-width:44ch;}
-.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px;}
-
-.spec{
-  margin-top:40px;padding-top:20px;border-top:1px solid var(--hair);
-  display:flex;flex-wrap:wrap;gap:10px 26px;
-  font-family:"Alexandria",sans-serif;font-weight:400;font-size:12.5px;
-  letter-spacing:.02em;color:var(--muted);
-}
-.spec span{display:inline-flex;align-items:center;gap:8px;}
-.spec span::before{content:"";width:3px;height:3px;border-radius:50%;background:var(--brass);}
-
-/* ══════ العرض: البطاقة + الجوال ══════ */
-.stage{position:relative;display:flex;justify-content:center;align-items:center;min-height:440px;}
+.stage{position:relative;display:flex;justify-content:center;align-items:center;min-height:430px;}
 .pass{
-  width:270px;border-radius:14px;padding:19px 19px 15px;color:#EEF1EC;
-  background:linear-gradient(157deg,#17362D 0%,#0B1A15 100%);
-  box-shadow:0 2px 3px rgba(14,19,17,.14),0 26px 52px -22px rgba(14,19,17,.55);
-  position:relative;z-index:2;transform:rotate(-4.5deg);
+  width:262px;background:linear-gradient(158deg,#17332B 0%,#0E1D18 100%);
+  border-radius:19px;padding:17px 17px 13px;color:#EDF1EC;
+  box-shadow:0 22px 46px -20px rgba(14,21,18,.6);
+  position:relative;z-index:2;transform:rotate(-5deg);
 }
-.pass-top{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.pass-top{display:flex;align-items:center;gap:9px;margin-bottom:15px;}
 .pass-logo{
-  width:36px;height:36px;border-radius:9px;flex:none;display:grid;place-items:center;
-  font-family:"Alexandria",sans-serif;font-weight:500;font-size:15px;
-  background:#C6A46A;color:#1B1409;
+  width:33px;height:33px;border-radius:9px;background:var(--amber);color:#1A1206;
+  display:grid;place-items:center;font-family:"Readex Pro",sans-serif;font-weight:700;font-size:15px;flex:none;
 }
-.pass-nm{font-family:"Alexandria",sans-serif;font-weight:500;font-size:14.5px;line-height:1.35;}
-.pass-sb{font-size:11px;color:rgba(238,241,236,.5);letter-spacing:.03em;}
-.pass-lbl{
-  font-family:"Alexandria",sans-serif;font-size:10px;letter-spacing:.13em;
-  color:rgba(238,241,236,.5);margin-bottom:11px;
+.pass-top .nm{font-family:"Readex Pro",sans-serif;font-weight:600;font-size:14.5px;line-height:1.3;}
+.pass-top .sb{font-size:11px;color:rgba(237,241,236,.55);}
+.pass-lbl{font-size:10.5px;letter-spacing:.06em;color:rgba(237,241,236,.55);margin-bottom:8px;}
+.stamps{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:14px;}
+.stamp{
+  aspect-ratio:1;border-radius:50%;border:1.5px dashed rgba(237,241,236,.28);
+  display:grid;place-items:center;font-size:12px;color:rgba(237,241,236,.3);
 }
-.stamps{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;margin-bottom:18px;}
-.stamps i{
-  aspect-ratio:1;border-radius:50%;border:1px solid rgba(238,241,236,.26);
-}
-.stamps i.on{background:#C6A46A;border-color:#C6A46A;}
-.pass-cut{
-  border-top:1px dashed rgba(238,241,236,.22);margin:0 -19px 13px;position:relative;
-}
-.pass-cut::before,.pass-cut::after{
-  content:"";position:absolute;top:-6px;width:12px;height:12px;border-radius:50%;background:var(--paper);
-}
-.pass-cut::before{inset-inline-start:-6px;}
-.pass-cut::after{inset-inline-end:-6px;}
-.pass-code{
-  height:40px;border-radius:4px;background:#F3F5F1;
-  display:flex;align-items:center;justify-content:center;gap:2px;padding:0 14px;
-}
-.pass-code span{display:block;width:2px;background:#0E1311;height:58%;}
-.pass-code span:nth-child(3n){height:84%;width:3px;}
-.pass-code span:nth-child(4n){height:40%;}
+.stamp.on{background:var(--amber);border:1.5px solid var(--amber);color:#1A1206;font-weight:700;}
+.pass-cut{border-top:1.5px dashed rgba(237,241,236,.22);margin:0 -17px 11px;}
+.pass-code{height:34px;border-radius:6px;background:rgba(237,241,236,.92);display:flex;align-items:center;justify-content:center;gap:2px;padding:0 12px;}
+.pass-code span{display:block;width:2px;background:#0E1512;height:60%;}
+.pass-code span:nth-child(3n){height:82%;width:3px;}
+.pass-code span:nth-child(4n){height:44%;}
 
 .phone{
-  width:212px;aspect-ratio:9/18.7;flex:none;
-  border-radius:33px;border:7px solid #050907;padding:23px 11px;
-  background:linear-gradient(168deg,#141F1A 0%,#050908 60%,#0E1814 100%);
-  box-shadow:0 30px 56px -22px rgba(14,19,17,.5);
-  position:relative;overflow:hidden;z-index:1;
-  margin-inline-start:-74px;margin-top:96px;transform:rotate(3.5deg);
+  width:216px;aspect-ratio:9/18.6;flex:none;
+  background:linear-gradient(168deg,#16211C 0%,#080D0B 60%,#101A16 100%);
+  border-radius:32px;border:7px solid #040806;
+  box-shadow:0 30px 54px -20px rgba(14,21,18,.55);
+  position:relative;overflow:hidden;padding:22px 11px;
+  margin-inline-start:-72px;margin-top:88px;z-index:1;transform:rotate(4deg);
 }
-.notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:60px;height:15px;background:#050907;border-radius:100px;}
-.lock-t{
-  color:#F3F5F1;text-align:center;font-family:"Alexandria",sans-serif;font-weight:200;
-  font-size:41px;line-height:1;margin-top:26px;letter-spacing:-.05em;
-}
-.lock-d{color:rgba(243,245,241,.5);text-align:center;font-size:10.5px;margin-top:6px;letter-spacing:.02em;}
+.notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:64px;height:16px;background:#040806;border-radius:100px;}
+.lock-time{color:#F2F5F1;text-align:center;font-family:"Readex Pro",sans-serif;font-weight:300;font-size:40px;line-height:1;margin-top:26px;letter-spacing:-.04em;}
+.lock-date{color:rgba(242,245,241,.55);text-align:center;font-size:11px;margin-top:5px;}
 .notif{
-  margin-top:24px;background:rgba(242,244,239,.96);border-radius:14px;color:#0E1311;
-  padding:11px 12px;display:flex;gap:9px;align-items:flex-start;
+  margin-top:22px;background:rgba(240,243,238,.95);border-radius:15px;color:#0E1512;
+  padding:10px 11px;display:flex;gap:9px;align-items:flex-start;
 }
-.notif .ic{
-  width:26px;height:26px;border-radius:7px;background:var(--deep);color:#fff;
-  font-size:11.5px;display:grid;place-items:center;flex:none;
-  font-family:"Alexandria",sans-serif;font-weight:500;
-}
-.notif .tt{font-size:11px;font-weight:500;line-height:1.35;}
-.notif .ms{font-size:11px;color:#404A44;line-height:1.55;}
-.notif.play{animation:rise .7s cubic-bezier(.2,.8,.25,1);}
-@keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+.notif .ic{width:27px;height:27px;border-radius:8px;background:var(--pine);color:#fff;font-size:12.5px;display:grid;place-items:center;flex:none;font-family:"Readex Pro",sans-serif;font-weight:700;}
+.notif .tt{font-size:11.5px;font-weight:600;line-height:1.35;}
+.notif .ms{font-size:11.5px;color:#3E4A44;line-height:1.5;}
+.notif.play{animation:pop .6s cubic-bezier(.2,.8,.25,1);}
+@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.96);}to{opacity:1;transform:none;}}
 
-.switch{
-  position:absolute;bottom:0;inset-inline-start:0;display:flex;gap:0;flex-wrap:wrap;
-  border:1px solid var(--hair);border-radius:2px;overflow:hidden;background:var(--paper);
-}
+.switch{position:absolute;bottom:-6px;inset-inline-start:0;display:flex;gap:7px;flex-wrap:wrap;}
 .switch button{
-  font-family:"Alexandria",sans-serif;font-weight:400;font-size:12px;letter-spacing:.01em;
-  padding:9px 15px;border:none;border-inline-start:1px solid var(--hair);
-  background:transparent;color:var(--muted);cursor:pointer;transition:.25s;
+  font-family:inherit;font-size:12.5px;padding:6px 14px;border-radius:100px;
+  border:1.5px solid var(--line);background:rgba(255,255,255,.5);color:var(--muted);cursor:pointer;transition:.18s;
 }
-.switch button:first-child{border-inline-start:none;}
-.switch button[aria-pressed="true"]{background:var(--ink);color:var(--paper);}
+.switch button[aria-pressed="true"]{border-color:var(--ink);color:var(--ink);font-weight:600;background:#fff;}
 
-/* ══════ المقارنة ══════ */
-.cmp{border-top:1px solid var(--ink);}
-.cmp-row{
-  display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;
-  border-bottom:1px solid var(--hair-soft);
+section{padding:clamp(64px,9vw,104px) 0;background-color:var(--paper);position:relative;}
+body{
+  background-image:radial-gradient(rgba(14,21,18,.028) 1px,transparent 1px);
+  background-size:22px 22px;
 }
-.cmp-row.head > *{
-  font-family:"Alexandria",sans-serif;font-weight:500;font-size:13.5px;
-  padding:16px 14px;color:var(--muted);letter-spacing:.01em;
-}
-.cmp-row > *{padding:16px 14px;font-size:14.5px;color:var(--ink-2);}
-.cmp-row > *:first-child{
-  font-family:"Alexandria",sans-serif;font-weight:400;color:var(--ink);font-size:14px;
-}
-.cmp-row .win{background:var(--deep);color:#EEF1EC;}
-.cmp-row.head .win{color:#fff;font-weight:500;}
-.cmp-note{margin-top:20px;font-size:13.5px;color:var(--muted);}
+section.faq{background-color:var(--paper-2);border-top:1px solid var(--line-soft);}
+h2{font-size:clamp(24px,3.6vw,34px);font-weight:600;margin-bottom:18px;max-width:23ch;}
+.sec-lede{font-size:17px;color:var(--ink-2);max-width:56ch;}
 
-/* ══════ الخطوات ══════ */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,32px);}
-.step .art{
-  height:250px;display:grid;place-items:center;
-  background:var(--paper-2);border:1px solid var(--hair-soft);border-radius:3px;
-  margin-bottom:22px;padding:22px;
-}
-.step .n{
-  font-family:"Alexandria",sans-serif;font-weight:400;font-size:11.5px;
-  letter-spacing:.14em;color:var(--brass);margin-bottom:9px;
-}
-.step h3{font-size:19px;font-weight:500;margin-bottom:8px;}
-.step p{font-size:14.5px;color:var(--ink-2);margin:0;}
+.compare{background:var(--paper-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);}
+.cmp{display:grid;grid-template-columns:repeat(4,1fr);margin-top:36px;border:1px solid var(--line);background:#fff;}
+.cmp-col{padding:22px 18px;border-inline-start:1px solid var(--line);}
+.cmp-col:first-child{border-inline-start:none;}
+.cmp-col.win{background:var(--pine);color:#F2F5F1;}
+.cmp-col h4{font-size:15.5px;font-weight:600;margin-bottom:14px;}
+.cmp-col.win h4{color:#fff;}
+.cmp-row{font-size:13.5px;color:var(--muted);padding:7px 0;border-top:1px dashed var(--line-soft);}
+.cmp-col.win .cmp-row{color:rgba(242,245,241,.82);border-top-color:rgba(242,245,241,.18);}
+.cmp-row:first-of-type{border-top:none;}
+.cmp-row b{color:var(--ink);font-weight:600;}
+.cmp-col.win .cmp-row b{color:#fff;}
 
-/* لوحة الملصق */
-.standee{width:132px;background:#fff;border:1px solid var(--hair);border-radius:3px;padding:14px 11px;text-align:center;}
-.standee .st{font-family:"Alexandria",sans-serif;font-weight:500;font-size:11.5px;color:var(--deep);letter-spacing:.02em;}
-.qr{width:92px;height:92px;margin:10px auto;display:grid;grid-template-columns:repeat(21,1fr);grid-template-rows:repeat(21,1fr);}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);margin-top:40px;}
+
+/* ── visual step cards ── */
+.vsteps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:38px;}
+.vstep{
+  background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;
+  box-shadow:0 1px 2px rgba(14,21,18,.05),0 18px 40px -30px rgba(14,21,18,.3);
+  transition:transform .35s cubic-bezier(.2,.7,.3,1),box-shadow .35s;
+}
+.vstep:hover{transform:translateY(-4px);box-shadow:0 1px 2px rgba(14,21,18,.05),0 26px 48px -28px rgba(14,21,18,.4);}
+.vstep .art{
+  min-height:222px;padding:24px 20px;display:grid;place-items:center;
+  background:linear-gradient(168deg,#F4F7F2 0%,#E5EBE2 100%);
+  border-bottom:1px solid var(--line-soft);
+}
+.vstep .bd{padding:20px;}
+.vstep .n{font-family:"Readex Pro",sans-serif;font-weight:700;font-size:11.5px;color:var(--amber);letter-spacing:.09em;margin-bottom:8px;}
+.vstep h3{font-size:17.5px;font-weight:600;margin-bottom:7px;}
+.vstep p{font-size:14.5px;color:var(--ink-2);margin:0;}
+
+/* standee + QR */
+.standee{
+  width:138px;background:#fff;border:1px solid var(--line);border-radius:11px;
+  padding:13px 11px;text-align:center;box-shadow:0 10px 22px -12px rgba(14,21,18,.35);
+}
+.std-top{font-family:"Readex Pro",sans-serif;font-weight:600;font-size:12px;color:var(--pine);}
+.qr{width:96px;height:96px;margin:9px auto;display:grid;grid-template-columns:repeat(21,1fr);grid-template-rows:repeat(21,1fr);}
 .qr i{display:block;}
 .qr i.on{background:var(--ink);}
-.standee .sb{font-size:9px;color:var(--muted);line-height:1.5;}
+.std-bot{font-size:9.5px;color:var(--muted);line-height:1.4;}
 
-/* نموذج التسجيل */
-.mock{width:176px;background:#fff;border:1px solid var(--hair);border-radius:3px;padding:15px;}
-.mock .mh{font-family:"Alexandria",sans-serif;font-weight:500;font-size:12.5px;margin-bottom:13px;line-height:1.45;}
-.mock .mi{height:31px;border:1px solid var(--hair-soft);border-radius:2px;font-size:11px;color:var(--muted);display:flex;align-items:center;padding:0 11px;margin-bottom:9px;}
-.mock .mb{height:35px;border-radius:2px;background:var(--ink);color:#fff;font-size:11.5px;display:flex;align-items:center;justify-content:center;gap:7px;font-family:"Alexandria",sans-serif;font-weight:400;}
-.mock .mb::before{content:"";width:11px;height:11px;border-radius:2px;background:#C6A46A;}
+/* enrollment mock */
+.mockform{width:172px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:14px;box-shadow:0 10px 22px -12px rgba(14,21,18,.32);}
+.mf-h{font-family:"Readex Pro",sans-serif;font-weight:600;font-size:12.5px;margin-bottom:11px;line-height:1.4;}
+.mf-i{height:30px;border:1px solid var(--line-soft);border-radius:7px;font-size:11px;color:var(--muted);display:flex;align-items:center;padding:0 10px;margin-bottom:8px;background:var(--paper-2);}
+.mf-b{
+  height:34px;border-radius:8px;background:var(--ink);color:#fff;font-size:11.5px;
+  display:flex;align-items:center;justify-content:center;gap:6px;font-weight:600;
+}
+.mf-b::before{content:"";width:12px;height:12px;border-radius:3px;background:var(--amber);flex:none;}
 
-/* جوال مصغر */
-.mini{
-  width:128px;aspect-ratio:9/17.6;border-radius:20px;border:5px solid #050907;
-  background:linear-gradient(168deg,#152019 0%,#050908 62%,#0F1915 100%);
+/* mini lock screen */
+.mini-phone{
+  width:132px;aspect-ratio:9/17.4;border-radius:20px;border:5px solid #060A08;
+  background:linear-gradient(168deg,#17231E 0%,#080D0B 62%,#111B17 100%);
   padding:14px 8px;position:relative;overflow:hidden;
+  box-shadow:0 14px 28px -14px rgba(14,21,18,.5);
 }
-.mini .mn{position:absolute;top:6px;left:50%;transform:translateX(-50%);width:38px;height:9px;background:#050907;border-radius:100px;}
-.mini .mt{color:#F3F5F1;text-align:center;font-family:"Alexandria",sans-serif;font-weight:200;font-size:25px;line-height:1;margin-top:19px;letter-spacing:-.05em;}
-.mini .mnf{margin-top:17px;background:rgba(242,244,239,.96);border-radius:9px;padding:7px 8px;display:flex;gap:6px;align-items:flex-start;}
-.mini .mi2{width:18px;height:18px;border-radius:5px;background:var(--deep);color:#fff;font-size:8px;display:grid;place-items:center;flex:none;font-family:"Alexandria",sans-serif;font-weight:500;}
-.mini .m1{font-size:8px;font-weight:500;color:#0E1311;line-height:1.35;}
-.mini .m2{font-size:8px;color:#404A44;line-height:1.5;}
+.mini-phone .mn{position:absolute;top:6px;left:50%;transform:translateX(-50%);width:40px;height:10px;background:#060A08;border-radius:100px;}
+.mini-t{color:#F2F5F1;text-align:center;font-family:"Readex Pro",sans-serif;font-weight:300;font-size:25px;line-height:1;margin-top:18px;letter-spacing:-.04em;}
+.mini-n{margin-top:16px;background:rgba(240,243,238,.95);border-radius:10px;padding:7px 8px;display:flex;gap:6px;align-items:flex-start;}
+.mini-n .mi{width:19px;height:19px;border-radius:6px;background:var(--pine);color:#fff;font-size:9px;display:grid;place-items:center;flex:none;font-family:"Readex Pro",sans-serif;font-weight:700;}
+.mini-n .mt{font-size:8.5px;font-weight:600;color:#0E1512;line-height:1.3;}
+.mini-n .mm{font-size:8.5px;color:#3E4A44;line-height:1.45;}
 
-/* ══════ قائمة الخدمات ══════ */
-.svc-group{margin-bottom:52px;}
-.svc-group:last-child{margin-bottom:0;}
-.grp-label{
-  display:flex;align-items:center;gap:16px;margin-bottom:6px;
-  font-family:"Alexandria",sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.15em;
-  color:var(--ink);
+/* colour variants */
+.variants{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px;}
+.vcard{
+  width:150px;border-radius:14px;padding:13px;color:#fff;
+  box-shadow:0 12px 26px -14px rgba(14,21,18,.45);
 }
-.grp-label::after{content:"";flex:1;height:1px;background:var(--hair);}
-.grp-label em{font-style:normal;color:var(--muted);letter-spacing:.02em;font-weight:400;font-size:12.5px;}
-.svc-list{display:grid;grid-template-columns:repeat(2,1fr);gap:0 clamp(24px,4vw,56px);}
-.svc-item{
-  display:grid;grid-template-columns:26px minmax(0,1fr);gap:16px;
-  padding:20px 0;border-bottom:1px solid var(--hair-soft);align-items:start;
-}
-.svc-item .ico{color:var(--brass);padding-top:3px;}
-.svc-item .ico svg{width:20px;height:20px;display:block;}
-.svc-item h3{font-family:"Alexandria",sans-serif;font-weight:500;font-size:16px;margin-bottom:4px;}
-.svc-item p{font-size:14px;color:var(--ink-2);margin:0;line-height:1.7;}
-.svc-group.later .svc-item h3,.svc-group.later .svc-item p{color:var(--muted);}
-.svc-group.later .ico{color:var(--hair);}
+.vcard .vh{display:flex;align-items:center;gap:7px;margin-bottom:10px;}
+.vcard .vl{width:24px;height:24px;border-radius:7px;display:grid;place-items:center;font-family:"Readex Pro",sans-serif;font-weight:700;font-size:11px;flex:none;}
+.vcard .vn{font-family:"Readex Pro",sans-serif;font-weight:600;font-size:12px;line-height:1.3;}
+.vcard .vs{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;}
+.vcard .vs i{aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.22);}
+.vcard .vs i.on{background:#fff;}
+.step{padding:0 26px;border-inline-start:1px solid var(--line);}
+.step:first-child{border-inline-start:none;padding-inline-start:0;}
+.step .n{font-family:"Readex Pro",sans-serif;font-weight:700;font-size:12px;color:var(--amber);letter-spacing:.08em;margin-bottom:10px;}
+.step h3{font-size:18px;font-weight:600;margin-bottom:8px;}
+.step p{font-size:14.5px;color:var(--ink-2);margin:0;}
 
-.disclose{
-  margin-top:44px;padding:26px 28px;background:var(--paper-2);
-  border-inline-start:2px solid var(--deep);border-radius:2px;
+.dark{
+  background:linear-gradient(180deg,#E6ECE4 0%,#DCE4DA 100%);
+  color:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
 }
-.disclose b{font-family:"Alexandria",sans-serif;font-weight:500;}
-.disclose p{margin:0;font-size:15px;color:var(--ink-2);max-width:70ch;}
-
-/* ══════ الطريقة ══════ */
+.dark h2{color:var(--ink);}
+.dark .kicker{color:var(--pine);}
+.dark .kicker::before{background:var(--pine);}
+.method{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:52px;align-items:start;}
+.method-note{color:var(--ink-2);max-width:40ch;}
 .mlist{margin:0;padding:0;list-style:none;counter-reset:m;}
 .mlist li{
-  counter-increment:m;padding:26px 0;border-bottom:1px solid var(--hair-soft);
-  display:grid;grid-template-columns:44px minmax(0,1fr);gap:6px 18px;align-items:start;
+  counter-increment:m;padding:16px 0;border-top:1px solid rgba(14,21,18,.13);
+  display:grid;grid-template-columns:34px minmax(0,1fr);gap:4px 14px;align-items:start;
 }
-.mlist li:first-child{border-top:1px solid var(--hair);}
+.mlist li:first-child{border-top:none;padding-top:0;}
 .mlist li::before{
-  content:"٠" counter(m);grid-column:1;grid-row:1 / span 2;
-  font-family:"Alexandria",sans-serif;font-weight:200;font-size:24px;
-  color:var(--brass);line-height:1.1;letter-spacing:-.02em;
+  content:"0" counter(m);font-family:"Readex Pro",sans-serif;font-weight:600;
+  font-size:12.5px;color:var(--pine);padding-top:3px;
+  grid-column:1;grid-row:1;
 }
 .mlist b{
-  grid-column:2;grid-row:1;font-family:"Alexandria",sans-serif;font-weight:500;
-  font-size:17px;
+  display:block;font-family:"Readex Pro",sans-serif;font-weight:600;font-size:16px;
+  color:var(--ink);margin-bottom:3px;grid-column:2;grid-row:1;min-width:0;
 }
-.mlist span{grid-column:2;grid-row:2;font-size:14.5px;color:var(--ink-2);}
+.mlist span{font-size:14.5px;color:var(--ink-2);grid-column:2;grid-row:2;min-width:0;}
 
-/* ══════ الأسعار ══════ */
-.tiers{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);}
+/* ── wallet live example ── */
+.wallet-sec{background:var(--paper-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);}
+.wallet-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(30px,5vw,64px);align-items:center;margin-top:34px;}
+.wallet-notes{margin:0;padding:0;list-style:none;}
+.wallet-notes li{
+  padding:14px 0;border-top:1px solid var(--line-soft);
+  display:grid;grid-template-columns:22px minmax(0,1fr);gap:12px;align-items:start;
+}
+.wallet-notes li:first-child{border-top:none;}
+.wallet-notes li::before{
+  content:"";width:7px;height:7px;border-radius:50%;background:var(--pine);
+  margin-top:11px;margin-inline-start:7px;
+}
+.wallet-notes b{display:block;font-family:"Readex Pro",sans-serif;font-weight:600;font-size:15.5px;margin-bottom:2px;}
+.wallet-notes span{font-size:14.5px;color:var(--ink-2);}
+
+.wphone{
+  width:308px;flex:none;aspect-ratio:9/19.2;background:#000;
+  border-radius:44px;border:9px solid #0A0A0A;position:relative;overflow:hidden;
+  box-shadow:0 30px 62px -24px rgba(14,21,18,.55);display:flex;flex-direction:column;
+}
+.wisland{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:88px;height:25px;background:#000;border-radius:100px;z-index:6;}
+.wstatus{
+  position:relative;z-index:5;display:flex;justify-content:space-between;align-items:center;
+  padding:15px 24px 0;color:#fff;font-size:12.5px;font-weight:600;font-family:"Readex Pro",sans-serif;
+}
+.wbars{display:flex;gap:3px;align-items:flex-end;}
+.wbars i{display:block;width:3px;background:#fff;border-radius:1px;}
+.wbars i:nth-child(1){height:4px;}.wbars i:nth-child(2){height:6px;}
+.wbars i:nth-child(3){height:8px;}.wbars i:nth-child(4){height:10px;}
+.wbatt{width:22px;height:10px;border:1.3px solid rgba(255,255,255,.7);border-radius:3px;position:relative;}
+.wbatt::after{content:"";position:absolute;inset:1.4px;background:#fff;border-radius:1px;}
+.whead{padding:24px 22px 10px;color:#fff;}
+.whead h3{font-family:"Readex Pro",sans-serif;font-weight:700;font-size:27px;margin:0;letter-spacing:-.03em;}
+.wstack{flex:1;padding:8px 16px 0;}
+.wbehind{height:54px;border-radius:13px 13px 5px 5px;margin-bottom:-38px;box-shadow:0 -3px 11px rgba(0,0,0,.45);position:relative;}
+.wb1{background:linear-gradient(160deg,#3A3F45,#25292E);}
+.wb2{background:linear-gradient(160deg,#4C4238,#2F2823);}
+.wbehind em{position:absolute;top:10px;inset-inline-start:13px;color:rgba(255,255,255,.45);font-size:10.5px;font-style:normal;}
+
+.wpass{
+  position:relative;border-radius:15px;padding:15px;color:#fff;
+  background:linear-gradient(158deg,#17332B 0%,#0D1A16 100%);
+  box-shadow:0 -4px 17px rgba(0,0,0,.5),0 15px 32px -16px rgba(0,0,0,.7);
+}
+.wp-top{display:flex;align-items:center;gap:9px;margin-bottom:14px;}
+.wp-logo{width:33px;height:33px;border-radius:9px;flex:none;display:grid;place-items:center;background:#C98A2B;color:#1A1206;font-family:"Readex Pro",sans-serif;font-weight:700;font-size:14px;}
+.wp-nm{font-family:"Readex Pro",sans-serif;font-weight:600;font-size:13.5px;line-height:1.3;}
+.wp-kd{font-size:10.5px;color:rgba(255,255,255,.55);}
+.wp-lbl{font-size:9.5px;letter-spacing:.07em;color:rgba(255,255,255,.55);margin-bottom:8px;}
+.wp-st{display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin-bottom:14px;}
+.wp-st i{aspect-ratio:1;border-radius:50%;border:1.3px dashed rgba(255,255,255,.3);}
+.wp-st i.on{background:#fff;border-color:#fff;}
+.wp-cut{border-top:1.3px dashed rgba(255,255,255,.24);margin:0 -15px 12px;}
+.wp-code{height:46px;border-radius:6px;background:#fff;display:flex;align-items:center;justify-content:center;gap:2px;padding:0 14px;}
+.wp-code span{display:block;width:2px;background:#0E1512;height:60%;}
+.wp-code span:nth-child(3n){height:86%;width:3px;}
+.wp-code span:nth-child(4n){height:40%;}
+.wp-foot{text-align:center;font-size:9.5px;color:rgba(255,255,255,.5);margin-top:8px;}
+
+/* ظهر البطاقة */
+.wback{
+  background:#F4F6F2;border-radius:15px;padding:6px 14px;color:var(--ink);
+  box-shadow:0 -4px 17px rgba(0,0,0,.4),0 15px 32px -16px rgba(0,0,0,.6);
+}
+.wback .row{
+  display:flex;justify-content:space-between;gap:10px;align-items:center;
+  padding:11px 0;border-bottom:1px solid #DDE2D9;font-size:11.5px;
+}
+.wback .row:last-child{border-bottom:none;}
+.wback .row .k{color:var(--muted);}
+.wback .row .v{font-family:"Readex Pro",sans-serif;font-weight:600;}
+.wback .row .v.link{color:var(--pine);}
+
+.wtoggle{display:flex;gap:0;border:1.5px solid var(--line);border-radius:100px;overflow:hidden;margin-top:20px;width:fit-content;}
+.wtoggle button{
+  font-family:inherit;font-size:13px;padding:8px 18px;border:none;background:transparent;
+  color:var(--muted);cursor:pointer;transition:.2s;
+}
+.wtoggle button[aria-pressed="true"]{background:var(--ink);color:var(--paper);font-weight:600;}
+.wnote{font-size:12.5px;color:var(--muted);margin-top:12px;}
+
+@media (max-width:900px){
+  .wallet-grid{grid-template-columns:1fr;justify-items:center;}
+  .wphone{width:min(300px,84vw);}
+  .wallet-notes{width:100%;}
+}
+
+/* ── services roadmap ── */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px;}
+.svc{
+  background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;
+  display:flex;flex-direction:column;gap:9px;position:relative;
+  box-shadow:0 1px 2px rgba(14,21,18,.04),0 14px 34px -30px rgba(14,21,18,.28);
+  transition:transform .3s cubic-bezier(.2,.7,.3,1),box-shadow .3s,border-color .3s;
+}
+.svc:hover{transform:translateY(-3px);border-color:var(--pine);box-shadow:0 1px 2px rgba(14,21,18,.04),0 22px 44px -28px rgba(20,89,74,.35);}
+.svc.later:hover{border-color:var(--line);transform:none;box-shadow:0 1px 2px rgba(14,21,18,.04),0 14px 34px -30px rgba(14,21,18,.28);}
+.svc .sym{
+  width:42px;height:42px;border-radius:12px;flex:none;
+  background:linear-gradient(145deg,rgba(20,89,74,.14),rgba(20,89,74,.05));
+  border:1px solid rgba(20,89,74,.14);
+  display:grid;place-items:center;font-size:19px;
+}
+.svc.later .sym{background:var(--paper-2);border-color:var(--line-soft);filter:grayscale(.5);opacity:.75;}
+.svc h3{font-size:16.5px;font-weight:600;margin:0;padding-inline-end:60px;}
+.svc p{font-size:14px;color:var(--ink-2);margin:0;}
+.tag{
+  position:absolute;top:18px;inset-inline-start:18px;font-size:10.5px;font-weight:600;
+  font-family:"Readex Pro",sans-serif;letter-spacing:.03em;padding:3px 9px;border-radius:100px;
+}
+.tag.now{background:var(--pine);color:#fff;}
+.tag.next{background:rgba(14,21,18,.08);color:var(--muted);}
+.svc.later{background:var(--paper-2);}
+.svc-ask{
+  margin-top:26px;border:1.5px dashed var(--pine);border-radius:14px;
+  padding:18px 20px;background:rgba(20,89,74,.05);font-size:15px;
+}
+.svc-ask b{font-family:"Readex Pro",sans-serif;font-weight:600;}
+
+/* ── onboarding ── */
+.ob{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:32px;border:1px solid var(--line);background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(14,21,18,.04),0 16px 38px -30px rgba(14,21,18,.3);}
+.ob > div{padding:26px 22px;border-inline-start:1px solid var(--line-soft);position:relative;}
+.ob > div:first-child{border-inline-start:none;}
+.ob > div::before{
+  content:"";position:absolute;top:0;inset-inline-start:0;width:100%;height:3px;
+  background:linear-gradient(90deg,var(--pine),rgba(20,89,74,0));opacity:0;transition:opacity .3s;
+}
+.ob > div:hover::before{opacity:1;}
+.ob .t{font-family:"Readex Pro",sans-serif;font-weight:600;font-size:11.5px;letter-spacing:.08em;color:var(--amber);margin-bottom:10px;display:flex;align-items:center;gap:7px;}
+.ob .t::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--amber);flex:none;}
+.ob h3{font-size:16.5px;font-weight:600;margin:0 0 6px;}
+.ob p{font-size:14px;color:var(--ink-2);margin:0;}
+
+/* ── onboarding ends ── */
+
+/* ── billing toggle ── */
+.bill{display:flex;border:1.5px solid var(--line);border-radius:100px;overflow:hidden;width:fit-content;margin-top:26px;background:#fff;}
+.bill button{
+  font-family:"Readex Pro",sans-serif;font-weight:500;font-size:13.5px;padding:9px 20px;
+  border:none;border-inline-start:1px solid var(--line-soft);background:transparent;color:var(--muted);cursor:pointer;transition:.2s;
+}
+.bill button:first-child{border-inline-start:none;}
+.bill button[aria-pressed="true"]{background:var(--ink);color:var(--paper);font-weight:600;}
+.bill button em{font-style:normal;font-size:11px;color:var(--amber);margin-inline-start:5px;}
+.bill button[aria-pressed="true"] em{color:#E8C388;}
+
+/* ── tiers ── */
+.tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px;align-items:start;}
 .tier{
-  padding:30px 26px;border-bottom:1px solid var(--hair);
-  border-inline-start:1px solid var(--hair-soft);
+  background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px 26px;
+  display:flex;flex-direction:column;position:relative;
+  box-shadow:0 1px 2px rgba(14,21,18,.04),0 16px 38px -30px rgba(14,21,18,.3);
+  transition:transform .3s cubic-bezier(.2,.7,.3,1),box-shadow .3s;
 }
-.tier:first-child{border-inline-start:none;}
-.tier .term{
-  font-family:"Alexandria",sans-serif;font-weight:500;font-size:12px;
-  letter-spacing:.13em;color:var(--muted);margin-bottom:16px;
+.tier:hover{transform:translateY(-4px);}
+.tier.mid{
+  border:1.5px solid var(--pine);
+  box-shadow:0 1px 2px rgba(20,89,74,.08),0 26px 52px -26px rgba(20,89,74,.5);
+  background:linear-gradient(180deg,#fff 0%,#F6FAF7 100%);
 }
-.tier .amt{font-family:"Alexandria",sans-serif;font-weight:200;font-size:44px;line-height:1;letter-spacing:-.04em;}
-.tier .amt small{font-family:"IBM Plex Sans Arabic",sans-serif;font-size:14px;font-weight:400;color:var(--muted);letter-spacing:0;}
-.tier .per{font-size:13.5px;color:var(--muted);margin-top:10px;}
-.tier .best{
-  display:inline-block;margin-top:14px;font-family:"Alexandria",sans-serif;
-  font-size:11px;letter-spacing:.1em;color:var(--brass);border:1px solid var(--brass);
-  padding:3px 10px;border-radius:2px;
+.tier .flag{
+  position:absolute;top:-11px;inset-inline-start:24px;background:var(--pine);color:#fff;
+  font-family:"Readex Pro",sans-serif;font-weight:600;font-size:11px;letter-spacing:.05em;
+  padding:4px 12px;border-radius:100px;
 }
+.tier .nm{font-family:"Readex Pro",sans-serif;font-weight:600;font-size:19px;margin-bottom:4px;}
+.tier .who{font-size:13.5px;color:var(--muted);margin-bottom:18px;min-height:42px;}
+.tier .amt{font-family:"Readex Pro",sans-serif;font-weight:700;font-size:33px;line-height:1;}
+.tier .amt small{font-size:14px;font-weight:500;color:var(--muted);}
+.tier .mo{font-size:13px;color:var(--muted);margin-top:7px;}
+.tier ul{list-style:none;margin:20px 0 0;padding:0;border-top:1px solid var(--line-soft);}
+.tier li{
+  padding:9px 0;font-size:14.5px;color:var(--ink-2);
+  display:grid;grid-template-columns:17px minmax(0,1fr);gap:9px;align-items:start;
+}
+.tier li::before{
+  content:"";width:9px;height:5px;margin-top:8px;margin-inline-start:4px;
+  border-inline-start:1.6px solid var(--pine);border-bottom:1.6px solid var(--pine);
+  transform:rotate(-45deg);
+}
+.tier li.plus{font-family:"Readex Pro",sans-serif;font-weight:600;color:var(--ink);}
+.tier li.soon::before{border-color:var(--muted);}
+.tier li.soon{color:var(--muted);}
+.tier li.soon em{font-style:normal;font-size:12px;color:var(--amber);}
 
 .founding{
-  margin-top:38px;background:var(--deep);color:#EEF1EC;border-radius:3px;
-  padding:clamp(30px,4vw,46px);
-  display:grid;grid-template-columns:minmax(0,1.25fr) auto;gap:clamp(26px,4vw,52px);align-items:center;
+  margin-top:26px;color:#EDF1EC;border-radius:18px;
+  background:radial-gradient(120% 160% at 85% 0%,#1C4A3D 0%,#0E1512 55%);
+  padding:clamp(28px,4vw,44px);
+  display:grid;grid-template-columns:minmax(0,1.3fr) auto;gap:clamp(24px,4vw,48px);align-items:center;
+  box-shadow:0 30px 60px -30px rgba(14,21,18,.6);
+  position:relative;overflow:hidden;
 }
-.founding h3{font-family:"Alexandria",sans-serif;font-weight:400;font-size:clamp(21px,2.6vw,27px);color:#fff;margin-bottom:14px;}
-.founding p{margin:0;color:rgba(238,241,236,.8);font-size:15px;max-width:56ch;}
-.founding p b{color:#fff;font-weight:500;}
-.f-amt{text-align:center;border-inline-start:1px solid rgba(238,241,236,.2);padding-inline-start:clamp(26px,4vw,52px);}
-.f-amt .n{font-family:"Alexandria",sans-serif;font-weight:200;font-size:clamp(44px,6vw,62px);line-height:1;letter-spacing:-.045em;color:#fff;}
-.f-amt .u{font-size:13px;color:rgba(238,241,236,.7);margin-top:8px;letter-spacing:.02em;}
-.founding .btn{margin-top:22px;}
-.terms{margin-top:20px;font-size:13.5px;color:var(--muted);}
+.founding::before{
+  content:"";position:absolute;inset-inline-start:-8%;bottom:-45%;width:340px;height:340px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,138,43,.16),transparent 70%);pointer-events:none;
+}
+.founding h3{font-family:"Readex Pro",sans-serif;font-weight:600;font-size:clamp(20px,2.5vw,25px);color:#fff;margin:0 0 12px;}
+.founding p{margin:0;color:rgba(237,241,236,.82);font-size:15px;max-width:58ch;}
+.founding p b{color:#fff;font-weight:600;}
+.f-amt{text-align:center;border-inline-start:1px solid rgba(237,241,236,.2);padding-inline-start:clamp(24px,4vw,48px);}
+.f-amt .n{font-family:"Readex Pro",sans-serif;font-weight:700;font-size:clamp(38px,5vw,54px);line-height:1;color:#fff;}
+.f-amt .u{font-size:13px;color:rgba(237,241,236,.7);margin-top:6px;}
 
-/* ══════ الأسئلة ══════ */
-.faq{border-top:1px solid var(--ink);}
-details{border-bottom:1px solid var(--hair-soft);}
+.pilot{background:var(--paper-2);}
+.offer{border:1.5px solid var(--ink);background:#fff;display:grid;grid-template-columns:1fr 1fr;}
+.offer > div{padding:30px;}
+.offer .give{border-inline-start:1px solid var(--line);background:var(--paper-2);}
+.offer h3{font-size:19px;font-weight:600;margin-bottom:14px;}
+.offer ul{margin:0;padding-inline-start:19px;font-size:15px;}
+.offer li{margin-bottom:9px;}
+.seats{display:flex;align-items:center;gap:16px;margin-top:26px;flex-wrap:wrap;}
+.seats .n{font-family:"Readex Pro",sans-serif;font-weight:700;font-size:56px;line-height:.9;color:var(--pine);}
+.seats .l{font-size:14px;color:var(--muted);max-width:22ch;}
+form{margin-top:26px;display:flex;gap:10px;flex-wrap:wrap;}
+input{flex:1;min-width:190px;font-family:inherit;font-size:15.5px;padding:14px 18px;border:1.5px solid var(--line);border-radius:100px;background:#fff;color:var(--ink);}
+input:focus{border-color:var(--pine);outline:none;}
+.hint{font-size:13px;color:var(--muted);margin-top:12px;}
+
+#faqList{background:#fff;border:1px solid var(--line);border-radius:16px;padding:4px 24px;box-shadow:0 1px 2px rgba(14,21,18,.04),0 16px 38px -30px rgba(14,21,18,.3);}
+details{border-top:1px solid var(--line-soft);padding:16px 0;}
+details:first-of-type{border-top:none;}
 summary{
-  font-family:"Alexandria",sans-serif;font-weight:400;font-size:17px;
-  cursor:pointer;list-style:none;display:flex;justify-content:space-between;
-  gap:20px;align-items:center;padding:24px 0;transition:color .25s;
+  font-family:"Readex Pro",sans-serif;font-weight:500;font-size:16.5px;
+  cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center;
 }
-summary:hover{color:var(--deep);}
 summary::-webkit-details-marker{display:none;}
-summary .pm{position:relative;width:13px;height:13px;flex:none;}
-summary .pm::before,summary .pm::after{
-  content:"";position:absolute;background:var(--brass);transition:transform .3s,opacity .3s;
-}
-summary .pm::before{inset-inline:0;top:6px;height:1px;}
-summary .pm::after{inset-block:0;inset-inline-start:6px;width:1px;}
-details[open] summary .pm::after{transform:scaleY(0);opacity:0;}
-details p{margin:0 0 26px;font-size:15.5px;color:var(--ink-2);max-width:66ch;}
+summary::after{content:"+";color:var(--pine);font-size:20px;font-weight:400;flex:none;}
+details[open] summary::after{content:"–";}
+details[open] summary{color:var(--pine);}
+details p{margin:12px 0 0;animation:faqIn .35s ease;}
+@keyframes faqIn{from{opacity:0;transform:translateY(-4px);}to{opacity:1;transform:none;}}
+details p{font-size:15px;color:var(--ink-2);max-width:62ch;}
 
-/* ══════ التذييل ══════ */
-footer{background:var(--ink);color:rgba(240,241,237,.6);padding:56px 0 46px;font-size:13.5px;}
-footer .top{
-  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:end;
-  padding-bottom:28px;border-bottom:1px solid rgba(240,241,237,.14);
+footer{
+  background:linear-gradient(180deg,#101714 0%,#0B100D 100%);
+  color:rgba(237,241,236,.62);padding:46px 0 40px;font-size:13.5px;
 }
-footer .fl{font-family:"Alexandria",sans-serif;font-weight:400;font-size:22px;color:#F0F1ED;letter-spacing:-.03em;}
-footer .fd{margin-top:8px;max-width:40ch;}
-footer .bot{padding-top:24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;}
-footer b{color:#F0F1ED;font-weight:500;}
-footer a{color:#F0F1ED;border-bottom:1px solid rgba(240,241,237,.3);padding-bottom:1px;}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:18px 28px;flex-wrap:wrap;}
+footer b{color:#EDF1EC;font-weight:600;}
+footer a{transition:color .2s;}
+footer a:hover{color:#fff !important;}
 
-/* ══════ الاستجابة ══════ */
-@media (max-width:1000px){
-  .svc-list{grid-template-columns:1fr;}
+@media (max-width:1080px) and (min-width:901px){
+  .svc-grid{grid-template-columns:repeat(2,1fr);}
 }
 @media (max-width:900px){
-  .hero .wrap,.sec-head,.founding{grid-template-columns:1fr;}
-  .sec-head{gap:20px;}
-  .steps{grid-template-columns:1fr;gap:44px;}
-  .tiers{grid-template-columns:1fr;}
-  .tier{border-inline-start:none;}
-  .stage{min-height:auto;padding-bottom:62px;}
-  .pass{width:236px;}
-  .phone{width:176px;margin-inline-start:-58px;margin-top:70px;}
-  .f-amt{border-inline-start:none;padding-inline-start:0;border-top:1px solid rgba(238,241,236,.2);padding-top:26px;text-align:start;}
-  .cmp-row{grid-template-columns:1fr;}
-  .cmp-row.head{display:none;}
-  .cmp-row > *{padding:12px 14px;border-bottom:1px solid var(--hair-soft);}
-  .cmp-row > *:first-child{background:var(--paper-2);font-weight:500;}
-  .cmp-row > *:last-child{border-bottom:none;}
-  .cmp-row > *[data-l]::before{content:attr(data-l) " — ";color:var(--muted);font-size:13px;}
-  footer .top{grid-template-columns:1fr;align-items:start;}
-}
-@media (max-width:620px){
-  .nav-links{display:none;}
+  .hero .wrap,.method,.offer{grid-template-columns:1fr;gap:38px;}
+  .cmp,.steps,.vsteps{grid-template-columns:1fr;}
+  .founder{grid-template-columns:1fr;text-align:center;}
+  .svc-grid{grid-template-columns:1fr;}
+  .tier-grid{grid-template-columns:1fr;}
+  .ob{grid-template-columns:1fr;}
+  .ob > div{border-inline-start:none;border-top:1px solid var(--line-soft);}
+  .ob > div:first-child{border-top:none;}
+  .founding{grid-template-columns:1fr;}
+  .f-amt{border-inline-start:none;padding-inline-start:0;border-top:1px solid rgba(237,241,236,.2);padding-top:22px;text-align:start;}
+  .vstep .art{min-height:196px;}
+  .variants{justify-content:flex-start;}
+  .cmp-col,.step{border-inline-start:none;border-top:1px solid var(--line);}
+  .cmp-col{padding:20px 18px;}
+  .cmp-col:first-child,.step:first-child{border-top:none;}
+  .step{padding:22px 0 0;}
+  .offer .give{border-inline-start:none;border-top:1px solid var(--line);}
+  section{padding:56px 0;}
+  .stage{min-height:auto;padding-bottom:56px;}
+  .pass{width:230px;}
+  .phone{width:180px;margin-inline-start:-56px;margin-top:64px;}
+  .hero::before{display:none;}
 }
 @media (prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none;transition:none;}
-  .notif.play{animation:none;}
+  .notif.play,.dot{animation:none;}
   html{scroll-behavior:auto;}
-}
-@media (prefers-color-scheme:dark){
-  html,body{background:#F0F1ED !important;color:#0E1311 !important;}
-  section,.hero{background:#F0F1ED;}
-  .step .art,.disclose{background:#E7E9E3;}
-  .standee,.mock{background:#fff;}
-  .cmp-row .win,.founding{background:#12352C !important;color:#EEF1EC !important;}
-  .founding h3{color:#fff !important;}
-  footer{background:#0E1311 !important;}
-  .btn{background:#0E1311;color:#F0F1ED;}
-  .btn.line{background:transparent;color:#0E1311;}
-  .btn.pale{background:#F0F1ED;color:#12352C;}
 }
 </style>
 </head>
 <body>
+<a class="skip" href="#how">تخطَّ إلى المحتوى</a>
 
 <nav id="nav">
   <div class="wrap">
-    <div class="logo"><span class="mark"></span> قُرب</div>
-    <div class="nav-links">
+    <div class="logo">قُ<i>رب</i></div>
+    <div class="nav-mid">
       <a href="#how">كيف تشتغل</a>
       <a href="#services">الخدمات</a>
-      <a href="#pricing">الأسعار</a>
+      <a href="#faq-sec">الأسئلة</a>
     </div>
-    <a class="btn sm" id="tg1" href="#pricing">المقاعد التأسيسية</a>
+    <a class="nav-cta" href="#pricing">الباقات</a>
   </div>
 </nav>
 
 <header class="hero">
   <div class="wrap">
     <div class="rv in">
-      <span class="eyebrow">تحت التطوير — خمسة محلات فقط</span>
-      <h1>عميلك يطلع من محلك،<br><span class="em">وتنقطع الصلة.</span></h1>
+      <span class="badge"><span class="dot"></span> تحت التطوير — نختار أول خمسة محلات</span>
+      <h1>عميلك يطلع من محلك، <i>وتنقطع الصلة.</i></h1>
       <p class="lede">
         بطاقة محلك تسكن محفظة جواله من أول زيارة — بدون تطبيق يحمّله.
-        وبعدها توصله رسالتك على شاشة القفل، بلا تكلفة على كل رسالة.
+        وبعدها توصله رسالتك على شاشة القفل، بدون تكلفة لكل رسالة.
       </p>
-      <div class="hero-cta">
-        <a class="btn" href="#pricing">احجز مقعدًا تأسيسيًا</a>
-        <a class="btn line" href="#how">شوف كيف تشتغل</a>
+      <div class="actions">
+        <a class="btn" href="#pilot">احجز مقعدًا تأسيسيًا</a>
+        <a class="btn ghost" href="#how">شوف كيف تشتغل</a>
       </div>
-      <div class="spec">
-        <span>Apple Wallet</span>
-        <span>Google Wallet</span>
-        <span>بدون تطبيق</span>
-        <span>بدون جهاز إضافي</span>
+      <div class="trust-line">
+        <b>Apple Wallet</b> و <b>Google Wallet</b> · بدون تطبيق · بدون جهاز إضافي
       </div>
     </div>
 
     <div class="stage rv in">
       <div class="pass">
         <div class="pass-top">
-          <div class="pass-logo" id="pLogo">ص</div>
+          <div class="pass-logo" id="pLogo">ن</div>
           <div>
-            <div class="pass-nm" id="pName">مغسلة الصفوة</div>
-            <div class="pass-sb">بطاقة العميل</div>
+            <div class="nm" id="pName">محل الندى</div>
+            <div class="sb">بطاقة العميل</div>
           </div>
         </div>
-        <div class="pass-lbl" id="pLabel">٦ من ٨ غسلات في باقتك</div>
+        <div class="pass-lbl" id="pLabel">٦ من ٨ زيارات في باقتك</div>
         <div class="stamps" id="pStamps"></div>
         <div class="pass-cut"></div>
         <div class="pass-code" id="pCode"></div>
@@ -493,323 +703,526 @@ footer a{color:#F0F1ED;border-bottom:1px solid rgba(240,241,237,.3);padding-bott
 
       <div class="phone">
         <div class="notch"></div>
-        <div class="lock-t">٧:٤١</div>
-        <div class="lock-d">الخميس، ٣٠ يوليو</div>
+        <div class="lock-time">٧:٤١</div>
+        <div class="lock-date">الخميس، ٣٠ يوليو</div>
         <div class="notif play" id="notif">
-          <div class="ic" id="nIc">ص</div>
+          <div class="ic" id="nIc">ن</div>
           <div>
-            <div class="tt" id="nTitle">مغسلة الصفوة</div>
-            <div class="ms" id="nMsg">سيارتك جاهزة — تقدر تستلمها الحين.</div>
+            <div class="tt" id="nTitle">محل الندى</div>
+            <div class="ms" id="nMsg">طلبك جاهز — تقدر تمر عليه اليوم.</div>
           </div>
         </div>
       </div>
 
       <div class="switch" role="group" aria-label="نوع المحل">
-        <button type="button" data-i="0" aria-pressed="true">مغسلة سيارات</button>
-        <button type="button" data-i="1" aria-pressed="false">مغسلة ملابس</button>
-        <button type="button" data-i="2" aria-pressed="false">كوفي</button>
+        <button type="button" data-i="0" aria-pressed="true">محل عام</button>
+        <button type="button" data-i="1" aria-pressed="false">مغسلة سيارات</button>
+        <button type="button" data-i="2" aria-pressed="false">صالون</button>
+        <button type="button" data-i="3" aria-pressed="false">كوفي</button>
       </div>
     </div>
   </div>
 </header>
 
-<!-- ٠١ المشكلة -->
-<section id="problem">
+<section class="compare">
   <div class="wrap">
-    <div class="sec-head rv">
-      <div class="sec-meta">
-        <span class="sec-num">٠١</span>
-        <span class="sec-label">المشكلة</span>
-      </div>
-      <div>
-        <h2 class="sec-title">كل طريقة توصل بها لعميلك اليوم لها ثمن</h2>
-        <p class="sec-sub">المسألة ليست «نبي برنامج نقاط». المسألة أنك لا تملك قناة تصل بها لعميلك بعد ما يطلع من الباب.</p>
-      </div>
+    <div class="rv">
+      <div class="kicker">المشكلة الحقيقية</div>
+      <h2>كل طريقة توصل فيها لعميلك اليوم لها ثمن</h2>
+      <p class="sec-lede">المسألة ليست «نبي برنامج نقاط» — المسألة أنك لا تملك قناة تصل بها لعميلك بعد ما يطلع من الباب.</p>
     </div>
-
     <div class="cmp rv">
-      <div class="cmp-row head">
-        <div></div>
-        <div>رسائل الجوال</div>
-        <div>حسابات التواصل</div>
-        <div class="win">بطاقة في المحفظة</div>
+      <div class="cmp-col">
+        <h4>رسائل الجوال</h4>
+        <div class="cmp-row"><b>تكلفة</b> على كل رسالة</div>
+        <div class="cmp-row">تحتاج جمع أرقام يدويًا</div>
+        <div class="cmp-row">تُقرأ ثم تُنسى</div>
       </div>
-      <div class="cmp-row">
-        <div>التكلفة</div>
-        <div data-l="رسائل الجوال">مبلغ على كل رسالة</div>
-        <div data-l="حسابات التواصل">إعلانات مدفوعة</div>
-        <div class="win" data-l="بطاقة في المحفظة">بدون تكلفة لكل رسالة</div>
+      <div class="cmp-col">
+        <h4>حسابات التواصل</h4>
+        <div class="cmp-row">يشوفها من يشوفها</div>
+        <div class="cmp-row">تحتاج محتوى مستمر</div>
+        <div class="cmp-row">ما تعرف مين منهم عميلك</div>
       </div>
-      <div class="cmp-row">
-        <div>الوصول</div>
-        <div data-l="رسائل الجوال">تُقرأ ثم تُنسى</div>
-        <div data-l="حسابات التواصل">يشوفها من يشوفها</div>
-        <div class="win" data-l="بطاقة في المحفظة">تظهر على شاشة القفل</div>
+      <div class="cmp-col">
+        <h4>تطبيق خاص</h4>
+        <div class="cmp-row"><b>تكلفة عالية</b> للبناء</div>
+        <div class="cmp-row">العميل ما يحمّله أصلًا</div>
+        <div class="cmp-row">صيانة وتحديثات دائمة</div>
       </div>
-      <div class="cmp-row">
-        <div>الجهد</div>
-        <div data-l="رسائل الجوال">جمع أرقام يدويًا</div>
-        <div data-l="حسابات التواصل">محتوى مستمر</div>
-        <div class="win" data-l="بطاقة في المحفظة">مسح باركود واحد</div>
-      </div>
-      <div class="cmp-row">
-        <div>معرفة عميلك</div>
-        <div data-l="رسائل الجوال">رقم بلا سياق</div>
-        <div data-l="حسابات التواصل">ما تعرف مين منهم عميلك</div>
-        <div class="win" data-l="بطاقة في المحفظة">سجل زياراته ورصيده</div>
+      <div class="cmp-col win">
+        <h4>بطاقة في المحفظة</h4>
+        <div class="cmp-row"><b>بدون تكلفة</b> لكل رسالة</div>
+        <div class="cmp-row">تنضاف بمسح باركود واحد</div>
+        <div class="cmp-row"><b>تظهر على شاشة القفل</b></div>
       </div>
     </div>
-    <p class="cmp-note">التطبيق الخاص خيار رابع — لكنه مكلف في البناء، والعميل لا يحمّله أصلًا.</p>
   </div>
 </section>
 
-<!-- ٠٢ كيف تشتغل -->
 <section id="how">
   <div class="wrap">
-    <div class="sec-head rv">
-      <div class="sec-meta">
-        <span class="sec-num">٠٢</span>
-        <span class="sec-label">كيف تشتغل</span>
-      </div>
-      <div>
-        <h2 class="sec-title">دقيقة واحدة عند الكاشير، ثم تعمل وحدها</h2>
-      </div>
+    <div class="rv">
+      <div class="kicker">كيف تشتغل</div>
+      <h2>دقيقة واحدة عند الكاشير، ثم تشتغل وحدها</h2>
     </div>
-
-    <div class="steps rv">
-      <div class="step">
+    <div class="vsteps rv">
+      <div class="vstep">
         <div class="art">
           <div class="standee">
-            <div class="st">امسح وانضم</div>
+            <div class="std-top">امسح وانضم</div>
             <div class="qr" id="qr1"></div>
-            <div class="sb">بطاقة عملاء<br>مغسلة الصفوة</div>
+            <div class="std-bot">بطاقة عملاء<br>محلك</div>
           </div>
         </div>
-        <div class="n">الخطوة الأولى</div>
-        <h3>ملصق عند الكاشير</h3>
-        <p>العميل يصوّره بكاميرا جواله مباشرة. لا تطبيق، ولا حساب جديد.</p>
+        <div class="bd">
+          <div class="n">الخطوة الأولى</div>
+          <h3>ملصق عند الكاشير</h3>
+          <p>العميل يصوّره بكاميرا جواله مباشرة — بدون تحميل أي تطبيق.</p>
+        </div>
       </div>
 
-      <div class="step">
+      <div class="vstep">
         <div class="art">
-          <div class="mock">
-            <div class="mh">انضم لبطاقة مغسلة الصفوة</div>
-            <div class="mi">الاسم</div>
-            <div class="mi">رقم الجوال</div>
-            <div class="mb">أضف إلى المحفظة</div>
+          <div class="mockform">
+            <div class="mf-h">انضم لبطاقة محلك</div>
+            <div class="mf-i">الاسم</div>
+            <div class="mf-i">رقم الجوال</div>
+            <div class="mf-b">أضف إلى المحفظة</div>
           </div>
         </div>
-        <div class="n">الخطوة الثانية</div>
-        <h3>حقلان وتدخل المحفظة</h3>
-        <p>تُضاف البطاقة إلى Apple Wallet أو Google Wallet خلال ثانية.</p>
+        <div class="bd">
+          <div class="n">الخطوة الثانية</div>
+          <h3>حقلان وتدخل المحفظة</h3>
+          <p>تُضاف البطاقة إلى Apple Wallet أو Google Wallet خلال ثانية.</p>
+        </div>
       </div>
 
-      <div class="step">
+      <div class="vstep">
         <div class="art">
-          <div class="mini">
+          <div class="mini-phone">
             <div class="mn"></div>
-            <div class="mt">٧:٤١</div>
-            <div class="mnf">
-              <div class="mi2">ص</div>
+            <div class="mini-t">٧:٤١</div>
+            <div class="mini-n">
+              <div class="mi">س</div>
               <div>
-                <div class="m1">مغسلة الصفوة</div>
-                <div class="m2">سيارتك جاهزة</div>
+                <div class="mt">محلك</div>
+                <div class="mm">طلبك جاهز</div>
               </div>
             </div>
           </div>
         </div>
-        <div class="n">الخطوة الثالثة</div>
-        <h3>توصله على شاشة القفل</h3>
-        <p>طلب جاهز، رصيد باقة، أو تذكير بعد غياب — متى ما احتجت.</p>
+        <div class="bd">
+          <div class="n">الخطوة الثالثة</div>
+          <h3>توصله على شاشة القفل</h3>
+          <p>طلب جاهز، رصيد باقة، أو تذكير بعد غياب — بدون تكلفة لكل رسالة.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rv" style="margin-top:56px;">
+      <div class="kicker">التخصيص</div>
+      <h2 style="font-size:22px;">البطاقة تطلع بألوان محلك وشعارك</h2>
+      <div class="variants">
+        <div class="vcard" style="background:linear-gradient(155deg,#17332B,#0E1D18);">
+          <div class="vh"><div class="vl" style="background:#C98A2B;color:#1A1206;">ن</div><div class="vn">محل الندى</div></div>
+          <div class="vs"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+        </div>
+        <div class="vcard" style="background:linear-gradient(155deg,#2A3550,#161D2E);">
+          <div class="vh"><div class="vl" style="background:#8FA9E8;color:#131A2A;">ك</div><div class="vn">كوفي الموسم</div></div>
+          <div class="vs"><i class="on"></i><i class="on"></i><i></i><i></i></div>
+        </div>
+        <div class="vcard" style="background:linear-gradient(155deg,#4A2530,#2A1219);">
+          <div class="vh"><div class="vl" style="background:#E0A0A8;color:#2A1219;">ص</div><div class="vn">صالون الأناقة</div></div>
+          <div class="vs"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+        </div>
+      </div>
+      <p class="hint" style="margin-top:14px;">نماذج توضيحية — بطاقتك تُصمَّم على هويتك أنت.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wallet-sec" id="wallet">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kicker">مثال حي</div>
+      <h2>هكذا تبدو بطاقتك داخل محفظة عميلك</h2>
+      <p class="sec-lede">تسكن بين بطاقاته الأخرى — بطاقة مدى، تذاكره، بطاقات ولائه. وحين تصله رسالتك، تظهر فوقها على شاشة القفل.</p>
+    </div>
+
+    <div class="wallet-grid rv">
+      <div>
+        <ul class="wallet-notes">
+          <li><b>اسم محلك وشعارك</b><span>البطاقة تحمل هويتك أنت، لا هوية قُرب.</span></li>
+          <li><b>الرصيد ظاهر أمامه</b><span>يشوف كم زيارة باقية له في باقته بلا ما يسأل الموظف.</span></li>
+          <li><b>باركود عند الكاشير</b><span>موظفك يمسحه فيُخصم من الرصيد فورًا.</span></li>
+          <li><b>قناتا التقييم معًا</b><span>ملاحظة خاصة تصلك أنت، ورابط تقييم قوقل معروض للجميع — بلا فلترة، التزامًا بسياسات قوقل.</span></li>
+          <li><b>وفي ظهر البطاقة</b><span>حساباتك في التواصل ورقمك وموقعك — دائمًا في جيب عميلك.</span></li>
+        </ul>
+        <div class="wtoggle" role="group" aria-label="وجه البطاقة">
+          <button type="button" id="wFront" aria-pressed="true">وجه البطاقة</button>
+          <button type="button" id="wBack" aria-pressed="false">ظهر البطاقة</button>
+        </div>
+        <p class="wnote">نموذج توضيحي — ليس لقطة من تطبيق حقيقي.</p>
+      </div>
+
+      <div class="wphone">
+        <div class="wisland"></div>
+        <div class="wstatus">
+          <span>9:41</span>
+          <span style="display:flex;gap:6px;align-items:center;">
+            <span class="wbars"><i></i><i></i><i></i><i></i></span>
+            <span class="wbatt"></span>
+          </span>
+        </div>
+        <div class="whead"><h3>المحفظة</h3></div>
+        <div class="wstack">
+          <div class="wbehind wb1"><em>بطاقة مدى</em></div>
+          <div class="wbehind wb2"><em>بطاقة الولاء</em></div>
+
+          <div id="wPassFront">
+            <div class="wpass">
+              <div class="wp-top">
+                <div class="wp-logo">ن</div>
+                <div>
+                  <div class="wp-nm">محل الندى</div>
+                  <div class="wp-kd">بطاقة العميل</div>
+                </div>
+              </div>
+              <div class="wp-lbl">6 من 8 زيارات في باقتك</div>
+              <div class="wp-st" id="wStamps"></div>
+              <div class="wp-cut"></div>
+              <div class="wp-code" id="wCode"></div>
+              <div class="wp-foot">قدّم الرمز عند الكاشير</div>
+            </div>
+          </div>
+
+          <div id="wPassBack" hidden>
+            <div class="wback">
+              <div class="row"><span class="k">الرصيد المتبقي</span><span class="v">زيارتان</span></div>
+              <div class="row"><span class="k">آخر زيارة</span><span class="v">قبل 6 أيام</span></div>
+              <div class="row"><span class="k">ملاحظاتك تهمنا</span><span class="v link">أرسل ملاحظة — تصل لصاحب المحل</span></div>
+              <div class="row"><span class="k">أعجبتك الخدمة؟</span><span class="v link">قيّمنا على قوقل ماب</span></div>
+              <div class="row"><span class="k">إنستغرام</span><span class="v link">@alnada.store</span></div>
+              <div class="row"><span class="k">سنابتشات</span><span class="v link">alnada</span></div>
+              <div class="row"><span class="k">الجوال</span><span class="v">05x xxx xxxx</span></div>
+              <div class="row"><span class="k">الموقع</span><span class="v link">افتح في الخريطة</span></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ٠٣ الخدمات -->
-<section id="services">
+<section class="dark">
   <div class="wrap">
-    <div class="sec-head rv">
-      <div class="sec-meta">
-        <span class="sec-num">٠٣</span>
-        <span class="sec-label">الخدمات</span>
+    <div class="method">
+      <div class="rv">
+        <div class="kicker">طريقتي في الشغل</div>
+        <h2>ما أبيعك شيئًا قبل ما أجرّبه معك</h2>
+        <p class="method-note">
+          أغلب الأدوات تُبنى في مكتب ثم تُعرض عليك. أنا أمشي بالعكس: أبني حول اللي تقوله لي أنت.
+        </p>
+      </div>
+      <ol class="mlist rv">
+        <li><b>أزورك وأسمع منك</b><span>خمس دقائق أسئلة عن وجعك اليومي، بدون أي عرض بيع.</span></li>
+        <li><b>أبني المهمة الواحدة الأهم</b><span>مو منصة بمئة خاصية — الشي الواحد اللي يفرق معك فعلًا.</span></li>
+        <li><b>تجرّبها في محلك مجانًا</b><span>مع عملائك الحقيقيين، وأنا أركّبها معك بنفسي.</span></li>
+        <li><b>تقرر بعدها</b><span>إذا ما نفعت، تقول لي وأنا أستفيد. بدون التزام ولا عقد.</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="services">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kicker">الخدمات</div>
+      <h2>وش تقدر تسوي بالبطاقة</h2>
+      <p class="sec-lede">البطاقة واحدة في جوال عميلك — واللي يتغير هو الشي اللي تحطه فيها. هذي المهام اللي أشتغل عليها.</p>
+    </div>
+
+    <div class="svc-grid rv">
+      <div class="svc">
+        <span class="tag now">الإصدار الأول</span>
+        <div class="sym">🎫</div>
+        <h3>بطاقة بهوية محلك</h3>
+        <p>بألوان محلك وشعارك، تسكن Apple Wallet أو Google Wallet — بدون تطبيق يحمّله العميل.</p>
+      </div>
+
+      <div class="svc">
+        <span class="tag now">الإصدار الأول</span>
+        <div class="sym">📷</div>
+        <h3>تسجيل بمسح باركود</h3>
+        <p>ملصق عند الكاشير. يصوّره العميل، يكتب اسمه ورقمه، وتدخل البطاقة جواله.</p>
+      </div>
+
+      <div class="svc">
+        <span class="tag now">الإصدار الأول</span>
+        <div class="sym">🔢</div>
+        <h3>رصيد يشوفه العميل</h3>
+        <p>كم زيارة باقية له من باقته، أو كم يفصله عن المكافأة — بدون ما يسأل الموظف.</p>
+      </div>
+
+      <div class="svc">
+        <span class="tag now">الإصدار الأول</span>
+        <div class="sym">🔔</div>
+        <h3>إشعار على شاشة القفل</h3>
+        <p>«طلبك جاهز» أو عرض أو تذكير — بدون تكلفة على كل رسالة.</p>
+      </div>
+
+      <div class="svc">
+        <span class="tag now">الإصدار الأول</span>
+        <div class="sym">💬</div>
+        <h3>رابط الملاحظات</h3>
+        <p>عميلك يوصل لك ملاحظته مباشرة من ظهر البطاقة — فتعرف المشكلة قبل ما تصير تقييمًا سيئًا.</p>
+      </div>
+
+      <div class="svc">
+        <span class="tag now">الإصدار الأول</span>
+        <div class="sym">📱</div>
+        <h3>روابط حساباتك</h3>
+        <p>إنستغرام وسنابتشات وتيك توك في ظهر البطاقة — كل عميل يمسح يصير متابعًا محتملًا.</p>
+      </div>
+
+      <div class="svc">
+        <span class="tag now">الإصدار الأول</span>
+        <div class="sym">🛠️</div>
+        <h3>تركيب وتدريب بيدي</h3>
+        <p>أجي محلك، أجهّز البطاقة والملصق، وأدرّب موظفك — ما تحتاج تتعلم شيئًا بنفسك.</p>
+      </div>
+
+      <div class="svc later">
+        <span class="tag next">لاحقًا</span>
+        <div class="sym">📅</div>
+        <h3>الاشتراك الشهري</h3>
+        <p>باقة بمبلغ ثابت في الشهر — دخل مقدم لك، وعميل يرجع لأن عنده رصيد.</p>
+      </div>
+
+      <div class="svc later">
+        <span class="tag next">لاحقًا</span>
+        <div class="sym">⏳</div>
+        <h3>تذكير الغياب</h3>
+        <p>ما مرّ من ثلاثة أسابيع؟ يوصله تذكير تلقائي بدون متابعة منك.</p>
+      </div>
+
+      <div class="svc later">
+        <span class="tag next">لاحقًا</span>
+        <div class="sym">🤝</div>
+        <h3>الإحالة والهدايا</h3>
+        <p>«عرّف صاحبك واحصل مكافأة»، وبطاقة هدية تدخل جوال عميل جديد.</p>
+      </div>
+
+      <div class="svc later">
+        <span class="tag next">لاحقًا</span>
+        <div class="sym">⭐</div>
+        <h3>طلب تقييم قوقل</h3>
+        <p>رابط التقييم يوصله بعد الخدمة. يُرسل لكل العملاء بدون فلترة، التزامًا بسياسات قوقل.</p>
+      </div>
+
+      <div class="svc later">
+        <span class="tag next">لاحقًا</span>
+        <div class="sym">🧠</div>
+        <h3>المستشار الذكي</h3>
+        <p>تقول له «أبي رسالة لعملاء ما مروا من شهر»، فيكتب لك ثلاث صيغ بلهجة عملائك ويقترح وقت الإرسال — بدل ما تحتار وش تكتب.</p>
+      </div>
+
+      <div class="svc later">
+        <span class="tag next">لاحقًا</span>
+        <div class="sym">✍️</div>
+        <h3>اللي تطلبه أنت</h3>
+        <p>هذي القائمة ما جت من مكتب — جت من أصحاب محلات. لو ناقصها شي، قل لي.</p>
+      </div>
+    </div>
+
+    <div class="svc-ask rv">
+      <b>وما لا يفعله قُرب — بصراحة:</b> لا ربط مع أنظمة الكاشير، ولا تطبيق مستقل يحمّله عميلك. وإدارة الفروع وحسابات الأساطيل والتقارير ليست جاهزة اليوم — موسومة «قادم» في الباقة الشاملة، ولن أحاسبك عليها قبل أن تجهز. قُرب يفعل شيئًا واحدًا الآن: يوصلك لعميلك بعد ما يطلع من الباب. ولو المنصة اللي عندك تخدمك فعلًا، ابقَ عليها.
+    </div>
+  </div>
+</section>
+
+<section id="start">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kicker">بعد ما تتواصل</div>
+      <h2>وش يصير بالضبط في أول ٤٨ ساعة</h2>
+      <p class="sec-lede">لا تنتظر ولا تحتار — هذي الخطوات مكتوبة عشان تعرف التزامي قبل ما تقرر.</p>
+    </div>
+    <div class="ob rv">
+      <div>
+        <div class="t">أول ساعة</div>
+        <h3>أرد عليك بنفسي</h3>
+        <p>وأسألك ثلاثة أسئلة عن محلك: نوعه، كم عميل يجيك في اليوم، ووش أكثر شي يعطّلك.</p>
       </div>
       <div>
-        <h2 class="sec-title">بطاقة واحدة، والذي يتغير هو ما تحمله</h2>
-      </div>
-    </div>
-
-    <div class="svc-group rv">
-      <div class="grp-label">الإصدار الأول <em>— ما يُسلَّم لأصحاب المقاعد الخمسة</em></div>
-      <div class="svc-list">
-        <div class="svc-item">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2.5" y="5.5" width="19" height="13" rx="2"/><path d="M2.5 10h19"/></svg></span>
-          <div><h3>بطاقة بهوية محلك</h3><p>بألوانك وشعارك، تسكن Apple Wallet أو Google Wallet.</p></div>
-        </div>
-        <div class="svc-item">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM19 19h2v2h-2zM14 19h2M19 14h2"/></svg></span>
-          <div><h3>تسجيل بمسح باركود</h3><p>ملصق عند الكاشير، والعميل يصوّره ويكتب اسمه ورقمه.</p></div>
-        </div>
-        <div class="svc-item">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
-          <div><h3>رصيد يشوفه العميل</h3><p>كم غسلة باقية له، أو كم يفصله عن المكافأة — بدون ما يسأل.</p></div>
-        </div>
-        <div class="svc-item">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M18 8.5a6 6 0 1 0-12 0c0 5-2 6.5-2 6.5h16s-2-1.5-2-6.5"/><path d="M10.5 19a2 2 0 0 0 3 0"/></svg></span>
-          <div><h3>إشعار على شاشة القفل</h3><p>«سيارتك جاهزة» أو عرض أو تذكير، بلا تكلفة على كل رسالة.</p></div>
-        </div>
-        <div class="svc-item">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20.5 12c0 4.1-3.8 7.4-8.5 7.4-1.2 0-2.4-.2-3.4-.6L4 20.5l1.4-3.6A7 7 0 0 1 3.5 12C3.5 7.9 7.3 4.6 12 4.6s8.5 3.3 8.5 7.4Z"/></svg></span>
-          <div><h3>رابط الملاحظات</h3><p>ملاحظة عميلك تصلك من ظهر البطاقة — فتعرف المشكلة قبل ما تصير تقييمًا.</p></div>
-        </div>
-        <div class="svc-item">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="17" cy="6" r="2.6"/><circle cx="7" cy="12" r="2.6"/><circle cx="17" cy="18" r="2.6"/><path d="M9.3 10.7 14.7 7.4M9.3 13.3l5.4 3.3"/></svg></span>
-          <div><h3>روابط حساباتك</h3><p>إنستغرام وسنابتشات وتيك توك في ظهر البطاقة — كل عميل متابع محتمل.</p></div>
-        </div>
-        <div class="svc-item">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M14.5 6.5 17 4l3 3-2.5 2.5M14.5 6.5 4 17v3h3L17.5 9.5"/></svg></span>
-          <div><h3>تركيب وتدريب بيدي</h3><p>أجي محلك، أجهّز البطاقة والملصق، وأدرّب موظفك.</p></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="svc-group later rv">
-      <div class="grp-label">لاحقًا <em>— بعد الإصدار الأول، وبحسب ما يطلبه أصحاب المحلات</em></div>
-      <div class="svc-list">
-        <div class="svc-item">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span>
-          <div><h3>الاشتراك الشهري</h3><p>باقة بمبلغ ثابت في الشهر — دخل مقدم لك.</p></div>
-        </div>
-        <div class="svc-item">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><circle cx="12" cy="12" r="4"/></svg></span>
-          <div><h3>تذكير الغياب</h3><p>ما مرّ من ثلاثة أسابيع؟ يوصله تذكير تلقائي.</p></div>
-        </div>
-        <div class="svc-item">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 20v-1.5A4.5 4.5 0 0 1 8.5 14h2A4.5 4.5 0 0 1 15 18.5V20"/><circle cx="9.5" cy="8" r="3.2"/><path d="M16.5 20v-1.2a4 4 0 0 0-2.4-3.6M15 5.2a3.2 3.2 0 0 1 0 5.6"/></svg></span>
-          <div><h3>الإحالة والهدايا</h3><p>«عرّف صاحبك واحصل غسلة»، وبطاقة هدية لعميل جديد.</p></div>
-        </div>
-        <div class="svc-item">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="m12 4 2.4 5 5.6.8-4 3.9 1 5.5-5-2.7-5 2.7 1-5.5-4-3.9 5.6-.8Z"/></svg></span>
-          <div><h3>طلب تقييم قوقل</h3><p>يُرسل لكل العملاء بدون فلترة، التزامًا بسياسات قوقل.</p></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="disclose rv">
-      <p><b>وما لا يفعله قُرب — بصراحة:</b> لا ربط مع أنظمة الكاشير، ولا تطبيق مستقل، ولا تقارير تحليلية، ولا إدارة فروع أو أساطيل. فيه منصات كبيرة تسوي هذا، ولن أدّعي أني أنافسها فيه. قُرب يفعل شيئًا واحدًا: يوصلك لعميلك بعد ما يطلع من الباب. ولو المنصة اللي عندك تخدمك فعلًا، ابقَ عليها.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ٠٤ الطريقة -->
-<section id="method">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div class="sec-meta">
-        <span class="sec-num">٠٤</span>
-        <span class="sec-label">طريقتي في الشغل</span>
+        <div class="t">أول يوم</div>
+        <h3>أجهّز بطاقتك</h3>
+        <p>بألوانك وشعارك، وأرسلها لك صورة قبل أي شي — تعدّل عليها كما تشاء.</p>
       </div>
       <div>
-        <h2 class="sec-title">ما أبيعك شيئًا قبل ما أجرّبه معك</h2>
-        <p class="sec-sub">أغلب الأدوات تُبنى في مكتب ثم تُعرض عليك. أنا أمشي بالعكس — وما عندي عملاء بعد، ولا راح أخترع أسماء ولا أرقامًا.</p>
+        <div class="t">أول زيارة</div>
+        <h3>أركّبها في محلك</h3>
+        <p>ألزّق الملصق، أدرّب موظفك في عشر دقائق، ونسجّل أول عميل حقيقي أمامك.</p>
+      </div>
+      <div>
+        <div class="t">أول شهر</div>
+        <h3>مجانًا بالكامل</h3>
+        <p>تستخدمها مع عملائك، ثم تقرر. ما أطالبك بريال قبل هذا، ولا فيه تجديد تلقائي.</p>
       </div>
     </div>
-
-    <ol class="mlist rv">
-      <li><b>أزورك وأسمع منك</b><span>خمس دقائق أسئلة عن وجعك اليومي، بدون أي عرض بيع.</span></li>
-      <li><b>أبني المهمة الواحدة الأهم</b><span>لا منصة بمئة خاصية — الشيء الواحد الذي يفرق معك فعلًا.</span></li>
-      <li><b>تجرّبها في محلك مجانًا</b><span>مع عملائك الحقيقيين، وأنا أركّبها معك بنفسي.</span></li>
-      <li><b>تقرر بعدها</b><span>إن لم تنفع، تقول لي وأستفيد. بلا التزام ولا عقد.</span></li>
-    </ol>
   </div>
 </section>
 
-<!-- ٠٥ الأسعار -->
 <section id="pricing">
   <div class="wrap">
-    <div class="sec-head rv">
-      <div class="sec-meta">
-        <span class="sec-num">٠٥</span>
-        <span class="sec-label">الأسعار</span>
-      </div>
-      <div>
-        <h2 class="sec-title">سعر واحد واضح، بلا رسوم مخفية</h2>
-        <p class="sec-sub">كل الباقات تشمل نفس المزايا — الفرق في المدة فقط. والتركيب والتدريب مجانًا في كل باقة.</p>
+    <div class="rv">
+      <div class="kicker">الباقات</div>
+      <h2>ثلاث باقات — تختار ما يناسب حجم محلك</h2>
+      <p class="sec-lede">التركيب والتدريب في محلك مجانًا في كل باقة، ولا يوجد تجديد تلقائي. اختر دورة الدفع:</p>
+      <div class="bill" role="group" aria-label="دورة الدفع">
+        <button type="button" data-b="m" aria-pressed="false">شهري</button>
+        <button type="button" data-b="h" aria-pressed="false">كل 6 أشهر</button>
+        <button type="button" data-b="y" aria-pressed="true">سنوي <em>الأوفر</em></button>
       </div>
     </div>
 
-    <div class="tiers rv">
+    <div class="tier-grid rv">
+
       <div class="tier">
-        <div class="term">٣ أشهر</div>
-        <div class="amt">٥٤٠ <small>ريال</small></div>
-        <div class="per">١٨٠ ريالًا شهريًا</div>
+        <div class="nm">الأساسية</div>
+        <div class="who">محل واحد يبدأ بالبطاقة والإشعارات.</div>
+        <div class="amt"><span class="p" data-m="150" data-h="800" data-y="1,500">1,500</span> <small>ريال</small></div>
+        <div class="mo per-note" data-m="تدفع كل شهر" data-h="ما يعادل 133 ريالًا شهريًا" data-y="ما يعادل 125 ريالًا شهريًا">ما يعادل 125 ريالًا شهريًا</div>
+        <ul>
+          <li>بطاقة بألوان محلك وشعارك</li>
+          <li>تسجيل العميل بمسح باركود</li>
+          <li>رصيد يشوفه العميل في بطاقته</li>
+          <li>إشعارات على شاشة القفل — حتى 4 حملات شهريًا</li>
+          <li>رابط الملاحظات في ظهر البطاقة</li>
+          <li>روابط حساباتك في التواصل</li>
+          <li>تركيب وتدريب في محلك</li>
+        </ul>
       </div>
+
+      <div class="tier mid">
+        <span class="flag">الأكثر ملاءمة</span>
+        <div class="nm">الاحترافية</div>
+        <div class="who">محل قائم يبيع باقات ويبني عملاء دائمين.</div>
+        <div class="amt"><span class="p" data-m="200" data-h="1,100" data-y="2,000">2,000</span> <small>ريال</small></div>
+        <div class="mo per-note" data-m="تدفع كل شهر" data-h="ما يعادل 183 ريالًا شهريًا" data-y="ما يعادل 167 ريالًا شهريًا">ما يعادل 167 ريالًا شهريًا</div>
+        <ul>
+          <li class="plus">كل ما في الأساسية، وزيادة:</li>
+          <li>إشعارات غير محدودة</li>
+          <li>باقات واشتراكات مدفوعة مقدمًا</li>
+          <li>تذكير الغياب تلقائيًا</li>
+          <li>بطاقة إحالة وبطاقة هدية</li>
+          <li>طلب تقييم قوقل بعد الخدمة</li>
+          <li class="soon">المستشار الذكي <em>— الإصدار الثاني</em></li>
+        </ul>
+      </div>
+
       <div class="tier">
-        <div class="term">٦ أشهر</div>
-        <div class="amt">٩٦٠ <small>ريال</small></div>
-        <div class="per">١٦٠ ريالًا شهريًا</div>
+        <div class="nm">الشاملة</div>
+        <div class="who">أكثر من فرع، أو عقود مع شركات.</div>
+        <div class="amt"><span class="p" data-m="250" data-h="1,350" data-y="2,500">2,500</span> <small>ريال</small></div>
+        <div class="mo per-note" data-m="تدفع كل شهر" data-h="ما يعادل 225 ريالًا شهريًا" data-y="ما يعادل 208 ريالات شهريًا">ما يعادل 208 ريالات شهريًا</div>
+        <ul>
+          <li class="plus">كل ما في الاحترافية، وزيادة:</li>
+          <li class="soon">فروع متعددة بلوحة واحدة <em>— قادم</em></li>
+          <li class="soon">حسابات الشركات والأساطيل <em>— قادم</em></li>
+          <li class="soon">تقارير العودة وأداء الفروع <em>— قادم</em></li>
+          <li>أولوية في الدعم والتعديلات</li>
+          <li>تدريب لكل فرع على حدة</li>
+        </ul>
       </div>
-      <div class="tier">
-        <div class="term">سنة</div>
-        <div class="amt">١٨٠٠ <small>ريال</small></div>
-        <div class="per">١٥٠ ريالًا شهريًا</div>
-        <span class="best">الأفضل قيمة</span>
-      </div>
+
     </div>
 
     <div class="founding rv">
       <div>
-        <h3>المقاعد التأسيسية — خمسة محلات</h3>
-        <p>شهر أول مجاني، ثم <b>١٢٠٠ ريالًا للسنة بدل ١٨٠٠</b> — ثابتة لك ما دمت مشتركًا، ولا ترتفع مع أي زيادة قادمة. ومقابلها: تستخدمها فعليًا، وتصارحني برأيك، وتأذن بذكر اسم محلك هنا.</p>
-        <a class="btn pale" id="tg2" href="https://t.me/qurb_sa" target="_blank" rel="noopener">تواصل معي على تيليجرام</a>
+        <h3>المقاعد التأسيسية — خمسة محلات فقط</h3>
+        <p>شهر أول مجاني، ثم <b>1,200 ريالًا للسنة</b> — <b>وتحصل على مزايا الباقة الاحترافية بسعر أقل من الأساسية، مدى اشتراكك</b>، ولا يرتفع سعرك مع أي زيادة قادمة. ومقابلها: تستخدمها فعليًا مع عملائك، وتصارحني برأيك، وتأذن بذكر اسم محلك في هذي الصفحة.</p>
       </div>
       <div class="f-amt">
-        <div class="n">١٢٠٠</div>
+        <div class="n">1,200</div>
         <div class="u">ريال / سنة</div>
       </div>
     </div>
 
-    <p class="terms">لا تجديد تلقائي — تقرر بنفسك في كل مرة. والدفع تحويل بنكي.</p>
+    <p class="hint">الدفع تحويل بنكي في بداية كل دورة. الميزات الموسومة «الإصدار الثاني» أو «قادم» غير جاهزة اليوم — وتُضاف لباقتك بلا مقابل حين تجهز، ولن أطالبك بريال قبل أن تجرّب.</p>
   </div>
 </section>
 
-<!-- ٠٦ الأسئلة -->
-<section id="faq">
+<section class="pilot" id="pilot">
   <div class="wrap">
-    <div class="sec-head rv">
-      <div class="sec-meta">
-        <span class="sec-num">٠٦</span>
-        <span class="sec-label">أسئلة تتكرر</span>
-      </div>
+    <div class="rv">
+      <div class="kicker">العرض التأسيسي</div>
+      <h2>خمسة محلات فقط — وأنتم تحددون وش نبني</h2>
+    </div>
+    <div class="offer rv">
       <div>
-        <h2 class="sec-title">الأسئلة التي جاءتني من أصحاب محلات</h2>
+        <h3>وش تاخذ</h3>
+        <ul>
+          <li>بطاقة بألوان محلك وشعارك، وملصق الباركود جاهزًا.</li>
+          <li>أركّبها معك في محلك، بدون أي جهاز إضافي.</li>
+          <li>مجانًا بالكامل خلال فترة التجربة.</li>
+          <li>طلباتك تدخل المنتج قبل أي أحد بعدك.</li>
+        </ul>
+      </div>
+      <div class="give">
+        <h3>وش تعطيني</h3>
+        <ul>
+          <li>تستخدمها فعليًا مع عملائك، لا تجربة على الورق.</li>
+          <li>تصارحني برأيك — خصوصًا لو ما نفعت.</li>
+          <li>لو عجبتك، إذنك بذكر اسم محلك في هذي الصفحة.</li>
+        </ul>
       </div>
     </div>
 
-    <div class="faq rv">
+    <div class="seats rv">
+      <div class="n">٥</div>
+      <div class="l">مقاعد فقط، لأني أركّبها بنفسي مع كل محل.</div>
+    </div>
+
+    <div class="actions rv" style="margin-top:26px;">
+      <a class="btn" id="tgLink" href="https://t.me/qurb_sa" target="_blank" rel="noopener">تواصل معي على تيليجرام</a>
+    </div>
+    <p class="hint">أرسل لي اسم محلك ونوعه والمدينة، وأرد عليك بنفسي.</p>
+  </div>
+</section>
+
+<section class="faq" id="faq-sec">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kicker">أسئلة تتكرر</div>
+      <h2>الأسئلة اللي جتني من أصحاب محلات</h2>
+    </div>
+    <div class="rv" id="faqList">
       <details>
-        <summary>عميلي كبير في السن وما يعرف يستخدم التقنية<span class="pm"></span></summary>
-        <p>ما يحتاج يتعلم شيئًا. يصوّر الباركود بالكاميرا مثل ما يصوّر أي شيء، ويكتب اسمه ورقمه. البطاقة تدخل جواله وتعمل وحدها بعدها — لا تطبيق يفتحه، ولا حساب يتذكره.</p>
+        <summary>عميلي كبير في السن وما يعرف يستخدم التقنية</summary>
+        <p>ما يحتاج يتعلم شيئًا. يصوّر الباركود بالكاميرا مثل ما يصوّر أي شيء، ويكتب اسمه ورقمه. البطاقة تدخل جواله وتشتغل وحدها بعدها — لا تطبيق يفتحه ولا حساب يتذكره.</p>
       </details>
       <details>
-        <summary>أحتاج جهازًا أو كاشير معينًا؟<span class="pm"></span></summary>
-        <p>لا. تعمل من جوالك أو جوال موظفك عبر المتصفح، وما تحتاج تغيّر الكاشير الموجود عندك.</p>
+        <summary>أحتاج جهازًا أو كاشير معينًا؟</summary>
+        <p>لا. تشتغل من جوالك أنت أو جوال موظفك عبر المتصفح، وما تحتاج تغيّر الكاشير الموجود عندك.</p>
       </details>
       <details>
-        <summary>أنا مشترك في منصة ولاء كبيرة، وش يفرق قُرب؟<span class="pm"></span></summary>
-        <p>المنصات الكبيرة مبنية حول أنظمة كاشير المقاهي والمتاجر، وفيها مزايا كثيرة أغلبها لا تُفتح. قُرب يفعل شيئًا واحدًا — يوصلك لعميلك بعد ما يطلع من الباب — بسعر أقل، وبتركيب أجيك به بنفسي. ولو المنصة التي عندك تخدمك فعلًا، ابقَ عليها ولا تغيّر.</p>
-      </details>
-      <details>
-        <summary>وش يصير لبيانات عملائي؟<span class="pm"></span></summary>
+        <summary>وش يصير لبيانات عملائي؟</summary>
         <p>هي بياناتك أنت، وتقدر تصدّرها متى ما طلبت. لا تُباع ولا تُشارك مع أي جهة، ولا تُستخدم لصالح محل ثاني.</p>
       </details>
       <details>
-        <summary>كم بتكلفني بعد التجربة؟<span class="pm"></span></summary>
-        <p>١٢٠٠ ريالًا للسنة لأصحاب المقاعد الخمسة الأولى بدل ١٨٠٠، وثابتة لهم ما داموا مشتركين. وفيه باقات أقصر: ٥٤٠ لثلاثة أشهر، و٩٦٠ لستة. الشهر الأول مجاني، ولا فيه تجديد تلقائي.</p>
+        <summary>كم بتكلفني بعد التجربة؟</summary>
+        <p>ثلاث باقات، وتختار دورة الدفع: شهري أو كل 6 أشهر أو سنوي. سنويًا: الأساسية 1,500 · الاحترافية 2,000 · الشاملة 2,500. وأصحاب المقاعد الخمسة الأولى يدفعون 1,200 للسنة فقط بمزايا الاحترافية، مدى اشتراكهم. الشهر الأول مجاني في كل الحالات، ولا فيه تجديد تلقائي.</p>
       </details>
       <details>
-        <summary>ليه ما فيه أسماء محلات في الصفحة؟<span class="pm"></span></summary>
-        <p>لأننا في البداية وما عندنا عملاء بعد. ولن أضع شعارًا لم آخذ إذنه، ولا رقمًا لم أقسه. أول خمسة محلات هم أول الأسماء التي تظهر هنا — بإذنهم.</p>
+        <summary>أنا مشترك في منصة ولاء كبيرة، وش يفرق قُرب؟</summary>
+        <p>المنصات الكبيرة مبنية حول أنظمة كاشير المقاهي والمتاجر، وفيها مزايا كثيرة أغلبها ما تفتحه. قُرب يسوي شيئًا واحدًا فقط — يوصلك لعميلك بعد ما يطلع من الباب — بسعر أقل، وبتركيب أجيك به بنفسي. لو المنصة اللي عندك تخدمك فعلًا، ابقَ عليها ولا تغيّر.</p>
+      </details>
+
+      <details>
+        <summary>ليه ما فيه أسماء محلات في الصفحة؟</summary>
+        <p>لأننا في البداية وما عندنا عملاء بعد. وما راح أضع شعارًا ما أخذت إذنه، ولا رقمًا ما قسته. أول خمسة محلات هم أول الأسماء اللي تظهر هنا — بإذنهم.</p>
       </details>
     </div>
   </div>
@@ -817,82 +1230,76 @@ footer a{color:#F0F1ED;border-bottom:1px solid rgba(240,241,237,.3);padding-bott
 
 <footer>
   <div class="wrap">
-    <div class="top">
-      <div>
-        <div class="fl">قُرب</div>
-        <div class="fd">بطاقة محلك في محفظة عميلك — أداة واحدة تفعل شيئًا واحدًا.</div>
-      </div>
-      <div><a id="tg3" href="https://t.me/qurb_sa" target="_blank" rel="noopener">تيليجرام</a></div>
+    <div><b>قُرب</b> — بطاقة محلك في محفظة عميلك</div>
+    <div>
+      <a href="privacy.html" style="color:inherit;text-decoration:underline;">سياسة الخصوصية</a> ·
+      <a href="terms.html" style="color:inherit;text-decoration:underline;">الشروط والأحكام</a> ·
+      <a id="tgFoot" href="https://t.me/qurb_sa" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">تيليجرام</a>
     </div>
-    <div class="bot">
-      <div>وثيقة عمل حر رقم <b id="flNo">FL-763162251</b></div>
-      <div><span id="ownerName">عبيد</span> · صُنع في السعودية</div>
-    </div>
+    <div>وثيقة عمل حر رقم <b id="flNo">FL-763162251</b> · <span id="ownerName">عبيد</span></div>
   </div>
 </footer>
 
 <script>
 /* ══════ عدّل هذي الأسطر فقط ══════ */
-var TELEGRAM   = "qurb_sa";        // اسم المستخدم في تيليجرام بدون @
-var FL_NUMBER  = "FL-763162251";   // رقم وثيقة العمل الحر
-var OWNER_NAME = "عبيد";           // اسمك كما تريد ظهوره
+var TELEGRAM   = "qurb_sa";              // اسم المستخدم في تيليجرام بدون @
+var FL_NUMBER  = "FL-763162251";         // رقم وثيقة العمل الحر
+var OWNER_NAME = "عبيد";                 // اسمك كما تريد ظهوره
 /* ═════════════════════════════════ */
 
 document.getElementById('flNo').textContent = FL_NUMBER;
 document.getElementById('ownerName').textContent = OWNER_NAME;
-['tg2','tg3'].forEach(function(id){
-  var el = document.getElementById(id);
-  if (el) el.href = "https://t.me/" + TELEGRAM;
-});
 
-/* الباركود */
 (function(){
   var c = document.getElementById('pCode'), h = '';
-  for (var i = 0; i < 52; i++) h += '<span></span>';
+  for (var i = 0; i < 46; i++) h += '<span></span>';
   c.innerHTML = h;
 })();
 
-/* رمز الاستجابة السريعة */
+/* ── QR pattern for the standee ── */
 (function(){
   var g = document.getElementById('qr1'); if(!g) return;
-  var N = 21, out = [], seed = 11;
-  function rnd(){ seed = (seed*1103515245 + 12345) & 0x7fffffff; return (seed>>16)/32768; }
+  var N = 21, cells = [];
   function finder(r,c){
-    return r>=0 && r<7 && c>=0 && c<7 &&
+    return (r>=0&&r<7&&c>=0&&c<7) &&
            (r===0||r===6||c===0||c===6||(r>=2&&r<=4&&c>=2&&c<=4));
   }
+  var seed = 7;
+  function rnd(){ seed = (seed*1103515245 + 12345) & 0x7fffffff; return (seed>>16)/32768; }
   for (var r=0;r<N;r++){
     for (var c=0;c<N;c++){
-      var on;
-      if (finder(r,c) || finder(r,c-14) || finder(r-14,c)) on = true;
-      else if ((r<8&&c<8)||(r<8&&c>12)||(r>12&&c<8)) on = false;
-      else on = rnd() > .47;
-      out.push('<i class="'+(on?'on':'')+'"></i>');
+      var on=false;
+      if (finder(r,c) || finder(r,c-14) || finder(r-14,c)) on=true;
+      else if ((r<8&&c<8)||(r<8&&c>12)||(r>12&&c<8)) on=false;
+      else on = rnd() > .48;
+      cells.push('<i class="'+(on?'on':'')+'"></i>');
     }
   }
-  g.innerHTML = out.join('');
+  g.innerHTML = cells.join('');
 })();
 
-/* المشاهد الثلاثة */
 var scenes = [
-  { ic:"ص", name:"مغسلة الصفوة", label:"٦ من ٨ غسلات في باقتك", on:6, total:8,
+  { ic:"ن", name:"محل الندى",     label:"٦ من ٨ زيارات في باقتك", on:6, total:8,
+    msg:"طلبك جاهز — تقدر تمر عليه اليوم." },
+  { ic:"س", name:"مغسلة الصفوة",  label:"٦ من ٨ غسلات في باقتك",  on:6, total:8,
     msg:"سيارتك جاهزة — تقدر تستلمها الحين." },
-  { ic:"ح", name:"مغسلة الحي",   label:"٥ من ٨ غسلات",         on:5, total:8,
-    msg:"غسيلك جاهز — تقدر تمر عليه قبل ٩ المساء." },
-  { ic:"م", name:"كوفي الموسم",  label:"٧ من ٨ أكواب",         on:7, total:8,
+  { ic:"ص", name:"صالون الأناقة", label:"٣ من ٥ جلسات",           on:3, total:8,
+    msg:"موعدك بكرة الساعة ٦ — نشوفك." },
+  { ic:"ك", name:"كوفي الموسم",   label:"٧ من ٨ أكواب",           on:7, total:8,
     msg:"باقي كوب واحد ويصير المشروب الجاي علينا." }
 ];
 
-var $ = function(id){ return document.getElementById(id); };
-var pLogo=$('pLogo'), pName=$('pName'), pLabel=$('pLabel'), pStamps=$('pStamps'),
-    nIc=$('nIc'), nTitle=$('nTitle'), nMsg=$('nMsg'), notif=$('notif');
+var pLogo=document.getElementById('pLogo'), pName=document.getElementById('pName'),
+    pLabel=document.getElementById('pLabel'), pStamps=document.getElementById('pStamps'),
+    nIc=document.getElementById('nIc'), nTitle=document.getElementById('nTitle'),
+    nMsg=document.getElementById('nMsg'), notif=document.getElementById('notif');
 
 function render(s){
   pLogo.textContent = s.ic;
   pName.textContent = s.name;
   pLabel.textContent = s.label;
-  var h = '';
-  for (var i=0;i<s.total;i++) h += '<i class="'+(i<s.on?'on':'')+'"></i>';
+  var h='';
+  for (var i=0;i<s.total;i++) h += '<div class="stamp'+(i<s.on?' on':'')+'">'+(i<s.on?'✓':'')+'</div>';
   pStamps.innerHTML = h;
   nIc.textContent = s.ic;
   nTitle.textContent = s.name;
@@ -910,21 +1317,77 @@ btns.forEach(function(b){
   });
 });
 
-/* ظهور تدريجي */
 var io = new IntersectionObserver(function(es){
-  es.forEach(function(e){
-    if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-  });
-}, { threshold:.1, rootMargin:"0px 0px -60px 0px" });
-document.querySelectorAll('.rv').forEach(function(el){
-  if (!el.classList.contains('in')) io.observe(el);
-});
+  es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold:.12, rootMargin:"0px 0px -40px 0px" });
+document.querySelectorAll('.rv').forEach(function(el){ if(!el.classList.contains('in')) io.observe(el); });
 
-/* خط الترويسة */
-var nav = $('nav');
-addEventListener('scroll', function(){
-  nav.classList.toggle('stuck', scrollY > 14);
-}, { passive:true });
+var nav = document.getElementById('nav');
+addEventListener('scroll', function(){ nav.classList.toggle('stuck', scrollY > 12); }, { passive:true });
+
+/* ── المثال الحي في المحفظة ── */
+(function(){
+  var st = document.getElementById('wStamps');
+  var cd = document.getElementById('wCode');
+  if (st){
+    var s = '';
+    for (var i=0;i<8;i++) s += '<i class="'+(i<6?'on':'')+'"></i>';
+    st.innerHTML = s;
+  }
+  if (cd){
+    var c = '';
+    for (var j=0;j<56;j++) c += '<span></span>';
+    cd.innerHTML = c;
+  }
+
+  var bF = document.getElementById('wFront');
+  var bB = document.getElementById('wBack');
+  var pF = document.getElementById('wPassFront');
+  var pB = document.getElementById('wPassBack');
+  if (bF && bB && pF && pB){
+    function show(front){
+      pF.hidden = !front;
+      pB.hidden = front;
+      bF.setAttribute('aria-pressed', front ? 'true' : 'false');
+      bB.setAttribute('aria-pressed', front ? 'false' : 'true');
+    }
+    bF.addEventListener('click', function(){ show(true); });
+    bB.addEventListener('click', function(){ show(false); });
+  }
+})();
+
+['tgFoot','tgLink'].forEach(function(id){var e=document.getElementById(id);if(e)e.href='https://t.me/'+TELEGRAM;});
+/* ── مفتاح دورة الدفع ── */
+(function(){
+  var btns = document.querySelectorAll('.bill button');
+  if (!btns.length) return;
+  function apply(k){
+    document.querySelectorAll('.tier .p').forEach(function(el){
+      el.textContent = el.dataset[k];
+    });
+    document.querySelectorAll('.tier .per-note').forEach(function(el){
+      el.textContent = el.dataset[k];
+    });
+    var unit = { m:'ريال / شهر', h:'ريال / 6 أشهر', y:'ريال / سنة' }[k];
+    document.querySelectorAll('.tier .amt small').forEach(function(el){
+      el.textContent = unit;
+    });
+  }
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      btns.forEach(function(x){ x.setAttribute('aria-pressed','false'); });
+      b.setAttribute('aria-pressed','true');
+      apply(b.dataset.b);
+    });
+  });
+  apply('y');
+})();
+
+var tgLink = document.getElementById('tgLink');
+if (tgLink) tgLink.href = "https://t.me/" + TELEGRAM;
 </script>
+<div class="mcta" id="mcta">
+  <a class="btn" id="tgM" href="https://t.me/qurb_sa" target="_blank" rel="noopener">تواصل معي على تيليجرام</a>
+</div>
 </body>
 </html>
