@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="only light">
+<title>دليل تجهيز بطاقتك في محلك — قُرب</title>
+<meta name="description" content="خمس خطوات لتجهيز بطاقة قُرب في محلك: إنشاء الحساب، هوية البطاقة، الملصق، تدريب الموظف، وأسبوعك الأول.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%2314594A'/%3E%3Crect x='17' y='22' width='30' height='22' rx='5' fill='none' stroke='%23F0F3EE' stroke-width='3.2'/%3E%3Cpath d='M17 29h30' stroke='%23F0F3EE' stroke-width='4.4'/%3E%3Ccircle cx='48' cy='18' r='8' fill='%23C98A2B' stroke='%2314594A' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:only light;
+  --ink:#0E1512;--ink-2:#39433D;--paper:#EEF0EA;--card:#FFFFFF;
+  --line:#D3D8CC;--line-soft:#E2E5DC;--pine:#14594A;--pine-lift:#1C7862;
+  --amber:#C98A2B;--muted:#6A736C;
+  --sh:0 1px 2px rgba(14,21,18,.05),0 8px 24px rgba(14,21,18,.06);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+html,body{margin:0;background:var(--paper);color:var(--ink)}
+body{font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;font-size:16px;line-height:1.9;-webkit-text-size-adjust:100%}
+h1,h2,h3{font-family:"Readex Pro",sans-serif;margin:0;letter-spacing:-.02em;line-height:1.35}
+a{color:var(--pine);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+@media (prefers-color-scheme:dark){html,body{background:var(--paper);color:var(--ink)}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+.wrap{max-width:780px;margin:0 auto;padding:0 20px}
+
+/* ── الشريط ── */
+.top{position:sticky;top:0;z-index:20;background:rgba(238,240,234,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;height:62px}
+.logo{display:flex;align-items:center;gap:10px;font-family:"Readex Pro",sans-serif;font-weight:600;font-size:19px;color:var(--ink)}
+.logo:hover{text-decoration:none;opacity:.8}
+.mk{width:30px;height:30px;border-radius:9px;background:var(--pine);position:relative;flex:none}
+.mk::before{content:"";position:absolute;inset:7px 6px 11px 6px;border-radius:4px;background:#F0F3EE}
+.mk::after{content:"";position:absolute;top:-3px;left:-3px;width:12px;height:12px;border-radius:50%;background:var(--amber);border:2.5px solid var(--paper)}
+.print-btn{border:1px solid var(--line);background:#fff;border-radius:100px;padding:8px 18px;font:inherit;font-size:13.5px;font-weight:600;color:var(--ink-2);cursor:pointer;transition:.2s}
+.print-btn:hover{border-color:var(--pine);color:var(--pine)}
+
+/* ── الغلاف ── */
+.hero{padding:52px 0 34px}
+.hero h1{font-size:clamp(28px,6vw,40px)}
+.hero .sub{font-family:"Readex Pro",sans-serif;font-size:clamp(14px,3vw,17px);color:var(--pine);font-weight:600;margin-top:12px}
+.hero .lede{font-size:16.5px;color:var(--ink-2);margin:18px 0 0;max-width:60ch}
+
+/* ── الفهرس ── */
+.toc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 22px;margin:26px 0 0;box-shadow:var(--sh)}
+.toc b{display:block;font-family:"Readex Pro",sans-serif;font-size:14px;color:var(--muted);margin-bottom:10px}
+.toc ol{margin:0;padding-inline-start:20px;font-size:15px}
+.toc li{margin-bottom:5px}
+
+/* ── الأقسام ── */
+section{padding:38px 0 0}
+.eyebrow{font-size:12.5px;letter-spacing:.09em;color:var(--muted);font-weight:600;margin-bottom:6px}
+h2{font-size:clamp(21px,4.5vw,26px);padding-bottom:12px;border-bottom:2.5px solid var(--pine)}
+
+.step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-top:18px;box-shadow:var(--sh)}
+.step-h{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+.num{width:36px;height:36px;flex:none;border-radius:50%;background:var(--pine);color:#fff;display:grid;place-items:center;font-family:"Readex Pro",sans-serif;font-weight:700;font-size:16px}
+.num.star{background:var(--amber)}
+.step-h h3{font-size:19px}
+.step p{margin:0 0 10px;color:var(--ink-2)}
+.step p:last-child{margin-bottom:0}
+.step ul{margin:10px 0 0;padding-inline-start:20px;color:var(--ink-2)}
+.step li{margin-bottom:8px}
+.step li:last-child{margin-bottom:0}
+.step b{color:var(--ink)}
+
+code,.url{font-family:ui-monospace,"SF Mono",monospace;font-size:14px;direction:ltr;unicode-bidi:embed;
+  background:var(--paper);border:1px solid var(--line);border-radius:7px;padding:3px 9px;display:inline-block;color:var(--pine);font-weight:600}
+a.url:hover{background:#fff;text-decoration:none;border-color:var(--pine)}
+
+.note{border-radius:14px;padding:18px 22px;margin-top:18px;background:#fff;border:1px solid var(--line);border-inline-start:4px solid var(--pine)}
+.note.warn{background:#FBF6EC;border-color:#EBDCC2;border-inline-start-color:var(--amber)}
+.note b{display:block;font-family:"Readex Pro",sans-serif;font-size:16px;margin-bottom:5px}
+.note p{margin:0;color:var(--ink-2);font-size:15.5px}
+
+table{width:100%;border-collapse:collapse;margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:15px;box-shadow:var(--sh)}
+th{background:var(--pine);color:#fff;text-align:start;padding:12px 16px;font-family:"Readex Pro",sans-serif;font-weight:600;font-size:14.5px}
+td{border-bottom:1px solid var(--line-soft);padding:12px 16px;color:var(--ink-2);vertical-align:top}
+tr:last-child td{border-bottom:none}
+
+details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-top:12px}
+details[open]{border-color:var(--pine)}
+summary{font-family:"Readex Pro",sans-serif;font-weight:600;font-size:16px;cursor:pointer;color:var(--ink);list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:left;color:var(--pine);font-size:20px;line-height:1}
+details[open] summary::after{content:"−"}
+details p{margin:10px 0 0;color:var(--ink-2);font-size:15.5px}
+
+footer{margin-top:52px;border-top:1px solid var(--line);padding:26px 0 60px;font-size:14px;color:var(--muted)}
+footer a{font-weight:600}
+.contact{display:flex;flex-wrap:wrap;gap:10px 22px;margin-bottom:12px}
+
+@media print{
+  .top,.print-btn,.toc{display:none}
+  html,body{background:#fff;font-size:11pt}
+  .wrap{max-width:100%;padding:0}
+  .step,.note,table,details{box-shadow:none;break-inside:avoid;page-break-inside:avoid}
+  section{padding-top:22px}
+  details{border:1px solid var(--line)}
+  details p{display:block!important}
+  footer{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="https://qurb.vercel.app"><span class="mk" aria-hidden="true"></span> قُرب</a>
+    <button class="print-btn" onclick="window.print()">اطبع أو احفظ PDF</button>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="eyebrow">دليل التجهيز الذاتي</div>
+    <h1>دليل تجهيز بطاقتك في محلك</h1>
+    <div class="sub">5 خطوات · 10 دقائق · بلا جهاز إضافي</div>
+    <p class="lede">
+      هذا الدليل يمشي بك من إنشاء الحساب إلى أول عميل تسجّله بنفسك.
+      اتبعه بالترتيب ولا تتجاوز خطوة — كل واحدة تبني على التي قبلها.
+    </p>
+
+    <div class="note warn">
+      <b>ما يعمل الآن وما ينتظر</b>
+      <p>
+        اللوحة وصفحة تسجيل العملاء وقناة الملاحظات تعمل اليوم. أما إضافة البطاقة إلى
+        Apple Wallet و Google Wallet فهي في مرحلة التفعيل النهائي، ويصلك إشعار يوم تجهز.
+        سجّل عملاءك من اليوم — بياناتهم محفوظة وتنتقل لبطاقاتهم تلقائيًا.
+      </p>
+    </div>
+
+    <nav class="toc" aria-label="محتويات الدليل">
+      <b>في هذا الدليل</b>
+      <ol>
+        <li><a href="#setup">التجهيز — من الحساب إلى البطاقة</a></li>
+        <li><a href="#run">التشغيل — الملصق والموظف</a></li>
+        <li><a href="#week">أسبوعك الأول</a></li>
+        <li><a href="#faq">أسئلة تتكرر</a></li>
+      </ol>
+    </nav>
+  </div>
+
+  <!-- ═══ التجهيز ═══ -->
+  <section id="setup">
+    <div class="eyebrow">الجزء الأول</div>
+    <h2>التجهيز — من الحساب إلى البطاقة</h2>
+
+    <div class="step">
+      <div class="step-h"><span class="num">1</span><h3>أنشئ حسابك</h3></div>
+      <p>
+        افتح <a class="url" href="https://qurb-app.vercel.app/signup">qurb-app.vercel.app/signup</a>
+        واملأ أربعة حقول: اسم المحل، نوع النشاط، بريدك، كلمة المرور.
+      </p>
+      <ul>
+        <li><b>اسم المحل</b> هو أهم حقل في الصفحة — لأنه ما سيقرأه عميلك على وجه البطاقة وفي كل إشعار يصله. اكتب اسم النشاط لا اسمك الشخصي.</li>
+        <li><b>نوع النشاط</b> يحدّد تسمية الرصيد: «رصيد الغسلات» للمغسلة، «عدد الأختام» للمقهى، «عدد الزيارات» للصالون.</li>
+      </ul>
+    </div>
+
+    <div class="step">
+      <div class="step-h"><span class="num">2</span><h3>اضبط هوية بطاقتك</h3></div>
+      <p>من القائمة الجانبية اختر <b>الإعدادات</b>. المعاينة أمامك تتغيّر مع كل تعديل، فاعمل وأنت تنظر إليها.</p>
+      <ul>
+        <li><b>اسم المحل:</b> صحّحه إن أخطأت في التسجيل.</li>
+        <li><b>تسمية الرصيد:</b> بلغة عملائك لا بلغة الأنظمة.</li>
+        <li><b>لون البطاقة:</b> أربعة ألوان — اختر الأقرب لهوية محلك.</li>
+      </ul>
+    </div>
+
+    <div class="step">
+      <div class="step-h"><span class="num">3</span><h3>أضف روابط ظهر البطاقة</h3></div>
+      <p>ظهر البطاقة يصير مركز روابط محلك الدائم في جوال العميل. في نفس صفحة الإعدادات:</p>
+      <ul>
+        <li><b>تقييم قوقل:</b> افتح خرائط قوقل، ابحث عن محلك، ومن زر المشاركة انسخ الرابط والصقه.</li>
+        <li><b>حساب التواصل:</b> إنستغرام أو سناب شات أو تيك توك.</li>
+        <li><b>رابط الملاحظات:</b> يُنشأ تلقائيًا ولا تحتاج ضبطه.</li>
+      </ul>
+    </div>
+
+    <div class="note">
+      <b>قاعدة الملاحظات — اقرأها ولو استعجلت</b>
+      <p>
+        رابط الملاحظات الداخلي وتقييم قوقل يظهران للعميل جنبًا إلى جنب، ولا نُخفي أحدهما
+        لأجل الآخر. الملاحظة تصلك أنت أولًا لتصلح الأمر قبل أن يكبر، والتقييم العلني يبقى
+        قرار العميل وحده. توجيه الراضين فقط إلى قوقل يخالف شروط قوقل ويعرّض صفحة محلك للحذف.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ التشغيل ═══ -->
+  <section id="run">
+    <div class="eyebrow">الجزء الثاني</div>
+    <h2>التشغيل — الملصق والموظف</h2>
+
+    <div class="step">
+      <div class="step-h"><span class="num">4</span><h3>ملصق رمز التسجيل</h3></div>
+      <p>في <b>الإعدادات</b> تجد رابط التسجيل الخاص بمحلك. حوّله إلى رمز QR واطبعه بحجم A5.</p>
+      <ul>
+        <li>ضعه <b>عند الكاشير في مستوى النظر</b> — لا على الجدار البعيد ولا على الباب.</li>
+        <li>اكتب فوقه سطرًا واحدًا: «صوّر الرمز وخذ بطاقتك — بدون تطبيق».</li>
+        <li>غلّفه بالبلاستيك، فالورق المتسخ يقول للعميل إن الأمر غير مهم.</li>
+      </ul>
+    </div>
+
+    <div class="step">
+      <div class="step-h"><span class="num">5</span><h3>درّب موظفك — عملان فقط</h3></div>
+      <p>لا تشرح له اللوحة كلها. عملان يكفيان، والباقي لك:</p>
+      <ul>
+        <li><b>يسجّل زيارة:</b> شاشة <b>العملاء</b> ← يبحث برقم جوال العميل ← يضغط <b>سجّل زيارة</b>. ينزل الرصيد واحدًا ويتحدّث على بطاقة العميل.</li>
+        <li><b>يشحن باقة:</b> نفس السطر، الزر الثاني <b>+ 5</b>.</li>
+      </ul>
+      <p style="margin-top:12px">جرّب معه مرة أمامك، ثم دعه يفعلها وحده مرة. عشر دقائق وينتهي التدريب.</p>
+    </div>
+
+    <table>
+      <thead><tr><th style="width:42%">العمل</th><th>من يفعله</th></tr></thead>
+      <tbody>
+        <tr><td>تسجيل الزيارة وشحن الباقة</td><td>الموظف، من جواله أو جوال المحل</td></tr>
+        <tr><td>ضبط اسم البطاقة ولونها وروابطها</td><td>أنت فقط</td></tr>
+        <tr><td>إرسال الإشعارات للعملاء</td><td>أنت فقط — لا تسلّمها لأحد</td></tr>
+        <tr><td>قراءة ملاحظات العملاء</td><td>أنت، وتقرأها أسبوعيًا</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note warn">
+      <b>لا تحتاج جهازًا ولا تغيير الكاشير</b>
+      <p>كل ما سبق يعمل من متصفح جوالك أو جوال موظفك. لا تطبيق تنزّله، ولا جهاز تشتريه، ولا نظام كاشير تستبدله.</p>
+    </div>
+  </section>
+
+  <!-- ═══ الأسبوع الأول ═══ -->
+  <section id="week">
+    <div class="eyebrow">الجزء الثالث</div>
+    <h2>أسبوعك الأول</h2>
+
+    <div class="step">
+      <div class="step-h"><span class="num star">★</span><h3>سجّل أول 10 عملاء بنفسك</h3></div>
+      <p>
+        لا تكتفِ بالملصق في الأيام الأولى. اقف عند الكاشير ساعة واحدة، واعرض البطاقة على كل
+        عميل بجملة واحدة: «صوّر هذا الرمز وتجيك بطاقة المحل في جوالك، ونعرف زياراتك».
+        العشرة الأوائل يكشفون لك ما لا يكشفه أي دليل: أين يتردّد العميل، وأي جملة تُقنعه.
+      </p>
+    </div>
+
+    <table>
+      <thead><tr><th style="width:42%">قاعدة الإرسال</th><th>السبب</th></tr></thead>
+      <tbody>
+        <tr><td>إشعار واحد مفيد أفضل من خمسة منسية</td><td>الإكثار يدفع العميل لحذف البطاقة، فتخسر القناة نهائيًا</td></tr>
+        <tr><td>أرسل لفئة لا للجميع</td><td>«من قارب رصيده» أو «من غاب 30 يومًا» — الرسالة العامة تُتجاهل</td></tr>
+        <tr><td>راقب عدّاد البطاقات المحذوفة</td><td>ارتفاعه بعد إرسال معيّن يعني أن رسالتك أزعجت الناس</td></tr>
+        <tr><td>الوقت يهمّ كالنص</td><td>عرض نهاية الأسبوع يُرسل الأربعاء مساءً لا السبت صباحًا</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note">
+      <b>لماذا نعرض لك رقمًا محرجًا؟</b>
+      <p>
+        لوحتك تُظهر عدد البطاقات المحذوفة صريحًا. منصات كثيرة تخفيه لأنه يحرجها، ونحن نعرضه
+        لأنه المقياس الوحيد الصادق لقيمة رسائلك عند عملائك.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ الأسئلة ═══ -->
+  <section id="faq">
+    <div class="eyebrow">الجزء الرابع</div>
+    <h2>أسئلة تتكرر</h2>
+
+    <details open>
+      <summary>عميلي كبير في السن وما يعرف يستخدم التقنية</summary>
+      <p>ما يحتاج يتعلّم شيئًا. يصوّر الرمز بالكاميرا، ويكتب اسمه ورقمه — ثم تعمل البطاقة وحدها. لا تطبيق يفتحه ولا حساب يتذكّره.</p>
+    </details>
+    <details>
+      <summary>عميل سجّل مرتين بنفس الرقم</summary>
+      <p>لا يتكرّر. النظام يتعرّف على رقمه ويعرض رصيده الحالي بدل إنشاء عميل جديد.</p>
+    </details>
+    <details>
+      <summary>غلطنا وسجّلنا زيارة</summary>
+      <p>اضغط <b>+ 5</b> أو راسلنا لنصحّحها. كل حركة على الرصيد مسجّلة، فلا شيء يُفقد بلا أثر.</p>
+    </details>
+    <details>
+      <summary>لي فرعان</summary>
+      <p>النسخة الحالية تخدم فرعًا واحدًا. إدارة الفروع في الخطة القادمة، ونخبرك يوم تجهز — ولا نبيعك ما ليس موجودًا.</p>
+    </details>
+
+    <div class="note warn">
+      <b>تفضّل التركيب الحضوري؟</b>
+      <p>
+        داخل مدينتي أجي بنفسي وأجهّز البطاقة والملصق وأدرّب موظفك. وخارجها هذا الدليل يكفي —
+        وإن تعثّرت في أي خطوة راسلني وأمشي معك خطوة خطوة.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="contact">
+      <span>تيليجرام: <a href="https://t.me/qurb_sa" target="_blank" rel="noopener">t.me/qurb_sa</a></span>
+      <span>جوال: <a href="tel:0550165210">0550165210</a></span>
+      <span><a href="https://qurb.vercel.app">الموقع الرئيسي</a></span>
+    </div>
+    <div>قُرب · بطاقة عملاء تسكن محفظة الجوال · صُنع في السعودية</div>
+  </footer>
+
+</div>
+</body>
+</html>
