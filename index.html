@@ -506,6 +506,14 @@ h2{font-size:clamp(24px,3.6vw,34px);font-weight:600;margin-bottom:18px;max-width
 }
 .svc:hover{transform:translateY(-3px);border-color:var(--pine);box-shadow:0 1px 2px rgba(14,21,18,.04),0 22px 44px -28px rgba(20,89,74,.35);}
 .svc.later:hover{border-color:var(--line);transform:none;box-shadow:0 1px 2px rgba(14,21,18,.04),0 14px 34px -30px rgba(14,21,18,.28);}
+.svc h3{font-size:17px;}
+.svc > p{font-size:14.5px;}
+.how{
+  margin-top:auto;padding-top:12px;border-top:1px dashed var(--line-soft);
+  font-size:13.5px;color:var(--ink-2);line-height:1.7;
+}
+.how b{color:var(--pine);font-family:"Readex Pro",sans-serif;font-weight:600;margin-inline-end:4px;}
+.how a{color:var(--pine);font-weight:500;}
 .svc .sym{
   width:42px;height:42px;border-radius:12px;flex:none;
   background:linear-gradient(145deg,rgba(20,89,74,.14),rgba(20,89,74,.05));
@@ -521,7 +529,15 @@ h2{font-size:clamp(24px,3.6vw,34px);font-weight:600;margin-bottom:18px;max-width
 }
 .tag.now{background:var(--pine);color:#fff;}
 .tag.next{background:rgba(14,21,18,.08);color:var(--muted);}
+.tag.next-soft{background:rgba(201,138,43,.16);color:#8A5D18;border:1px solid rgba(201,138,43,.38);}
 .svc.later{background:var(--paper-2);}
+.svc-more{
+  margin-top:24px;font-size:14.5px;color:var(--muted);text-align:center;
+  padding-top:20px;border-top:1px solid var(--line-soft);max-width:74ch;margin-inline:auto;
+}
+.svc-adv{border-color:rgba(201,138,43,.5) !important;background:linear-gradient(180deg,#fff 0%,#FDFAF4 100%);}
+.svc-adv .sym{background:linear-gradient(145deg,rgba(201,138,43,.22),rgba(201,138,43,.07)) !important;border-color:rgba(201,138,43,.32) !important;}
+.svc a{color:var(--pine);font-weight:500;}
 .svc-ask{
   margin-top:26px;border:1.5px dashed var(--pine);border-radius:14px;
   padding:18px 20px;background:rgba(20,89,74,.05);font-size:15px;
@@ -727,12 +743,42 @@ details p{font-size:15px;color:var(--ink-2);max-width:62ch;}
 
 footer{
   background:linear-gradient(180deg,#123F35 0%,#0D2C25 100%);
-  color:rgba(237,241,236,.62);padding:46px 0 40px;font-size:13.5px;
+  color:rgba(237,244,240,.72);padding:clamp(44px,6vw,64px) 0 30px;font-size:14px;
 }
-footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:18px 28px;flex-wrap:wrap;}
-footer b{color:#EDF1EC;font-weight:600;}
-footer a{transition:color .2s;}
-footer a:hover{color:#fff !important;}
+.f-grid{
+  display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:36px;
+  padding-bottom:34px;border-bottom:1px solid rgba(237,244,240,.16);
+}
+.f-logo{
+  font-family:"Readex Pro",sans-serif;font-weight:600;font-size:22px;color:#fff;
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:12px;
+}
+.fmk{
+  width:30px;height:30px;flex:none;position:relative;border-radius:9px;
+  background:rgba(237,244,240,.12);display:grid;place-items:center;
+}
+.fmk::before{content:"";width:13px;height:10px;border-radius:2px;border:1.4px solid rgba(240,246,242,.9);border-top-width:3.5px;}
+.fmk::after{content:"";position:absolute;top:-2px;inset-inline-end:-2px;width:9px;height:9px;border-radius:50%;background:var(--amber);}
+.f-brand p{margin:0;max-width:34ch;line-height:1.8;font-size:13.5px;}
+.f-col h4{
+  font-family:"Readex Pro",sans-serif;font-weight:600;font-size:14px;color:#fff;
+  margin:0 0 14px;padding-bottom:10px;border-bottom:1px solid rgba(237,244,240,.16);
+}
+.f-col a{display:block;color:rgba(237,244,240,.72);text-decoration:none;padding:5px 0;transition:color .2s,transform .2s;}
+.f-col a:hover{color:#fff;transform:translateX(-3px);}
+.f-note{display:block;padding:8px 0 0;font-size:12.5px;color:rgba(237,244,240,.5);line-height:1.8;}
+.f-note b{color:rgba(237,244,240,.85);}
+.f-bot{
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  padding-top:22px;font-size:13px;color:rgba(237,244,240,.55);
+}
+@media (max-width:860px){
+  .f-grid{grid-template-columns:1fr 1fr;}
+  .f-brand{grid-column:1 / -1;}
+}
+@media (max-width:480px){
+  .f-grid{grid-template-columns:1fr;}
+}
 
 @media (max-width:1080px) and (min-width:901px){
   .svc-grid{grid-template-columns:repeat(2,1fr);}
@@ -1137,109 +1183,64 @@ footer a:hover{color:#fff !important;}
   <div class="wrap">
     <div class="rv">
       <div class="kicker">الخدمات</div>
-      <h2>وش تقدر تسوي بالبطاقة</h2>
+      <h2>ست مزايا تشتغل من بطاقة واحدة</h2>
       <p class="sec-lede">البطاقة واحدة في جوال عميلك — واللي يتغير هو الشي اللي تحطه فيها. هذي المهام اللي أشتغل عليها.</p>
     </div>
 
     <div class="svc-grid rv">
       <div class="svc">
-        <span class="tag now">الإصدار الأول</span>
+        <span class="tag now">جاهز</span>
         <div class="sym">🎫</div>
         <h3>بطاقة بهوية محلك</h3>
-        <p>بألوان محلك وشعارك، تسكن Apple Wallet أو Google Wallet — بدون تطبيق يحمّله العميل.</p>
+        <p>بألوانك وشعارك في محفظة جوال عميلك — بلا تطبيق وبلا حساب.</p>
+        <div class="how"><b>كيف؟</b> العميل يصوّر باركود عند الكاشير، يكتب اسمه ورقمه، وتدخل البطاقة جواله في ثوانٍ.</div>
       </div>
 
       <div class="svc">
-        <span class="tag now">الإصدار الأول</span>
-        <div class="sym">📷</div>
-        <h3>تسجيل بمسح باركود</h3>
-        <p>ملصق عند الكاشير. يصوّره العميل، يكتب اسمه ورقمه، وتدخل البطاقة جواله.</p>
-      </div>
-
-      <div class="svc">
-        <span class="tag now">الإصدار الأول</span>
-        <div class="sym">🔢</div>
-        <h3>رصيد يشوفه العميل</h3>
-        <p>كم زيارة باقية له من باقته، أو كم يفصله عن المكافأة — بدون ما يسأل الموظف.</p>
-      </div>
-
-      <div class="svc">
-        <span class="tag now">الإصدار الأول</span>
+        <span class="tag now">جاهز</span>
         <div class="sym">🔔</div>
         <h3>إشعار على شاشة القفل</h3>
-        <p>«طلبك جاهز» أو عرض أو تذكير — بدون تكلفة على كل رسالة.</p>
+        <p>«طلبك جاهز»، عرض، أو تذكير — بلا تكلفة على كل رسالة.</p>
+        <div class="how"><b>كيف؟</b> من شاشتك: تختار العميل أو الفئة، تكتب السطر (أو تأخذه من المستشار)، وتضغط إرسال.</div>
       </div>
 
       <div class="svc">
-        <span class="tag now">الإصدار الأول</span>
+        <span class="tag now">جاهز</span>
+        <div class="sym">🔢</div>
+        <h3>رصيد يشوفه العميل</h3>
+        <p>باقته المدفوعة أو أختامه — ظاهرة في بطاقته دائمًا.</p>
+        <div class="how"><b>كيف؟</b> عند كل زيارة موظفك يبحث بالرقم ويضغط «تسجيل زيارة» — فيُخصم من الباقة وتتحدث البطاقة في جواله فورًا.</div>
+      </div>
+
+      <div class="svc">
+        <span class="tag now">جاهز</span>
         <div class="sym">💬</div>
-        <h3>رابط الملاحظات</h3>
-        <p>عميلك يوصل لك ملاحظته مباشرة من ظهر البطاقة — فتعرف المشكلة قبل ما تصير تقييمًا سيئًا.</p>
+        <h3>تقييم وملاحظات</h3>
+        <p>تعرف المشكلة قبل ما تصير تقييمًا عامًا أمام الجميع.</p>
+        <div class="how"><b>كيف؟</b> في ظهر البطاقة رابطان دائمان: ملاحظة خاصة تصلك أنت وحدك، ورابط تقييم قوقل للجميع — بلا فلترة.</div>
       </div>
 
       <div class="svc">
-        <span class="tag now">الإصدار الأول</span>
+        <span class="tag now">جاهز</span>
         <div class="sym">📱</div>
-        <h3>روابط حساباتك</h3>
-        <p>إنستغرام وسنابتشات وتيك توك في ظهر البطاقة — كل عميل يمسح يصير متابعًا محتملًا.</p>
+        <h3>حساباتك في جيبه</h3>
+        <p>كل عميل يسجّل يصير متابعًا محتملًا لحساباتك.</p>
+        <div class="how"><b>كيف؟</b> إنستغرام وسنابتشات ورقمك وموقعك روابط ثابتة في ظهر البطاقة — يضغط فيفتح حسابك مباشرة.</div>
       </div>
 
-      <div class="svc">
-        <span class="tag now">الإصدار الأول</span>
-        <div class="sym">🛠️</div>
-        <h3>تركيب وتدريب بيدي</h3>
-        <p>أجي محلك، أجهّز البطاقة والملصق، وأدرّب موظفك — ما تحتاج تتعلم شيئًا بنفسك.</p>
-      </div>
-
-      <div class="svc later">
-        <span class="tag next">لاحقًا</span>
-        <div class="sym">📅</div>
-        <h3>الاشتراك الشهري</h3>
-        <p>باقة بمبلغ ثابت في الشهر — دخل مقدم لك، وعميل يرجع لأن عنده رصيد.</p>
-      </div>
-
-      <div class="svc later">
-        <span class="tag next">لاحقًا</span>
-        <div class="sym">⏳</div>
-        <h3>تذكير الغياب</h3>
-        <p>ما مرّ من ثلاثة أسابيع؟ يوصله تذكير تلقائي بدون متابعة منك.</p>
-      </div>
-
-      <div class="svc later">
-        <span class="tag next">لاحقًا</span>
-        <div class="sym">🤝</div>
-        <h3>الإحالة والهدايا</h3>
-        <p>«عرّف صاحبك واحصل مكافأة»، وبطاقة هدية تدخل جوال عميل جديد.</p>
-      </div>
-
-      <div class="svc later">
-        <span class="tag next">لاحقًا</span>
-        <div class="sym">⭐</div>
-        <h3>طلب تقييم قوقل</h3>
-        <p>رابط التقييم يوصله بعد الخدمة. يُرسل لكل العملاء بدون فلترة، التزامًا بسياسات قوقل.</p>
-      </div>
-
-      <div class="svc later">
-        <span class="tag next">لاحقًا</span>
-        <div class="sym">🏢</div>
-        <h3>الفروع وحسابات الشركات</h3>
-        <p>إدارة أكثر من فرع بلوحة واحدة، وحساب لشركة تحمل عدة عملاء بفاتورة شهرية.</p>
-      </div>
-
-      <div class="svc later">
-        <span class="tag next">لاحقًا</span>
+      <div class="svc svc-adv">
+        <span class="tag next-soft">الإصدار الثاني</span>
         <div class="sym">🧠</div>
         <h3>المستشار الذكي</h3>
-        <p>يكتب لك ثلاث صيغ بلهجة عملائك بحسب حالة كل عميل، ويقترح وقت الإرسال. <a href="#advisor" style="color:var(--pine);">شوف مثالًا حيًا ↓</a></p>
-      </div>
-
-      <div class="svc later">
-        <span class="tag next">لاحقًا</span>
-        <div class="sym">✍️</div>
-        <h3>اللي تطلبه أنت</h3>
-        <p>هذي القائمة ما جت من مكتب — جت من أصحاب محلات. لو ناقصها شي، قل لي.</p>
+        <p>ما عاد تحتار وش تكتب ولا متى ترسل.</p>
+        <div class="how"><b>كيف؟</b> تختار حالة العميل (غايب، باقته تنتهي…) فيكتب لك ثلاث صيغ بلهجة عملائك ويقترح الوقت. <a href="#advisor">جرّبه حيًا ↓</a></div>
       </div>
     </div>
+
+    <p class="svc-more">
+      ومعها في الباقات: تذكير الغياب تلقائيًا · بطاقة إحالة وبطاقة هدية · تركيب وتدريب في محلك مجانًا ·
+      وقادم: إدارة الفروع وحسابات الشركات.
+    </p>
 
     <div class="svc-ask rv">
       <b>وما لا يفعله قُرب — بصراحة:</b> لا ربط مع أنظمة الكاشير، ولا تطبيق مستقل يحمّله عميلك. وإدارة الفروع وحسابات الشركات والتقارير ليست جاهزة اليوم — موسومة «لاحقًا»، ولن أحاسبك عليها قبل أن تجهز. قُرب يفعل شيئًا واحدًا الآن: يوصلك لعميلك بعد ما يطلع من الباب. ولو المنصة اللي عندك تخدمك فعلًا، ابقَ عليها.
@@ -1420,13 +1421,39 @@ footer a:hover{color:#fff !important;}
 
 <footer>
   <div class="wrap">
-    <div><b>قُرب</b> — بطاقة محلك في محفظة عميلك</div>
-    <div>
-      <a href="privacy.html" style="color:inherit;text-decoration:underline;">سياسة الخصوصية</a> ·
-      <a href="terms.html" style="color:inherit;text-decoration:underline;">الشروط والأحكام</a> ·
-      <a id="tgFoot" href="https://t.me/qurb_sa" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">تيليجرام</a>
+    <div class="f-grid">
+      <div class="f-brand">
+        <div class="f-logo"><span class="fmk" aria-hidden="true"></span> قُرب</div>
+        <p>بطاقة محلك في محفظة عميلك — أداة واحدة تفعل شيئًا واحدًا: توصلك لعميلك بعد ما يطلع من الباب.</p>
+      </div>
+
+      <div class="f-col">
+        <h4>الموقع</h4>
+        <a href="#how">كيف تشتغل</a>
+        <a href="#services">المزايا</a>
+        <a href="#advisor">المستشار الذكي</a>
+        <a href="#pricing">الباقات</a>
+        <a href="#faq-sec">الأسئلة الشائعة</a>
+      </div>
+
+      <div class="f-col">
+        <h4>الثقة</h4>
+        <a href="privacy.html">سياسة الخصوصية</a>
+        <a href="terms.html">الشروط والأحكام</a>
+        <span class="f-note">وثيقة عمل حر رقم<br><b id="flNo">FL-763162251</b></span>
+      </div>
+
+      <div class="f-col">
+        <h4>تواصل معي</h4>
+        <a id="tgFoot" href="https://t.me/qurb_sa" target="_blank" rel="noopener">تيليجرام — أرد بنفسي</a>
+        <span class="f-note">من 4 العصر إلى 11 مساءً<br>كل أيام الأسبوع</span>
+      </div>
     </div>
-    <div>وثيقة عمل حر رقم <b id="flNo">FL-763162251</b> · <span id="ownerName">عبيد</span></div>
+
+    <div class="f-bot">
+      <span>© <span id="fyear">2026</span> قُرب · <span id="ownerName">عبيد</span></span>
+      <span>صُنع في السعودية 🇸🇦</span>
+    </div>
   </div>
 </footer>
 
