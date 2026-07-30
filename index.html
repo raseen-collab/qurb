@@ -485,7 +485,8 @@ h2{font-size:clamp(24px,3.6vw,34px);font-weight:600;margin-bottom:18px;max-width
   padding:11px 0;border-bottom:1px solid #DDE2D9;font-size:11.5px;
 }
 .wback .row:last-child{border-bottom:none;}
-.wback .row .k{color:var(--muted);}
+.wback .row .k{color:var(--muted);display:flex;align-items:center;gap:8px;min-width:0;}
+.wback .row .k .ri{width:17px;height:17px;flex:none;opacity:.85;}
 .wback .row .v{font-family:"Readex Pro",sans-serif;font-weight:600;}
 .wback .row .v.link{color:var(--pine);}
 
@@ -1102,14 +1103,13 @@ footer{
 
           <div id="wPassBack" hidden>
             <div class="wback">
-              <div class="row"><span class="k">الرصيد المتبقي</span><span class="v">زيارتان</span></div>
-              <div class="row"><span class="k">آخر زيارة</span><span class="v">قبل 6 أيام</span></div>
-              <div class="row"><span class="k">ملاحظاتك تهمنا</span><span class="v link">أرسل ملاحظة — تصل لصاحب المحل</span></div>
-              <div class="row"><span class="k">أعجبتك الخدمة؟</span><span class="v link">قيّمنا على قوقل ماب</span></div>
-              <div class="row"><span class="k">إنستغرام</span><span class="v link">@alnada.store</span></div>
-              <div class="row"><span class="k">سنابتشات</span><span class="v link">alnada</span></div>
-              <div class="row"><span class="k">الجوال</span><span class="v">05x xxx xxxx</span></div>
-              <div class="row"><span class="k">الموقع</span><span class="v link">افتح في الخريطة</span></div>
+              <div class="row"><span class="k"><svg class="ri" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="3"/><path d="M3 10.5h18"/><circle cx="17" cy="15" r="1.3" fill="currentColor" stroke="none"/></svg><span>الرصيد المتبقي</span></span><span class="v">زيارتان</span></div>
+              <div class="row"><span class="k"><svg class="ri" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.2V12l3 1.8"/></svg><span>آخر زيارة</span></span><span class="v">قبل 6 أيام</span></div>
+              <div class="row"><span class="k"><svg class="ri" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-4-.9L3 21l1.9-4.6A8.4 8.4 0 0 1 4 11.5a8.4 8.4 0 0 1 8.5-8.4A8.4 8.4 0 0 1 21 11.5z"/></svg><span>ملاحظاتك تهمنا</span></span><span class="v link">أرسل ملاحظة — تصل لصاحب المحل</span></div>
+              <div class="row"><span class="k"><svg class="ri" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5.5-8 12-8 12s-8-6.5-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="2.8"/></svg><span>قوقل ماب</span></span><span class="v link">قيّمنا · افتح في الخريطة</span></div>
+              <div class="row"><span class="k"><svg class="ri" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.2"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.4" cy="6.6" r="1.15" fill="currentColor" stroke="none"/></svg><span>إنستغرام</span></span><span class="v link">@alnada.store</span></div>
+              <div class="row"><span class="k"><svg class="ri" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c2.7 0 4.6 2 4.6 4.7 0 1.1-.1 2-.2 2.7.5.3 1.2.2 1.8 0 .5.6.1 1.4-1.3 1.9-.4.1-.6.4-.4.8.6 1.4 1.9 2.4 3.2 2.7.4.1.5.5.2.8-.7.6-1.9.8-2.6.9-.3 0-.4.3-.5.7-.1.4-.3.6-.8.5-.7-.1-1.6-.3-2.6.2-.6.3-1.2.9-2.4.9s-1.8-.6-2.4-.9c-1-.5-1.9-.3-2.6-.2-.5.1-.7-.1-.8-.5-.1-.4-.2-.7-.5-.7-.7-.1-1.9-.3-2.6-.9-.3-.3-.2-.7.2-.8 1.3-.3 2.6-1.3 3.2-2.7.2-.4 0-.7-.4-.8-1.4-.5-1.8-1.3-1.3-1.9.6.2 1.3.3 1.8 0-.1-.7-.2-1.6-.2-2.7C7.4 5 9.3 3 12 3z"/></svg><span>سناب شات</span></span><span class="v link">alnada</span></div>
+              <div class="row"><span class="k"><svg class="ri" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 16.9v2.6a1.7 1.7 0 0 1-1.9 1.7 17 17 0 0 1-7.4-2.6 16.7 16.7 0 0 1-5.1-5.1A17 17 0 0 1 4.5 6.1 1.7 1.7 0 0 1 6.2 4.2h2.6a1.7 1.7 0 0 1 1.7 1.5c.1.9.3 1.7.6 2.5a1.7 1.7 0 0 1-.4 1.8l-1.1 1.1a13.6 13.6 0 0 0 5.1 5.1l1.1-1.1a1.7 1.7 0 0 1 1.8-.4c.8.3 1.6.5 2.5.6a1.7 1.7 0 0 1 1.4 1.6z"/></svg><span>الجوال</span></span><span class="v">05x xxx xxxx</span></div>
             </div>
           </div>
         </div>
@@ -1279,9 +1279,9 @@ footer{
         <p>بألوانك وشعارك، وأرسلها لك صورة قبل أي شي — تعدّل عليها كما تشاء.</p>
       </div>
       <div>
-        <div class="t">أول زيارة</div>
-        <h3>أركّبها في محلك</h3>
-        <p>ألزّق الملصق، أدرّب موظفك في عشر دقائق، ونسجّل أول عميل حقيقي أمامك.</p>
+        <div class="t">أول ساعتين</div>
+        <h3>تجهّزها بنفسك</h3>
+        <p>دليل مصوّر خطوة بخطوة: الملصق جاهز للطباعة من لوحتك، وتدريب موظفك عشر دقائق. <a href="guide.html">افتح الدليل</a></p>
       </div>
       <div>
         <div class="t">أول شهر</div>
@@ -1297,7 +1297,7 @@ footer{
     <div class="rv">
       <div class="kicker">الباقات</div>
       <h2>باقتان — تختار ما يناسب حجم محلك</h2>
-      <p class="sec-lede">التركيب والتدريب في محلك مجانًا في كل باقة، ولا يوجد تجديد تلقائي. اختر دورة الدفع:</p>
+      <p class="sec-lede">دليل التجهيز والدعم مشمولان في كل باقة، ولا يوجد تجديد تلقائي. اختر دورة الدفع:</p>
       <div class="bill" role="group" aria-label="دورة الدفع">
         <button type="button" data-b="m" aria-pressed="false">شهري</button>
         <button type="button" data-b="h" aria-pressed="false">كل 6 أشهر</button>
