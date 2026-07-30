@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light">
+<meta name="theme-color" content="#F0F1ED">
+<title>قُرب — بطاقة محلك في محفظة عميلك</title>
+<meta name="description" content="بطاقة تسكن محفظة جوال عميلك من أول زيارة، فتوصل رسالتك إلى شاشة قفله بدون تطبيق وبدون رسائل مدفوعة.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════
+   نظام التصميم
+   ══════════════════════════════════════ */
+:root{
+  color-scheme: light only;
+
+  --paper:#F0F1ED;
+  --paper-2:#E7E9E3;
+  --ink:#0E1311;
+  --ink-2:#3A443E;
+  --muted:#6A736C;
+  --hair:#CDD2C8;
+  --hair-soft:#DEE1D9;
+  --deep:#12352C;
+  --brass:#8C6A3A;
+
+  --sp-section:clamp(72px,9vw,132px);
+  --measure:56ch;
+}
+
+*{box-sizing:border-box;}
+html{
+  scroll-behavior:smooth;-webkit-text-size-adjust:100%;
+  background:var(--paper);color:var(--ink);
+}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;
+  font-size:16.5px;line-height:1.85;font-weight:400;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.dsp{
+  font-family:"Alexandria",system-ui,sans-serif;
+  margin:0;line-height:1.24;letter-spacing:-.025em;font-weight:300;
+}
+p{margin:0 0 1.05em;}
+a{color:inherit;text-decoration:none;}
+:focus-visible{outline:1.5px solid var(--brass);outline-offset:4px;}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(22px,4vw,48px);}
+.measure{max-width:var(--measure);}
+
+/* هوامش الأقسام والفواصل الرقيقة */
+section{padding:var(--sp-section) 0;border-top:1px solid var(--hair);}
+section:first-of-type{border-top:none;}
+
+/* ترويسة القسم: رقم + تسمية + عنوان */
+.sec-head{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);
+  gap:clamp(24px,5vw,64px);align-items:start;margin-bottom:clamp(38px,5vw,64px);
+}
+.sec-meta{display:flex;align-items:baseline;gap:14px;}
+.sec-num{
+  font-family:"Alexandria",sans-serif;font-weight:200;font-size:clamp(30px,4vw,46px);
+  color:var(--brass);line-height:1;letter-spacing:-.03em;
+}
+.sec-label{
+  font-family:"Alexandria",sans-serif;font-weight:500;font-size:11.5px;
+  letter-spacing:.16em;color:var(--muted);padding-top:4px;
+}
+.sec-title{font-size:clamp(25px,3.5vw,38px);}
+.sec-sub{color:var(--ink-2);margin:1.1em 0 0;font-size:16.5px;}
+
+/* حركة هادئة */
+.rv{opacity:0;transform:translateY(16px);transition:opacity 1s cubic-bezier(.22,.7,.28,1),transform 1s cubic-bezier(.22,.7,.28,1);}
+.rv.in{opacity:1;transform:none;}
+
+/* ══════ الترويسة ══════ */
+nav{
+  position:sticky;top:0;z-index:60;
+  background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:saturate(140%) blur(14px);
+  border-bottom:1px solid transparent;transition:border-color .4s;
+}
+nav.stuck{border-bottom-color:var(--hair);}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;height:76px;}
+.logo{
+  font-family:"Alexandria",sans-serif;font-weight:500;font-size:21px;
+  letter-spacing:-.03em;display:flex;align-items:center;gap:9px;
+}
+.logo .mark{
+  width:9px;height:9px;border:1.5px solid var(--brass);border-radius:50%;
+  display:inline-block;flex:none;
+}
+.nav-links{display:flex;gap:30px;align-items:center;}
+.nav-links a{
+  font-size:14.5px;color:var(--ink-2);
+  border-bottom:1px solid transparent;padding-bottom:2px;transition:.25s;
+}
+.nav-links a:hover{color:var(--ink);border-bottom-color:var(--brass);}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  font-family:"Alexandria",sans-serif;font-weight:400;font-size:14.5px;letter-spacing:-.01em;
+  padding:13px 26px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);
+  border-radius:2px;transition:background .3s,color .3s,border-color .3s;cursor:pointer;
+}
+.btn:hover{background:var(--deep);border-color:var(--deep);}
+.btn.line{background:transparent;color:var(--ink);}
+.btn.line:hover{background:var(--ink);color:var(--paper);}
+.btn.pale{background:var(--paper);color:var(--deep);border-color:var(--paper);}
+.btn.pale:hover{background:transparent;color:var(--paper);border-color:var(--paper);}
+.btn.sm{padding:10px 20px;font-size:13.5px;}
+
+/* ══════ البطل ══════ */
+.hero{padding:clamp(48px,7vw,86px) 0 clamp(60px,8vw,104px);}
+.hero .wrap{
+  display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);
+  gap:clamp(34px,6vw,76px);align-items:center;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:"Alexandria",sans-serif;font-weight:500;font-size:11px;letter-spacing:.16em;
+  color:var(--muted);margin-bottom:26px;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--brass);}
+h1{font-size:clamp(33px,5.6vw,60px);font-weight:200;letter-spacing:-.035em;}
+h1 b{font-weight:500;}
+h1 .em{color:var(--deep);font-weight:400;}
+.lede{font-size:clamp(16.5px,2vw,19px);color:var(--ink-2);margin:26px 0 0;max-width:44ch;}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px;}
+
+.spec{
+  margin-top:40px;padding-top:20px;border-top:1px solid var(--hair);
+  display:flex;flex-wrap:wrap;gap:10px 26px;
+  font-family:"Alexandria",sans-serif;font-weight:400;font-size:12.5px;
+  letter-spacing:.02em;color:var(--muted);
+}
+.spec span{display:inline-flex;align-items:center;gap:8px;}
+.spec span::before{content:"";width:3px;height:3px;border-radius:50%;background:var(--brass);}
+
+/* ══════ العرض: البطاقة + الجوال ══════ */
+.stage{position:relative;display:flex;justify-content:center;align-items:center;min-height:440px;}
+.pass{
+  width:270px;border-radius:14px;padding:19px 19px 15px;color:#EEF1EC;
+  background:linear-gradient(157deg,#17362D 0%,#0B1A15 100%);
+  box-shadow:0 2px 3px rgba(14,19,17,.14),0 26px 52px -22px rgba(14,19,17,.55);
+  position:relative;z-index:2;transform:rotate(-4.5deg);
+}
+.pass-top{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.pass-logo{
+  width:36px;height:36px;border-radius:9px;flex:none;display:grid;place-items:center;
+  font-family:"Alexandria",sans-serif;font-weight:500;font-size:15px;
+  background:#C6A46A;color:#1B1409;
+}
+.pass-nm{font-family:"Alexandria",sans-serif;font-weight:500;font-size:14.5px;line-height:1.35;}
+.pass-sb{font-size:11px;color:rgba(238,241,236,.5);letter-spacing:.03em;}
+.pass-lbl{
+  font-family:"Alexandria",sans-serif;font-size:10px;letter-spacing:.13em;
+  color:rgba(238,241,236,.5);margin-bottom:11px;
+}
+.stamps{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;margin-bottom:18px;}
+.stamps i{
+  aspect-ratio:1;border-radius:50%;border:1px solid rgba(238,241,236,.26);
+}
+.stamps i.on{background:#C6A46A;border-color:#C6A46A;}
+.pass-cut{
+  border-top:1px dashed rgba(238,241,236,.22);margin:0 -19px 13px;position:relative;
+}
+.pass-cut::before,.pass-cut::after{
+  content:"";position:absolute;top:-6px;width:12px;height:12px;border-radius:50%;background:var(--paper);
+}
+.pass-cut::before{inset-inline-start:-6px;}
+.pass-cut::after{inset-inline-end:-6px;}
+.pass-code{
+  height:40px;border-radius:4px;background:#F3F5F1;
+  display:flex;align-items:center;justify-content:center;gap:2px;padding:0 14px;
+}
+.pass-code span{display:block;width:2px;background:#0E1311;height:58%;}
+.pass-code span:nth-child(3n){height:84%;width:3px;}
+.pass-code span:nth-child(4n){height:40%;}
+
+.phone{
+  width:212px;aspect-ratio:9/18.7;flex:none;
+  border-radius:33px;border:7px solid #050907;padding:23px 11px;
+  background:linear-gradient(168deg,#141F1A 0%,#050908 60%,#0E1814 100%);
+  box-shadow:0 30px 56px -22px rgba(14,19,17,.5);
+  position:relative;overflow:hidden;z-index:1;
+  margin-inline-start:-74px;margin-top:96px;transform:rotate(3.5deg);
+}
+.notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:60px;height:15px;background:#050907;border-radius:100px;}
+.lock-t{
+  color:#F3F5F1;text-align:center;font-family:"Alexandria",sans-serif;font-weight:200;
+  font-size:41px;line-height:1;margin-top:26px;letter-spacing:-.05em;
+}
+.lock-d{color:rgba(243,245,241,.5);text-align:center;font-size:10.5px;margin-top:6px;letter-spacing:.02em;}
+.notif{
+  margin-top:24px;background:rgba(242,244,239,.96);border-radius:14px;color:#0E1311;
+  padding:11px 12px;display:flex;gap:9px;align-items:flex-start;
+}
+.notif .ic{
+  width:26px;height:26px;border-radius:7px;background:var(--deep);color:#fff;
+  font-size:11.5px;display:grid;place-items:center;flex:none;
+  font-family:"Alexandria",sans-serif;font-weight:500;
+}
+.notif .tt{font-size:11px;font-weight:500;line-height:1.35;}
+.notif .ms{font-size:11px;color:#404A44;line-height:1.55;}
+.notif.play{animation:rise .7s cubic-bezier(.2,.8,.25,1);}
+@keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+
+.switch{
+  position:absolute;bottom:0;inset-inline-start:0;display:flex;gap:0;flex-wrap:wrap;
+  border:1px solid var(--hair);border-radius:2px;overflow:hidden;background:var(--paper);
+}
+.switch button{
+  font-family:"Alexandria",sans-serif;font-weight:400;font-size:12px;letter-spacing:.01em;
+  padding:9px 15px;border:none;border-inline-start:1px solid var(--hair);
+  background:transparent;color:var(--muted);cursor:pointer;transition:.25s;
+}
+.switch button:first-child{border-inline-start:none;}
+.switch button[aria-pressed="true"]{background:var(--ink);color:var(--paper);}
+
+/* ══════ المقارنة ══════ */
+.cmp{border-top:1px solid var(--ink);}
+.cmp-row{
+  display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;
+  border-bottom:1px solid var(--hair-soft);
+}
+.cmp-row.head > *{
+  font-family:"Alexandria",sans-serif;font-weight:500;font-size:13.5px;
+  padding:16px 14px;color:var(--muted);letter-spacing:.01em;
+}
+.cmp-row > *{padding:16px 14px;font-size:14.5px;color:var(--ink-2);}
+.cmp-row > *:first-child{
+  font-family:"Alexandria",sans-serif;font-weight:400;color:var(--ink);font-size:14px;
+}
+.cmp-row .win{background:var(--deep);color:#EEF1EC;}
+.cmp-row.head .win{color:#fff;font-weight:500;}
+.cmp-note{margin-top:20px;font-size:13.5px;color:var(--muted);}
+
+/* ══════ الخطوات ══════ */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,32px);}
+.step .art{
+  height:250px;display:grid;place-items:center;
+  background:var(--paper-2);border:1px solid var(--hair-soft);border-radius:3px;
+  margin-bottom:22px;padding:22px;
+}
+.step .n{
+  font-family:"Alexandria",sans-serif;font-weight:400;font-size:11.5px;
+  letter-spacing:.14em;color:var(--brass);margin-bottom:9px;
+}
+.step h3{font-size:19px;font-weight:500;margin-bottom:8px;}
+.step p{font-size:14.5px;color:var(--ink-2);margin:0;}
+
+/* لوحة الملصق */
+.standee{width:132px;background:#fff;border:1px solid var(--hair);border-radius:3px;padding:14px 11px;text-align:center;}
+.standee .st{font-family:"Alexandria",sans-serif;font-weight:500;font-size:11.5px;color:var(--deep);letter-spacing:.02em;}
+.qr{width:92px;height:92px;margin:10px auto;display:grid;grid-template-columns:repeat(21,1fr);grid-template-rows:repeat(21,1fr);}
+.qr i{display:block;}
+.qr i.on{background:var(--ink);}
+.standee .sb{font-size:9px;color:var(--muted);line-height:1.5;}
+
+/* نموذج التسجيل */
+.mock{width:176px;background:#fff;border:1px solid var(--hair);border-radius:3px;padding:15px;}
+.mock .mh{font-family:"Alexandria",sans-serif;font-weight:500;font-size:12.5px;margin-bottom:13px;line-height:1.45;}
+.mock .mi{height:31px;border:1px solid var(--hair-soft);border-radius:2px;font-size:11px;color:var(--muted);display:flex;align-items:center;padding:0 11px;margin-bottom:9px;}
+.mock .mb{height:35px;border-radius:2px;background:var(--ink);color:#fff;font-size:11.5px;display:flex;align-items:center;justify-content:center;gap:7px;font-family:"Alexandria",sans-serif;font-weight:400;}
+.mock .mb::before{content:"";width:11px;height:11px;border-radius:2px;background:#C6A46A;}
+
+/* جوال مصغر */
+.mini{
+  width:128px;aspect-ratio:9/17.6;border-radius:20px;border:5px solid #050907;
+  background:linear-gradient(168deg,#152019 0%,#050908 62%,#0F1915 100%);
+  padding:14px 8px;position:relative;overflow:hidden;
+}
+.mini .mn{position:absolute;top:6px;left:50%;transform:translateX(-50%);width:38px;height:9px;background:#050907;border-radius:100px;}
+.mini .mt{color:#F3F5F1;text-align:center;font-family:"Alexandria",sans-serif;font-weight:200;font-size:25px;line-height:1;margin-top:19px;letter-spacing:-.05em;}
+.mini .mnf{margin-top:17px;background:rgba(242,244,239,.96);border-radius:9px;padding:7px 8px;display:flex;gap:6px;align-items:flex-start;}
+.mini .mi2{width:18px;height:18px;border-radius:5px;background:var(--deep);color:#fff;font-size:8px;display:grid;place-items:center;flex:none;font-family:"Alexandria",sans-serif;font-weight:500;}
+.mini .m1{font-size:8px;font-weight:500;color:#0E1311;line-height:1.35;}
+.mini .m2{font-size:8px;color:#404A44;line-height:1.5;}
+
+/* ══════ قائمة الخدمات ══════ */
+.svc-group{margin-bottom:52px;}
+.svc-group:last-child{margin-bottom:0;}
+.grp-label{
+  display:flex;align-items:center;gap:16px;margin-bottom:6px;
+  font-family:"Alexandria",sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.15em;
+  color:var(--ink);
+}
+.grp-label::after{content:"";flex:1;height:1px;background:var(--hair);}
+.grp-label em{font-style:normal;color:var(--muted);letter-spacing:.02em;font-weight:400;font-size:12.5px;}
+.svc-list{display:grid;grid-template-columns:repeat(2,1fr);gap:0 clamp(24px,4vw,56px);}
+.svc-item{
+  display:grid;grid-template-columns:26px minmax(0,1fr);gap:16px;
+  padding:20px 0;border-bottom:1px solid var(--hair-soft);align-items:start;
+}
+.svc-item .ico{color:var(--brass);padding-top:3px;}
+.svc-item .ico svg{width:20px;height:20px;display:block;}
+.svc-item h3{font-family:"Alexandria",sans-serif;font-weight:500;font-size:16px;margin-bottom:4px;}
+.svc-item p{font-size:14px;color:var(--ink-2);margin:0;line-height:1.7;}
+.svc-group.later .svc-item h3,.svc-group.later .svc-item p{color:var(--muted);}
+.svc-group.later .ico{color:var(--hair);}
+
+.disclose{
+  margin-top:44px;padding:26px 28px;background:var(--paper-2);
+  border-inline-start:2px solid var(--deep);border-radius:2px;
+}
+.disclose b{font-family:"Alexandria",sans-serif;font-weight:500;}
+.disclose p{margin:0;font-size:15px;color:var(--ink-2);max-width:70ch;}
+
+/* ══════ الطريقة ══════ */
+.mlist{margin:0;padding:0;list-style:none;counter-reset:m;}
+.mlist li{
+  counter-increment:m;padding:26px 0;border-bottom:1px solid var(--hair-soft);
+  display:grid;grid-template-columns:44px minmax(0,1fr);gap:6px 18px;align-items:start;
+}
+.mlist li:first-child{border-top:1px solid var(--hair);}
+.mlist li::before{
+  content:"٠" counter(m);grid-column:1;grid-row:1 / span 2;
+  font-family:"Alexandria",sans-serif;font-weight:200;font-size:24px;
+  color:var(--brass);line-height:1.1;letter-spacing:-.02em;
+}
+.mlist b{
+  grid-column:2;grid-row:1;font-family:"Alexandria",sans-serif;font-weight:500;
+  font-size:17px;
+}
+.mlist span{grid-column:2;grid-row:2;font-size:14.5px;color:var(--ink-2);}
+
+/* ══════ الأسعار ══════ */
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);}
+.tier{
+  padding:30px 26px;border-bottom:1px solid var(--hair);
+  border-inline-start:1px solid var(--hair-soft);
+}
+.tier:first-child{border-inline-start:none;}
+.tier .term{
+  font-family:"Alexandria",sans-serif;font-weight:500;font-size:12px;
+  letter-spacing:.13em;color:var(--muted);margin-bottom:16px;
+}
+.tier .amt{font-family:"Alexandria",sans-serif;font-weight:200;font-size:44px;line-height:1;letter-spacing:-.04em;}
+.tier .amt small{font-family:"IBM Plex Sans Arabic",sans-serif;font-size:14px;font-weight:400;color:var(--muted);letter-spacing:0;}
+.tier .per{font-size:13.5px;color:var(--muted);margin-top:10px;}
+.tier .best{
+  display:inline-block;margin-top:14px;font-family:"Alexandria",sans-serif;
+  font-size:11px;letter-spacing:.1em;color:var(--brass);border:1px solid var(--brass);
+  padding:3px 10px;border-radius:2px;
+}
+
+.founding{
+  margin-top:38px;background:var(--deep);color:#EEF1EC;border-radius:3px;
+  padding:clamp(30px,4vw,46px);
+  display:grid;grid-template-columns:minmax(0,1.25fr) auto;gap:clamp(26px,4vw,52px);align-items:center;
+}
+.founding h3{font-family:"Alexandria",sans-serif;font-weight:400;font-size:clamp(21px,2.6vw,27px);color:#fff;margin-bottom:14px;}
+.founding p{margin:0;color:rgba(238,241,236,.8);font-size:15px;max-width:56ch;}
+.founding p b{color:#fff;font-weight:500;}
+.f-amt{text-align:center;border-inline-start:1px solid rgba(238,241,236,.2);padding-inline-start:clamp(26px,4vw,52px);}
+.f-amt .n{font-family:"Alexandria",sans-serif;font-weight:200;font-size:clamp(44px,6vw,62px);line-height:1;letter-spacing:-.045em;color:#fff;}
+.f-amt .u{font-size:13px;color:rgba(238,241,236,.7);margin-top:8px;letter-spacing:.02em;}
+.founding .btn{margin-top:22px;}
+.terms{margin-top:20px;font-size:13.5px;color:var(--muted);}
+
+/* ══════ الأسئلة ══════ */
+.faq{border-top:1px solid var(--ink);}
+details{border-bottom:1px solid var(--hair-soft);}
+summary{
+  font-family:"Alexandria",sans-serif;font-weight:400;font-size:17px;
+  cursor:pointer;list-style:none;display:flex;justify-content:space-between;
+  gap:20px;align-items:center;padding:24px 0;transition:color .25s;
+}
+summary:hover{color:var(--deep);}
+summary::-webkit-details-marker{display:none;}
+summary .pm{position:relative;width:13px;height:13px;flex:none;}
+summary .pm::before,summary .pm::after{
+  content:"";position:absolute;background:var(--brass);transition:transform .3s,opacity .3s;
+}
+summary .pm::before{inset-inline:0;top:6px;height:1px;}
+summary .pm::after{inset-block:0;inset-inline-start:6px;width:1px;}
+details[open] summary .pm::after{transform:scaleY(0);opacity:0;}
+details p{margin:0 0 26px;font-size:15.5px;color:var(--ink-2);max-width:66ch;}
+
+/* ══════ التذييل ══════ */
+footer{background:var(--ink);color:rgba(240,241,237,.6);padding:56px 0 46px;font-size:13.5px;}
+footer .top{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:end;
+  padding-bottom:28px;border-bottom:1px solid rgba(240,241,237,.14);
+}
+footer .fl{font-family:"Alexandria",sans-serif;font-weight:400;font-size:22px;color:#F0F1ED;letter-spacing:-.03em;}
+footer .fd{margin-top:8px;max-width:40ch;}
+footer .bot{padding-top:24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+footer b{color:#F0F1ED;font-weight:500;}
+footer a{color:#F0F1ED;border-bottom:1px solid rgba(240,241,237,.3);padding-bottom:1px;}
+
+/* ══════ الاستجابة ══════ */
+@media (max-width:1000px){
+  .svc-list{grid-template-columns:1fr;}
+}
+@media (max-width:900px){
+  .hero .wrap,.sec-head,.founding{grid-template-columns:1fr;}
+  .sec-head{gap:20px;}
+  .steps{grid-template-columns:1fr;gap:44px;}
+  .tiers{grid-template-columns:1fr;}
+  .tier{border-inline-start:none;}
+  .stage{min-height:auto;padding-bottom:62px;}
+  .pass{width:236px;}
+  .phone{width:176px;margin-inline-start:-58px;margin-top:70px;}
+  .f-amt{border-inline-start:none;padding-inline-start:0;border-top:1px solid rgba(238,241,236,.2);padding-top:26px;text-align:start;}
+  .cmp-row{grid-template-columns:1fr;}
+  .cmp-row.head{display:none;}
+  .cmp-row > *{padding:12px 14px;border-bottom:1px solid var(--hair-soft);}
+  .cmp-row > *:first-child{background:var(--paper-2);font-weight:500;}
+  .cmp-row > *:last-child{border-bottom:none;}
+  .cmp-row > *[data-l]::before{content:attr(data-l) " — ";color:var(--muted);font-size:13px;}
+  footer .top{grid-template-columns:1fr;align-items:start;}
+}
+@media (max-width:620px){
+  .nav-links{display:none;}
+}
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none;}
+  .notif.play{animation:none;}
+  html{scroll-behavior:auto;}
+}
+@media (prefers-color-scheme:dark){
+  html,body{background:#F0F1ED !important;color:#0E1311 !important;}
+  section,.hero{background:#F0F1ED;}
+  .step .art,.disclose{background:#E7E9E3;}
+  .standee,.mock{background:#fff;}
+  .cmp-row .win,.founding{background:#12352C !important;color:#EEF1EC !important;}
+  .founding h3{color:#fff !important;}
+  footer{background:#0E1311 !important;}
+  .btn{background:#0E1311;color:#F0F1ED;}
+  .btn.line{background:transparent;color:#0E1311;}
+  .btn.pale{background:#F0F1ED;color:#12352C;}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap">
+    <div class="logo"><span class="mark"></span> قُرب</div>
+    <div class="nav-links">
+      <a href="#how">كيف تشتغل</a>
+      <a href="#services">الخدمات</a>
+      <a href="#pricing">الأسعار</a>
+    </div>
+    <a class="btn sm" id="tg1" href="#pricing">المقاعد التأسيسية</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="rv in">
+      <span class="eyebrow">تحت التطوير — خمسة محلات فقط</span>
+      <h1>عميلك يطلع من محلك،<br><span class="em">وتنقطع الصلة.</span></h1>
+      <p class="lede">
+        بطاقة محلك تسكن محفظة جواله من أول زيارة — بدون تطبيق يحمّله.
+        وبعدها توصله رسالتك على شاشة القفل، بلا تكلفة على كل رسالة.
+      </p>
+      <div class="hero-cta">
+        <a class="btn" href="#pricing">احجز مقعدًا تأسيسيًا</a>
+        <a class="btn line" href="#how">شوف كيف تشتغل</a>
+      </div>
+      <div class="spec">
+        <span>Apple Wallet</span>
+        <span>Google Wallet</span>
+        <span>بدون تطبيق</span>
+        <span>بدون جهاز إضافي</span>
+      </div>
+    </div>
+
+    <div class="stage rv in">
+      <div class="pass">
+        <div class="pass-top">
+          <div class="pass-logo" id="pLogo">ص</div>
+          <div>
+            <div class="pass-nm" id="pName">مغسلة الصفوة</div>
+            <div class="pass-sb">بطاقة العميل</div>
+          </div>
+        </div>
+        <div class="pass-lbl" id="pLabel">٦ من ٨ غسلات في باقتك</div>
+        <div class="stamps" id="pStamps"></div>
+        <div class="pass-cut"></div>
+        <div class="pass-code" id="pCode"></div>
+      </div>
+
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="lock-t">٧:٤١</div>
+        <div class="lock-d">الخميس، ٣٠ يوليو</div>
+        <div class="notif play" id="notif">
+          <div class="ic" id="nIc">ص</div>
+          <div>
+            <div class="tt" id="nTitle">مغسلة الصفوة</div>
+            <div class="ms" id="nMsg">سيارتك جاهزة — تقدر تستلمها الحين.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="switch" role="group" aria-label="نوع المحل">
+        <button type="button" data-i="0" aria-pressed="true">مغسلة سيارات</button>
+        <button type="button" data-i="1" aria-pressed="false">مغسلة ملابس</button>
+        <button type="button" data-i="2" aria-pressed="false">كوفي</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ٠١ المشكلة -->
+<section id="problem">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="sec-meta">
+        <span class="sec-num">٠١</span>
+        <span class="sec-label">المشكلة</span>
+      </div>
+      <div>
+        <h2 class="sec-title">كل طريقة توصل بها لعميلك اليوم لها ثمن</h2>
+        <p class="sec-sub">المسألة ليست «نبي برنامج نقاط». المسألة أنك لا تملك قناة تصل بها لعميلك بعد ما يطلع من الباب.</p>
+      </div>
+    </div>
+
+    <div class="cmp rv">
+      <div class="cmp-row head">
+        <div></div>
+        <div>رسائل الجوال</div>
+        <div>حسابات التواصل</div>
+        <div class="win">بطاقة في المحفظة</div>
+      </div>
+      <div class="cmp-row">
+        <div>التكلفة</div>
+        <div data-l="رسائل الجوال">مبلغ على كل رسالة</div>
+        <div data-l="حسابات التواصل">إعلانات مدفوعة</div>
+        <div class="win" data-l="بطاقة في المحفظة">بدون تكلفة لكل رسالة</div>
+      </div>
+      <div class="cmp-row">
+        <div>الوصول</div>
+        <div data-l="رسائل الجوال">تُقرأ ثم تُنسى</div>
+        <div data-l="حسابات التواصل">يشوفها من يشوفها</div>
+        <div class="win" data-l="بطاقة في المحفظة">تظهر على شاشة القفل</div>
+      </div>
+      <div class="cmp-row">
+        <div>الجهد</div>
+        <div data-l="رسائل الجوال">جمع أرقام يدويًا</div>
+        <div data-l="حسابات التواصل">محتوى مستمر</div>
+        <div class="win" data-l="بطاقة في المحفظة">مسح باركود واحد</div>
+      </div>
+      <div class="cmp-row">
+        <div>معرفة عميلك</div>
+        <div data-l="رسائل الجوال">رقم بلا سياق</div>
+        <div data-l="حسابات التواصل">ما تعرف مين منهم عميلك</div>
+        <div class="win" data-l="بطاقة في المحفظة">سجل زياراته ورصيده</div>
+      </div>
+    </div>
+    <p class="cmp-note">التطبيق الخاص خيار رابع — لكنه مكلف في البناء، والعميل لا يحمّله أصلًا.</p>
+  </div>
+</section>
+
+<!-- ٠٢ كيف تشتغل -->
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="sec-meta">
+        <span class="sec-num">٠٢</span>
+        <span class="sec-label">كيف تشتغل</span>
+      </div>
+      <div>
+        <h2 class="sec-title">دقيقة واحدة عند الكاشير، ثم تعمل وحدها</h2>
+      </div>
+    </div>
+
+    <div class="steps rv">
+      <div class="step">
+        <div class="art">
+          <div class="standee">
+            <div class="st">امسح وانضم</div>
+            <div class="qr" id="qr1"></div>
+            <div class="sb">بطاقة عملاء<br>مغسلة الصفوة</div>
+          </div>
+        </div>
+        <div class="n">الخطوة الأولى</div>
+        <h3>ملصق عند الكاشير</h3>
+        <p>العميل يصوّره بكاميرا جواله مباشرة. لا تطبيق، ولا حساب جديد.</p>
+      </div>
+
+      <div class="step">
+        <div class="art">
+          <div class="mock">
+            <div class="mh">انضم لبطاقة مغسلة الصفوة</div>
+            <div class="mi">الاسم</div>
+            <div class="mi">رقم الجوال</div>
+            <div class="mb">أضف إلى المحفظة</div>
+          </div>
+        </div>
+        <div class="n">الخطوة الثانية</div>
+        <h3>حقلان وتدخل المحفظة</h3>
+        <p>تُضاف البطاقة إلى Apple Wallet أو Google Wallet خلال ثانية.</p>
+      </div>
+
+      <div class="step">
+        <div class="art">
+          <div class="mini">
+            <div class="mn"></div>
+            <div class="mt">٧:٤١</div>
+            <div class="mnf">
+              <div class="mi2">ص</div>
+              <div>
+                <div class="m1">مغسلة الصفوة</div>
+                <div class="m2">سيارتك جاهزة</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="n">الخطوة الثالثة</div>
+        <h3>توصله على شاشة القفل</h3>
+        <p>طلب جاهز، رصيد باقة، أو تذكير بعد غياب — متى ما احتجت.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ٠٣ الخدمات -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="sec-meta">
+        <span class="sec-num">٠٣</span>
+        <span class="sec-label">الخدمات</span>
+      </div>
+      <div>
+        <h2 class="sec-title">بطاقة واحدة، والذي يتغير هو ما تحمله</h2>
+      </div>
+    </div>
+
+    <div class="svc-group rv">
+      <div class="grp-label">الإصدار الأول <em>— ما يُسلَّم لأصحاب المقاعد الخمسة</em></div>
+      <div class="svc-list">
+        <div class="svc-item">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2.5" y="5.5" width="19" height="13" rx="2"/><path d="M2.5 10h19"/></svg></span>
+          <div><h3>بطاقة بهوية محلك</h3><p>بألوانك وشعارك، تسكن Apple Wallet أو Google Wallet.</p></div>
+        </div>
+        <div class="svc-item">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM19 19h2v2h-2zM14 19h2M19 14h2"/></svg></span>
+          <div><h3>تسجيل بمسح باركود</h3><p>ملصق عند الكاشير، والعميل يصوّره ويكتب اسمه ورقمه.</p></div>
+        </div>
+        <div class="svc-item">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
+          <div><h3>رصيد يشوفه العميل</h3><p>كم غسلة باقية له، أو كم يفصله عن المكافأة — بدون ما يسأل.</p></div>
+        </div>
+        <div class="svc-item">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M18 8.5a6 6 0 1 0-12 0c0 5-2 6.5-2 6.5h16s-2-1.5-2-6.5"/><path d="M10.5 19a2 2 0 0 0 3 0"/></svg></span>
+          <div><h3>إشعار على شاشة القفل</h3><p>«سيارتك جاهزة» أو عرض أو تذكير، بلا تكلفة على كل رسالة.</p></div>
+        </div>
+        <div class="svc-item">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20.5 12c0 4.1-3.8 7.4-8.5 7.4-1.2 0-2.4-.2-3.4-.6L4 20.5l1.4-3.6A7 7 0 0 1 3.5 12C3.5 7.9 7.3 4.6 12 4.6s8.5 3.3 8.5 7.4Z"/></svg></span>
+          <div><h3>رابط الملاحظات</h3><p>ملاحظة عميلك تصلك من ظهر البطاقة — فتعرف المشكلة قبل ما تصير تقييمًا.</p></div>
+        </div>
+        <div class="svc-item">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="17" cy="6" r="2.6"/><circle cx="7" cy="12" r="2.6"/><circle cx="17" cy="18" r="2.6"/><path d="M9.3 10.7 14.7 7.4M9.3 13.3l5.4 3.3"/></svg></span>
+          <div><h3>روابط حساباتك</h3><p>إنستغرام وسنابتشات وتيك توك في ظهر البطاقة — كل عميل متابع محتمل.</p></div>
+        </div>
+        <div class="svc-item">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M14.5 6.5 17 4l3 3-2.5 2.5M14.5 6.5 4 17v3h3L17.5 9.5"/></svg></span>
+          <div><h3>تركيب وتدريب بيدي</h3><p>أجي محلك، أجهّز البطاقة والملصق، وأدرّب موظفك.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc-group later rv">
+      <div class="grp-label">لاحقًا <em>— بعد الإصدار الأول، وبحسب ما يطلبه أصحاب المحلات</em></div>
+      <div class="svc-list">
+        <div class="svc-item">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span>
+          <div><h3>الاشتراك الشهري</h3><p>باقة بمبلغ ثابت في الشهر — دخل مقدم لك.</p></div>
+        </div>
+        <div class="svc-item">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><circle cx="12" cy="12" r="4"/></svg></span>
+          <div><h3>تذكير الغياب</h3><p>ما مرّ من ثلاثة أسابيع؟ يوصله تذكير تلقائي.</p></div>
+        </div>
+        <div class="svc-item">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 20v-1.5A4.5 4.5 0 0 1 8.5 14h2A4.5 4.5 0 0 1 15 18.5V20"/><circle cx="9.5" cy="8" r="3.2"/><path d="M16.5 20v-1.2a4 4 0 0 0-2.4-3.6M15 5.2a3.2 3.2 0 0 1 0 5.6"/></svg></span>
+          <div><h3>الإحالة والهدايا</h3><p>«عرّف صاحبك واحصل غسلة»، وبطاقة هدية لعميل جديد.</p></div>
+        </div>
+        <div class="svc-item">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="m12 4 2.4 5 5.6.8-4 3.9 1 5.5-5-2.7-5 2.7 1-5.5-4-3.9 5.6-.8Z"/></svg></span>
+          <div><h3>طلب تقييم قوقل</h3><p>يُرسل لكل العملاء بدون فلترة، التزامًا بسياسات قوقل.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="disclose rv">
+      <p><b>وما لا يفعله قُرب — بصراحة:</b> لا ربط مع أنظمة الكاشير، ولا تطبيق مستقل، ولا تقارير تحليلية، ولا إدارة فروع أو أساطيل. فيه منصات كبيرة تسوي هذا، ولن أدّعي أني أنافسها فيه. قُرب يفعل شيئًا واحدًا: يوصلك لعميلك بعد ما يطلع من الباب. ولو المنصة اللي عندك تخدمك فعلًا، ابقَ عليها.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ٠٤ الطريقة -->
+<section id="method">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="sec-meta">
+        <span class="sec-num">٠٤</span>
+        <span class="sec-label">طريقتي في الشغل</span>
+      </div>
+      <div>
+        <h2 class="sec-title">ما أبيعك شيئًا قبل ما أجرّبه معك</h2>
+        <p class="sec-sub">أغلب الأدوات تُبنى في مكتب ثم تُعرض عليك. أنا أمشي بالعكس — وما عندي عملاء بعد، ولا راح أخترع أسماء ولا أرقامًا.</p>
+      </div>
+    </div>
+
+    <ol class="mlist rv">
+      <li><b>أزورك وأسمع منك</b><span>خمس دقائق أسئلة عن وجعك اليومي، بدون أي عرض بيع.</span></li>
+      <li><b>أبني المهمة الواحدة الأهم</b><span>لا منصة بمئة خاصية — الشيء الواحد الذي يفرق معك فعلًا.</span></li>
+      <li><b>تجرّبها في محلك مجانًا</b><span>مع عملائك الحقيقيين، وأنا أركّبها معك بنفسي.</span></li>
+      <li><b>تقرر بعدها</b><span>إن لم تنفع، تقول لي وأستفيد. بلا التزام ولا عقد.</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ٠٥ الأسعار -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="sec-meta">
+        <span class="sec-num">٠٥</span>
+        <span class="sec-label">الأسعار</span>
+      </div>
+      <div>
+        <h2 class="sec-title">سعر واحد واضح، بلا رسوم مخفية</h2>
+        <p class="sec-sub">كل الباقات تشمل نفس المزايا — الفرق في المدة فقط. والتركيب والتدريب مجانًا في كل باقة.</p>
+      </div>
+    </div>
+
+    <div class="tiers rv">
+      <div class="tier">
+        <div class="term">٣ أشهر</div>
+        <div class="amt">٥٤٠ <small>ريال</small></div>
+        <div class="per">١٨٠ ريالًا شهريًا</div>
+      </div>
+      <div class="tier">
+        <div class="term">٦ أشهر</div>
+        <div class="amt">٩٦٠ <small>ريال</small></div>
+        <div class="per">١٦٠ ريالًا شهريًا</div>
+      </div>
+      <div class="tier">
+        <div class="term">سنة</div>
+        <div class="amt">١٨٠٠ <small>ريال</small></div>
+        <div class="per">١٥٠ ريالًا شهريًا</div>
+        <span class="best">الأفضل قيمة</span>
+      </div>
+    </div>
+
+    <div class="founding rv">
+      <div>
+        <h3>المقاعد التأسيسية — خمسة محلات</h3>
+        <p>شهر أول مجاني، ثم <b>١٢٠٠ ريالًا للسنة بدل ١٨٠٠</b> — ثابتة لك ما دمت مشتركًا، ولا ترتفع مع أي زيادة قادمة. ومقابلها: تستخدمها فعليًا، وتصارحني برأيك، وتأذن بذكر اسم محلك هنا.</p>
+        <a class="btn pale" id="tg2" href="https://t.me/qurb_sa" target="_blank" rel="noopener">تواصل معي على تيليجرام</a>
+      </div>
+      <div class="f-amt">
+        <div class="n">١٢٠٠</div>
+        <div class="u">ريال / سنة</div>
+      </div>
+    </div>
+
+    <p class="terms">لا تجديد تلقائي — تقرر بنفسك في كل مرة. والدفع تحويل بنكي.</p>
+  </div>
+</section>
+
+<!-- ٠٦ الأسئلة -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="sec-meta">
+        <span class="sec-num">٠٦</span>
+        <span class="sec-label">أسئلة تتكرر</span>
+      </div>
+      <div>
+        <h2 class="sec-title">الأسئلة التي جاءتني من أصحاب محلات</h2>
+      </div>
+    </div>
+
+    <div class="faq rv">
+      <details>
+        <summary>عميلي كبير في السن وما يعرف يستخدم التقنية<span class="pm"></span></summary>
+        <p>ما يحتاج يتعلم شيئًا. يصوّر الباركود بالكاميرا مثل ما يصوّر أي شيء، ويكتب اسمه ورقمه. البطاقة تدخل جواله وتعمل وحدها بعدها — لا تطبيق يفتحه، ولا حساب يتذكره.</p>
+      </details>
+      <details>
+        <summary>أحتاج جهازًا أو كاشير معينًا؟<span class="pm"></span></summary>
+        <p>لا. تعمل من جوالك أو جوال موظفك عبر المتصفح، وما تحتاج تغيّر الكاشير الموجود عندك.</p>
+      </details>
+      <details>
+        <summary>أنا مشترك في منصة ولاء كبيرة، وش يفرق قُرب؟<span class="pm"></span></summary>
+        <p>المنصات الكبيرة مبنية حول أنظمة كاشير المقاهي والمتاجر، وفيها مزايا كثيرة أغلبها لا تُفتح. قُرب يفعل شيئًا واحدًا — يوصلك لعميلك بعد ما يطلع من الباب — بسعر أقل، وبتركيب أجيك به بنفسي. ولو المنصة التي عندك تخدمك فعلًا، ابقَ عليها ولا تغيّر.</p>
+      </details>
+      <details>
+        <summary>وش يصير لبيانات عملائي؟<span class="pm"></span></summary>
+        <p>هي بياناتك أنت، وتقدر تصدّرها متى ما طلبت. لا تُباع ولا تُشارك مع أي جهة، ولا تُستخدم لصالح محل ثاني.</p>
+      </details>
+      <details>
+        <summary>كم بتكلفني بعد التجربة؟<span class="pm"></span></summary>
+        <p>١٢٠٠ ريالًا للسنة لأصحاب المقاعد الخمسة الأولى بدل ١٨٠٠، وثابتة لهم ما داموا مشتركين. وفيه باقات أقصر: ٥٤٠ لثلاثة أشهر، و٩٦٠ لستة. الشهر الأول مجاني، ولا فيه تجديد تلقائي.</p>
+      </details>
+      <details>
+        <summary>ليه ما فيه أسماء محلات في الصفحة؟<span class="pm"></span></summary>
+        <p>لأننا في البداية وما عندنا عملاء بعد. ولن أضع شعارًا لم آخذ إذنه، ولا رقمًا لم أقسه. أول خمسة محلات هم أول الأسماء التي تظهر هنا — بإذنهم.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <div class="fl">قُرب</div>
+        <div class="fd">بطاقة محلك في محفظة عميلك — أداة واحدة تفعل شيئًا واحدًا.</div>
+      </div>
+      <div><a id="tg3" href="https://t.me/qurb_sa" target="_blank" rel="noopener">تيليجرام</a></div>
+    </div>
+    <div class="bot">
+      <div>وثيقة عمل حر رقم <b id="flNo">FL-763162251</b></div>
+      <div><span id="ownerName">عبيد</span> · صُنع في السعودية</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ══════ عدّل هذي الأسطر فقط ══════ */
+var TELEGRAM   = "qurb_sa";        // اسم المستخدم في تيليجرام بدون @
+var FL_NUMBER  = "FL-763162251";   // رقم وثيقة العمل الحر
+var OWNER_NAME = "عبيد";           // اسمك كما تريد ظهوره
+/* ═════════════════════════════════ */
+
+document.getElementById('flNo').textContent = FL_NUMBER;
+document.getElementById('ownerName').textContent = OWNER_NAME;
+['tg2','tg3'].forEach(function(id){
+  var el = document.getElementById(id);
+  if (el) el.href = "https://t.me/" + TELEGRAM;
+});
+
+/* الباركود */
+(function(){
+  var c = document.getElementById('pCode'), h = '';
+  for (var i = 0; i < 52; i++) h += '<span></span>';
+  c.innerHTML = h;
+})();
+
+/* رمز الاستجابة السريعة */
+(function(){
+  var g = document.getElementById('qr1'); if(!g) return;
+  var N = 21, out = [], seed = 11;
+  function rnd(){ seed = (seed*1103515245 + 12345) & 0x7fffffff; return (seed>>16)/32768; }
+  function finder(r,c){
+    return r>=0 && r<7 && c>=0 && c<7 &&
+           (r===0||r===6||c===0||c===6||(r>=2&&r<=4&&c>=2&&c<=4));
+  }
+  for (var r=0;r<N;r++){
+    for (var c=0;c<N;c++){
+      var on;
+      if (finder(r,c) || finder(r,c-14) || finder(r-14,c)) on = true;
+      else if ((r<8&&c<8)||(r<8&&c>12)||(r>12&&c<8)) on = false;
+      else on = rnd() > .47;
+      out.push('<i class="'+(on?'on':'')+'"></i>');
+    }
+  }
+  g.innerHTML = out.join('');
+})();
+
+/* المشاهد الثلاثة */
+var scenes = [
+  { ic:"ص", name:"مغسلة الصفوة", label:"٦ من ٨ غسلات في باقتك", on:6, total:8,
+    msg:"سيارتك جاهزة — تقدر تستلمها الحين." },
+  { ic:"ح", name:"مغسلة الحي",   label:"٥ من ٨ غسلات",         on:5, total:8,
+    msg:"غسيلك جاهز — تقدر تمر عليه قبل ٩ المساء." },
+  { ic:"م", name:"كوفي الموسم",  label:"٧ من ٨ أكواب",         on:7, total:8,
+    msg:"باقي كوب واحد ويصير المشروب الجاي علينا." }
+];
+
+var $ = function(id){ return document.getElementById(id); };
+var pLogo=$('pLogo'), pName=$('pName'), pLabel=$('pLabel'), pStamps=$('pStamps'),
+    nIc=$('nIc'), nTitle=$('nTitle'), nMsg=$('nMsg'), notif=$('notif');
+
+function render(s){
+  pLogo.textContent = s.ic;
+  pName.textContent = s.name;
+  pLabel.textContent = s.label;
+  var h = '';
+  for (var i=0;i<s.total;i++) h += '<i class="'+(i<s.on?'on':'')+'"></i>';
+  pStamps.innerHTML = h;
+  nIc.textContent = s.ic;
+  nTitle.textContent = s.name;
+  nMsg.textContent = s.msg;
+  notif.classList.remove('play'); void notif.offsetWidth; notif.classList.add('play');
+}
+render(scenes[0]);
+
+var btns = document.querySelectorAll('.switch button');
+btns.forEach(function(b){
+  b.addEventListener('click', function(){
+    btns.forEach(function(x){ x.setAttribute('aria-pressed','false'); });
+    b.setAttribute('aria-pressed','true');
+    render(scenes[+b.dataset.i]);
+  });
+});
+
+/* ظهور تدريجي */
+var io = new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+  });
+}, { threshold:.1, rootMargin:"0px 0px -60px 0px" });
+document.querySelectorAll('.rv').forEach(function(el){
+  if (!el.classList.contains('in')) io.observe(el);
+});
+
+/* خط الترويسة */
+var nav = $('nav');
+addEventListener('scroll', function(){
+  nav.classList.toggle('stuck', scrollY > 14);
+}, { passive:true });
+</script>
+</body>
+</html>
