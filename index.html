@@ -171,6 +171,13 @@ nav.stuck .logo .mk::after{animation:pulse 2.6s ease-in-out infinite;}
   padding:9px 20px;border-radius:100px;font-weight:600;transition:background .2s;
 }
 .nav-cta:hover{background:var(--pine);}
+.nav-end{display:flex;align-items:center;gap:14px;}
+.nav-login{
+  font-size:14px;text-decoration:none;color:var(--ink-2);font-weight:500;
+  border-bottom:1.5px solid transparent;padding-bottom:2px;transition:.2s;
+}
+.nav-login:hover{color:var(--pine);border-bottom-color:var(--amber);}
+@media (max-width:520px){.nav-login{display:none;}}
 
 .hero{padding:44px 0 76px;position:relative;}
 .hero::before{
@@ -828,9 +835,13 @@ footer{
       <a href="#how">كيف تشتغل</a>
       <a href="#services">الخدمات</a>
       <a href="#advisor">المستشار</a>
+      <a href="#pricing">الباقات</a>
       <a href="#faq-sec">الأسئلة</a>
     </div>
-    <a class="nav-cta" href="#pricing">الباقات</a>
+    <div class="nav-end">
+      <a class="nav-login" href="https://qurb-app.vercel.app/login">دخول</a>
+      <a class="nav-cta" href="https://qurb-app.vercel.app/signup">أنشئ حسابك</a>
+    </div>
   </div>
 </nav>
 
@@ -1378,8 +1389,9 @@ footer{
 
     <div class="actions rv" style="margin-top:26px;">
       <a class="btn" id="tgLink" href="https://t.me/qurb_sa" target="_blank" rel="noopener">تواصل معي على تيليجرام</a>
+      <a class="btn ghost" href="https://qurb-app.vercel.app/signup">أنشئ حسابك وجرّب اللوحة</a>
     </div>
-    <p class="hint">أرسل لي اسم محلك ونوعه والمدينة، وأرد عليك بنفسي.</p>
+    <p class="hint">أرسل لي اسم محلك ونوعه والمدينة، وأرد عليك بنفسي. واللوحة مفتوحة للتجربة الآن — بطاقة المحفظة نفسها تُفعّل عند اكتمال ربطها بمحافظ آبل وقوقل.</p>
   </div>
 </section>
 
@@ -1434,6 +1446,7 @@ footer{
         <a href="#advisor">المستشار الذكي</a>
         <a href="#pricing">الباقات</a>
         <a href="#faq-sec">الأسئلة الشائعة</a>
+        <a href="https://qurb-app.vercel.app/login">دخول لوحة التحكم</a>
       </div>
 
       <div class="f-col">
