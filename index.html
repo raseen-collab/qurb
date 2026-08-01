@@ -20,7 +20,11 @@
 <meta property="og:url" content="https://qurb.com.sa/">
 <meta property="og:title" content="قُرب | بطاقة محلك في محفظة جوال عميلك">
 <meta property="og:description" content="بطاقة تسكن محفظة جوال عميلك من أول زيارة، فتوصل رسالتك إلى شاشة قفله — بدون تطبيق وبدون تكلفة على كل رسالة.">
-<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://qurb.com.sa/logo.png">
+<meta property="og:image:width" content="660">
+<meta property="og:image:height" content="660">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://qurb.com.sa/logo.png">
 <meta name="twitter:title" content="قُرب | بطاقة محلك في محفظة جوال عميلك">
 <meta name="twitter:description" content="بدون تطبيق، وبدون تكلفة على كل رسالة. للمحلات الخدمية الصغيرة في السعودية.">
 
@@ -58,6 +62,16 @@
           "@type": "Question",
           "name": "وش يصير لبيانات عملائي؟",
           "acceptedAnswer": { "@type": "Answer", "text": "هي بياناتك أنت، وتقدر تصدّرها متى ما طلبت. لا تُباع ولا تُشارك مع أي جهة، ولا تُستخدم لصالح محل ثاني." }
+        },
+        {
+          "@type": "Question",
+          "name": "وش معنى بطاقة نشطة؟",
+          "acceptedAnswer": { "@type": "Answer", "text": "البطاقة التي ما زالت في محفظة عميلك ولم يحذفها. المحذوفة تنقص من العدّاد تلقائيًا ولا تُحسب عليك." }
+        },
+        {
+          "@type": "Question",
+          "name": "لو العميل حذف البطاقة، تعرفون؟",
+          "acceptedAnswer": { "@type": "Answer", "text": "نعم — يصلنا إشعار من المحفظة فينقص عدّاد البطاقات النشطة تلقائيًا. نرى الإجمالي فقط، لا لحظة الحذف ولا اسم من حذف." }
         },
         {
           "@type": "Question",
@@ -837,6 +851,7 @@ footer{
       <a href="#services">الخدمات</a>
       <a href="#advisor">المستشار</a>
       <a href="#pricing">الباقات</a>
+      <a href="#roi">الحاسبة</a>
       <a href="#faq-sec">الأسئلة</a>
       <a href="guide.html">الدليل</a>
     </div>
@@ -887,7 +902,7 @@ footer{
       <div class="phone">
         <div class="notch"></div>
         <div class="lock-time">7:41</div>
-        <div class="lock-date">الخميس، 30 يوليو</div>
+        <div class="lock-date" id="lockDate">الخميس، 30 يوليو</div>
         <div class="notif play" id="notif">
           <div class="ic" id="nIc">ن</div>
           <div>
@@ -1357,6 +1372,65 @@ footer{
 
     </div>
 
+    <div class="roi rv" id="roi">
+      <div class="roi-head">
+        <h3>احسب متى يطلّع قُرب تكلفته</h3>
+        <p>عبّئ رقمين من واقع محلك، والحساب يطلع قدامك — بدون تسجيل ولا بيانات تُرسل لأحد.</p>
+      </div>
+
+      <div class="roi-grid">
+        <div class="roi-in">
+          <label for="roi-v">متوسط قيمة الزيارة الواحدة</label>
+          <div class="roi-field">
+            <input id="roi-v" type="number" inputmode="numeric" min="1" max="5000" value="30">
+            <span>ريال</span>
+          </div>
+        </div>
+        <div class="roi-in">
+          <label for="roi-c">كم عميل يجيك في اليوم؟</label>
+          <div class="roi-field">
+            <input id="roi-c" type="number" inputmode="numeric" min="1" max="2000" value="25">
+            <span>عميل</span>
+          </div>
+        </div>
+        <div class="roi-in">
+          <label for="roi-s">تدفع اليوم لبرنامج ولاء أو رسائل؟</label>
+          <div class="roi-field">
+            <input id="roi-s" type="number" inputmode="numeric" min="0" max="100000" value="0">
+            <span>ريال / شهر</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="roi-out" id="roi-out" aria-live="polite">
+        <div class="roi-line">
+          <span class="k">تكلفة قُرب عليك</span>
+          <span class="v"><b id="roi-cost">100</b> ريال في الشهر <em id="roi-plan">(بالسعر التأسيسي 1,200 للسنة)</em></span>
+        </div>
+        <div class="roi-line hero">
+          <span class="k">يكفي أن يرجع لك</span>
+          <span class="v"><b id="roi-break">4</b> <span id="roi-break-u">زيارات</span> في الشهر ويطلّع تكلفته</span>
+        </div>
+        <div class="roi-line">
+          <span class="k">وهذا يعادل</span>
+          <span class="v"><b id="roi-pct">0.5%</b> من زياراتك الشهرية <em id="roi-visits">(750 زيارة)</em></span>
+        </div>
+        <div class="roi-line save" id="roi-save-row" hidden>
+          <span class="k">وتوفّر عن اللي تدفعه اليوم</span>
+          <span class="v"><b id="roi-save">0</b> ريال في السنة</span>
+        </div>
+      </div>
+
+      <div class="roi-cta">
+        <a class="btn" href="#pilot">ابدأ شهرك المجاني — بلا بطاقة بنكية</a>
+      </div>
+
+      <p class="roi-note">
+        هذا <b>حساب تعادل</b> لا وعد بأرباح: يقول لك كم زيارة تكفي لتغطية التكلفة، ولا يفترض
+        نسبة عودة معيّنة — لأن أحدًا لا يعرفها لمحلك إلا أنت بعد ما تجرّب.
+      </p>
+    </div>
+
     <div class="founding rv">
       <div>
         <h3>المقاعد التأسيسية — خمسة محلات فقط</h3>
@@ -1409,7 +1483,7 @@ footer{
       <a class="btn ghost" href="https://qurb-app.vercel.app/signup">أنشئ حسابك وجرّب اللوحة</a>
       <a class="btn ghost" href="guide.html">اقرأ دليل التجهيز</a>
     </div>
-    <p class="hint">أرسل لي اسم محلك ونوعه والمدينة، وأرد عليك بنفسي. واللوحة مفتوحة للتجربة الآن — بطاقة المحفظة نفسها تُفعّل عند اكتمال ربطها بمحافظ آبل وقوقل.</p>
+    <p class="hint">أرسل لي اسم محلك ونوعه والمدينة، وأرد عليك بنفسي. واللوحة مفتوحة للتجربة الآن — بطاقة Google Wallet شغّالة اليوم، وبطاقة الآيفون (Apple Wallet) تُفعّل خلال أيام.</p>
   </div>
 </section>
 
@@ -1481,6 +1555,7 @@ footer{
         <a href="#services">المزايا</a>
         <a href="#advisor">المستشار الذكي</a>
         <a href="#pricing">الباقات</a>
+      <a href="#roi">الحاسبة</a>
         <a href="#faq-sec">الأسئلة الشائعة</a>
         <a href="guide.html">دليل التجهيز</a>
         <a href="https://qurb-app.vercel.app/login">دخول لوحة التحكم</a>
@@ -1506,6 +1581,12 @@ footer{
     </div>
   </div>
 </footer>
+
+<div class="mcta" id="mcta" role="complementary" aria-label="ابدأ التجربة">
+  <span class="mcta-t">شهر أول مجاني — بلا بطاقة بنكية</span>
+  <a class="btn btn-s-cta" href="#pilot">ابدأ</a>
+  <button class="mcta-x" id="mcta-x" aria-label="إغلاق">✕</button>
+</div>
 
 <script>
 /* ══════ عدّل هذي الأسطر فقط ══════ */
@@ -1663,6 +1744,68 @@ addEventListener('scroll', function(){ nav.classList.toggle('stuck', scrollY > 1
   apply('y');
 })();
 
+/* ── جسر الحاسبة ── */
+.roi-cta{margin-top:18px;text-align:center;}
+.roi-cta .btn{width:100%;max-width:420px;}
+
+/* ── شريط الجوال السفلي ── */
+.mcta{
+  position:fixed;bottom:0;inset-inline:0;z-index:60;
+  display:none;align-items:center;gap:12px;
+  background:var(--pine);color:#fff;padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+  transform:translateY(110%);transition:transform .3s ease;
+  box-shadow:0 -6px 24px rgba(14,21,18,.18);
+}
+.mcta.on{transform:translateY(0);}
+.mcta-t{flex:1;font-size:13px;line-height:1.5;}
+.btn-s-cta{
+  flex:none;background:#fff;color:var(--pine);border-radius:100px;
+  padding:9px 22px;font-weight:700;font-size:14px;text-decoration:none;
+}
+.mcta-x{
+  flex:none;border:none;background:none;color:rgba(255,255,255,.75);
+  font-size:15px;cursor:pointer;padding:4px 2px;line-height:1;
+}
+@media (max-width:760px){ .mcta{display:flex;} }
+
+/* ── إظهار حلقة التركيز للوحة المفاتيح فقط ── */
+:focus-visible{outline:2.5px solid var(--pine);outline-offset:3px;border-radius:4px;}
+.roi-field input:focus-visible{outline:none;}
+
+@media (prefers-reduced-motion:reduce){
+  .mcta{transition:none;}
+}
+
+/* ── حاسبة التعادل ── */
+.roi{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 28px;margin-bottom:20px;}
+.roi-head h3{font-size:20px;margin-bottom:6px;}
+.roi-head p{color:var(--muted);font-size:14px;line-height:1.75;margin-bottom:20px;}
+.roi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:22px;}
+.roi-in label{display:block;font-size:13px;color:var(--ink-2);margin-bottom:7px;line-height:1.6;}
+.roi-field{display:flex;align-items:center;gap:8px;background:var(--paper-2);border:1px solid var(--line-soft);border-radius:11px;padding:0 12px;transition:border-color .15s;}
+.roi-field:focus-within{border-color:var(--pine);}
+.roi-field input{flex:1;min-width:0;border:none;background:none;padding:13px 0;font:inherit;font-size:17px;font-weight:600;color:var(--ink);outline:none;-moz-appearance:textfield;}
+.roi-field input::-webkit-outer-spin-button,.roi-field input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0;}
+.roi-field span{flex:none;font-size:12.5px;color:var(--muted);}
+.roi-out{background:var(--paper-2);border:1px solid var(--line-soft);border-radius:14px;padding:6px 18px;}
+.roi-line{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap;padding:13px 0;border-bottom:1px solid var(--line-soft);}
+.roi-line:last-child{border-bottom:none;}
+.roi-line .k{font-size:13.5px;color:var(--muted);}
+.roi-line .v{font-size:14.5px;color:var(--ink-2);}
+.roi-line .v b{font-size:19px;color:var(--pine);font-family:"Readex Pro",sans-serif;}
+.roi-line .v em{font-style:normal;font-size:12px;color:var(--muted);}
+.roi-line.hero{background:rgba(20,89,74,.05);margin:0 -18px;padding:15px 18px;border-radius:10px;}
+.roi-line.hero .k{color:var(--ink-2);font-weight:600;}
+.roi-line.hero .v b{font-size:26px;}
+.roi-line.save .v b{color:var(--amber);}
+.roi-note{margin-top:16px;font-size:12.5px;color:var(--muted);line-height:1.8;}
+@media (max-width:760px){
+  .roi{padding:22px 18px;}
+  .roi-grid{grid-template-columns:1fr;gap:13px;}
+  .roi-line{flex-direction:column;gap:2px;align-items:flex-start;}
+  .roi-line.hero{margin:0 -18px;}
+}
+
 /* ── المستشار: عرض تفاعلي ── */
 (function(){
   var cases = [
@@ -1723,9 +1866,97 @@ addEventListener('scroll', function(){ nav.classList.toggle('stuck', scrollY > 1
 
 var tgLink = document.getElementById('tgLink');
 if (tgLink) tgLink.href = "https://t.me/" + TELEGRAM;
+
+
 </script>
 <div class="mcta" id="mcta">
   <a class="btn" id="tgM" href="https://t.me/qurb_sa" target="_blank" rel="noopener">تواصل معي على تيليجرام</a>
 </div>
+<script>
+/* ── حاسبة التعادل ── */
+(function(){
+  var v = document.getElementById('roi-v');
+  if(!v) return;
+  var c = document.getElementById('roi-c'), sp = document.getElementById('roi-s');
+  var oCost = document.getElementById('roi-cost'), oBreak = document.getElementById('roi-break'),
+      oBreakU = document.getElementById('roi-break-u'), oPct = document.getElementById('roi-pct'),
+      oVisits = document.getElementById('roi-visits'), oSave = document.getElementById('roi-save'),
+      oSaveRow = document.getElementById('roi-save-row');
+
+  var FOUNDING_YEAR = 1200;          /* السعر التأسيسي */
+  var MONTH = Math.round(FOUNDING_YEAR / 12);
+
+  function num(el, min, max, fallback){
+    var n = parseFloat(el.value);
+    if(!isFinite(n) || n < min) return fallback;
+    return Math.min(n, max);
+  }
+  function fmt(n){ return n.toLocaleString('en-US'); }
+  function unit(n){ return n === 1 ? 'زيارة' : (n === 2 ? 'زيارتين' : (n <= 10 ? 'زيارات' : 'زيارة')); }
+
+  function run(){
+    var val = num(v, 1, 5000, 30);
+    var perDay = num(c, 1, 2000, 25);
+    var spend = num(sp, 0, 100000, 0);
+
+    oCost.textContent = fmt(MONTH);
+
+    var need = Math.max(1, Math.ceil(MONTH / val));
+    oBreak.textContent = need === 2 ? '' : fmt(need);
+    oBreakU.textContent = unit(need);
+
+    var monthly = Math.round(perDay * 30);
+    oVisits.textContent = '(' + fmt(monthly) + ' زيارة)';
+    var pct = (need / monthly) * 100;
+    if(pct > 100){
+      oPct.textContent = 'أكثر من زياراتك الحالية';
+      oVisits.textContent = '— جرّب أرقامًا أقرب لواقع محلك';
+    } else {
+      oPct.textContent = (pct < 0.1 ? '0.1' : pct.toFixed(pct < 10 ? 1 : 0)) + '%';
+    }
+
+    var saving = Math.round(spend * 12 - FOUNDING_YEAR);
+    if(spend > 0 && saving > 0){
+      oSave.textContent = fmt(saving);
+      oSaveRow.hidden = false;
+    } else {
+      oSaveRow.hidden = true;
+    }
+  }
+
+  [v, c, sp].forEach(function(el){
+    el.addEventListener('input', run);
+    el.addEventListener('change', run);
+  });
+  run();
+})();
+
+/* ── تاريخ شاشة القفل الحي ── */
+(function(){
+  var el = document.getElementById('lockDate');
+  if(!el) return;
+  try{
+    el.textContent = new Intl.DateTimeFormat('ar-SA-u-nu-latn',
+      { weekday:'long', day:'numeric', month:'long' }).format(new Date());
+  }catch(e){/* يبقى النص الافتراضي */}
+})();
+
+/* ── شريط الجوال السفلي ── */
+(function(){
+  var bar = document.getElementById('mcta');
+  if(!bar) return;
+  var closed = false;
+  document.getElementById('mcta-x').addEventListener('click', function(){
+    closed = true; bar.classList.remove('on');
+  });
+  var pilot = document.getElementById('pilot');
+  addEventListener('scroll', function(){
+    if(closed) return;
+    var past = scrollY > 560;
+    var nearPilot = pilot && pilot.getBoundingClientRect().top < innerHeight;
+    bar.classList.toggle('on', past && !nearPilot);
+  }, { passive:true });
+})();
+</script>
 </body>
 </html>
