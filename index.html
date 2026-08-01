@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -838,6 +838,71 @@ footer{
   .notif.play,.dot{animation:none;}
   html{scroll-behavior:auto;}
 }
+
+/* ── جسر الحاسبة ── */
+.roi-cta{margin-top:18px;text-align:center;}
+.roi-cta .btn{width:100%;max-width:420px;}
+
+/* ── شريط الجوال السفلي ── */
+.mcta{
+  position:fixed;bottom:0;inset-inline:0;z-index:60;
+  display:none;align-items:center;gap:12px;
+  background:var(--pine);color:#fff;padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+  transform:translateY(110%);transition:transform .3s ease;
+  box-shadow:0 -6px 24px rgba(14,21,18,.18);
+}
+.mcta.on{transform:translateY(0);}
+.mcta-t{flex:1;font-size:13px;line-height:1.5;}
+.btn-s-cta{
+  flex:none;background:#fff;color:var(--pine);border-radius:100px;
+  padding:9px 22px;font-weight:700;font-size:14px;text-decoration:none;
+}
+.mcta-x{
+  flex:none;border:none;background:none;color:rgba(255,255,255,.75);
+  font-size:15px;cursor:pointer;padding:4px 2px;line-height:1;
+}
+@media (max-width:760px){ .mcta{display:flex;} }
+
+/* ── إظهار حلقة التركيز للوحة المفاتيح فقط ── */
+:focus-visible{outline:2.5px solid var(--pine);outline-offset:3px;border-radius:4px;}
+.roi-field input:focus-visible{outline:none;}
+
+@media (prefers-reduced-motion:reduce){
+  .mcta{transition:none;}
+}
+
+/* ── حاسبة التعادل ── */
+.roi{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 28px;margin-bottom:20px;}
+.roi-head h3{font-size:20px;margin-bottom:6px;}
+.roi-head p{color:var(--muted);font-size:14px;line-height:1.75;margin-bottom:20px;}
+.roi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:22px;}
+.roi-in label{display:block;font-size:13px;color:var(--ink-2);margin-bottom:7px;line-height:1.6;}
+.roi-field{display:flex;align-items:center;gap:8px;background:var(--paper-2);border:1px solid var(--line-soft);border-radius:11px;padding:0 12px;transition:border-color .15s;}
+.roi-field:focus-within{border-color:var(--pine);}
+.roi-field input{flex:1;min-width:0;border:none;background:none;padding:13px 0;font:inherit;font-size:17px;font-weight:600;color:var(--ink);outline:none;-moz-appearance:textfield;}
+.roi-field input::-webkit-outer-spin-button,.roi-field input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0;}
+.roi-field span{flex:none;font-size:12.5px;color:var(--muted);}
+.roi-out{background:var(--paper-2);border:1px solid var(--line-soft);border-radius:14px;padding:6px 18px;}
+.roi-line{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap;padding:13px 0;border-bottom:1px solid var(--line-soft);}
+.roi-line:last-child{border-bottom:none;}
+.roi-line .k{font-size:13.5px;color:var(--muted);}
+.roi-line .v{font-size:14.5px;color:var(--ink-2);}
+.roi-line .v b{font-size:19px;color:var(--pine);font-family:"Readex Pro",sans-serif;}
+.roi-line .v em{font-style:normal;font-size:12px;color:var(--muted);}
+.roi-line.hero{background:rgba(20,89,74,.05);margin:0 -18px;padding:15px 18px;border-radius:10px;}
+.roi-line.hero .k{color:var(--ink-2);font-weight:600;}
+.roi-line.hero .v b{font-size:26px;}
+.roi-line.save .v b{color:var(--amber);}
+.roi-note{margin-top:16px;font-size:12.5px;color:var(--muted);line-height:1.8;}
+@media (max-width:760px){
+  .roi{padding:22px 18px;}
+  .roi-grid{grid-template-columns:1fr;gap:13px;}
+  .roi-line{flex-direction:column;gap:2px;align-items:flex-start;}
+  .roi-line.hero{margin:0 -18px;}
+}
+
+/* حارس: لو تعطّل السكربت لأي سبب، يبقى المحتوى ظاهرًا — لا صفحة بيضاء أبدًا */
+.no-js .rv{opacity:1 !important;transform:none !important;}
 </style>
 </head>
 <body>
@@ -1589,6 +1654,7 @@ footer{
 </div>
 
 <script>
+document.documentElement.classList.remove('no-js');
 /* ══════ عدّل هذي الأسطر فقط ══════ */
 var TELEGRAM   = "qurb_sa";              // اسم المستخدم في تيليجرام بدون @
 var FL_NUMBER  = "FL-763162251";         // رقم وثيقة العمل الحر
@@ -1744,68 +1810,6 @@ addEventListener('scroll', function(){ nav.classList.toggle('stuck', scrollY > 1
   apply('y');
 })();
 
-/* ── جسر الحاسبة ── */
-.roi-cta{margin-top:18px;text-align:center;}
-.roi-cta .btn{width:100%;max-width:420px;}
-
-/* ── شريط الجوال السفلي ── */
-.mcta{
-  position:fixed;bottom:0;inset-inline:0;z-index:60;
-  display:none;align-items:center;gap:12px;
-  background:var(--pine);color:#fff;padding:12px 16px calc(12px + env(safe-area-inset-bottom));
-  transform:translateY(110%);transition:transform .3s ease;
-  box-shadow:0 -6px 24px rgba(14,21,18,.18);
-}
-.mcta.on{transform:translateY(0);}
-.mcta-t{flex:1;font-size:13px;line-height:1.5;}
-.btn-s-cta{
-  flex:none;background:#fff;color:var(--pine);border-radius:100px;
-  padding:9px 22px;font-weight:700;font-size:14px;text-decoration:none;
-}
-.mcta-x{
-  flex:none;border:none;background:none;color:rgba(255,255,255,.75);
-  font-size:15px;cursor:pointer;padding:4px 2px;line-height:1;
-}
-@media (max-width:760px){ .mcta{display:flex;} }
-
-/* ── إظهار حلقة التركيز للوحة المفاتيح فقط ── */
-:focus-visible{outline:2.5px solid var(--pine);outline-offset:3px;border-radius:4px;}
-.roi-field input:focus-visible{outline:none;}
-
-@media (prefers-reduced-motion:reduce){
-  .mcta{transition:none;}
-}
-
-/* ── حاسبة التعادل ── */
-.roi{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 28px;margin-bottom:20px;}
-.roi-head h3{font-size:20px;margin-bottom:6px;}
-.roi-head p{color:var(--muted);font-size:14px;line-height:1.75;margin-bottom:20px;}
-.roi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:22px;}
-.roi-in label{display:block;font-size:13px;color:var(--ink-2);margin-bottom:7px;line-height:1.6;}
-.roi-field{display:flex;align-items:center;gap:8px;background:var(--paper-2);border:1px solid var(--line-soft);border-radius:11px;padding:0 12px;transition:border-color .15s;}
-.roi-field:focus-within{border-color:var(--pine);}
-.roi-field input{flex:1;min-width:0;border:none;background:none;padding:13px 0;font:inherit;font-size:17px;font-weight:600;color:var(--ink);outline:none;-moz-appearance:textfield;}
-.roi-field input::-webkit-outer-spin-button,.roi-field input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0;}
-.roi-field span{flex:none;font-size:12.5px;color:var(--muted);}
-.roi-out{background:var(--paper-2);border:1px solid var(--line-soft);border-radius:14px;padding:6px 18px;}
-.roi-line{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap;padding:13px 0;border-bottom:1px solid var(--line-soft);}
-.roi-line:last-child{border-bottom:none;}
-.roi-line .k{font-size:13.5px;color:var(--muted);}
-.roi-line .v{font-size:14.5px;color:var(--ink-2);}
-.roi-line .v b{font-size:19px;color:var(--pine);font-family:"Readex Pro",sans-serif;}
-.roi-line .v em{font-style:normal;font-size:12px;color:var(--muted);}
-.roi-line.hero{background:rgba(20,89,74,.05);margin:0 -18px;padding:15px 18px;border-radius:10px;}
-.roi-line.hero .k{color:var(--ink-2);font-weight:600;}
-.roi-line.hero .v b{font-size:26px;}
-.roi-line.save .v b{color:var(--amber);}
-.roi-note{margin-top:16px;font-size:12.5px;color:var(--muted);line-height:1.8;}
-@media (max-width:760px){
-  .roi{padding:22px 18px;}
-  .roi-grid{grid-template-columns:1fr;gap:13px;}
-  .roi-line{flex-direction:column;gap:2px;align-items:flex-start;}
-  .roi-line.hero{margin:0 -18px;}
-}
-
 /* ── المستشار: عرض تفاعلي ── */
 (function(){
   var cases = [
@@ -1957,6 +1961,11 @@ if (tgLink) tgLink.href = "https://t.me/" + TELEGRAM;
     bar.classList.toggle('on', past && !nearPilot);
   }, { passive:true });
 })();
+
+/* شبكة أمان: أي عنصر لم يظهر خلال ثانيتين يُظهَر قسرًا */
+setTimeout(function(){
+  document.querySelectorAll('.rv:not(.in)').forEach(function(el){ el.classList.add('in'); });
+}, 2000);
 </script>
 </body>
 </html>
