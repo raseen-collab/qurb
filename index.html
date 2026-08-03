@@ -41,8 +41,8 @@
       "description": "بطاقة عميل تسكن محفظة الجوال، تمكّن أصحاب المحلات الخدمية الصغيرة من الوصول إلى عملائهم عبر شاشة القفل بدون تطبيق.",
       "areaServed": { "@type": "Country", "name": "SA" },
       "offers": [
-        { "@type": "Offer", "name": "الأساسية",   "price": "1500", "priceCurrency": "SAR" },
-        { "@type": "Offer", "name": "الاحترافية", "price": "2000", "priceCurrency": "SAR" }
+        { "@type": "Offer", "name": "الأساسية",   "price": "880", "priceCurrency": "SAR" },
+        { "@type": "Offer", "name": "الاحترافية", "price": "1200", "priceCurrency": "SAR" }
       ]
     },
     {
@@ -76,7 +76,7 @@
         {
           "@type": "Question",
           "name": "كم تكلفة قُرب؟",
-          "acceptedAnswer": { "@type": "Answer", "text": "باقتان، وتختار دورة الدفع: شهري أو كل 6 أشهر أو سنوي. سنويًا: الأساسية 1500 ريال والاحترافية 2000 ريال. والمقاعد التأسيسية الخمسة الأولى بـ1200 ريال مثبتة بمزايا الاحترافية. الشهر الأول مجاني ولا يوجد تجديد تلقائي." }
+          "acceptedAnswer": { "@type": "Answer", "text": "باقتان، وتختار دورة الدفع: كل 3 أشهر أو كل 6 أشهر أو سنوي. سنويًا: الأساسية 880 ريالًا والاحترافية 1200 ريال. والمقاعد التأسيسية الخمسة الأولى بـ720 ريالًا مثبتة بمزايا الاحترافية. الشهر الأول مجاني ولا يوجد تجديد تلقائي." }
         }
       ]
     }
@@ -1303,7 +1303,7 @@ footer{
         <div class="sym">🔢</div>
         <h3>رصيد يشوفه العميل</h3>
         <p>باقته المدفوعة أو أختامه — ظاهرة في بطاقته دائمًا.</p>
-        <div class="how"><b>كيف؟</b> عند كل زيارة موظفك يبحث بالرقم ويضغط «تسجيل زيارة» — فيُخصم من الباقة وتتحدث البطاقة في جواله فورًا.</div>
+        <div class="how"><b>كيف؟</b> عند كل زيارة موظفك يبحث بالرقم ويضغط «تسجيل زيارة» — فينزل رصيد الباقة أو يزيد ختم، وتتحدث البطاقة في جواله فورًا. تختار النمط من الإعدادات: باقة مدفوعة مقدمًا أو أختام تصاعدية.</div>
       </div>
 
       <div class="svc">
@@ -1341,7 +1341,7 @@ footer{
 
     <p class="svc-more">
       ومعها في الباقات: دليل تجهيز ودعم مباشر. وفي الإصدار الثاني: تذكير الغياب تلقائيًا
-      وباقات مدفوعة مقدمًا وطلب التقييم بعد الخدمة. وقادم بعدها: إدارة الفروع وحسابات الشركات.
+      والاشتراك الشهري غير المحدود وطلب التقييم بعد الخدمة. وقادم بعدها: إدارة الفروع وحسابات الشركات.
     </p>
 
     <div class="svc-ask rv">
@@ -1390,7 +1390,7 @@ footer{
       <p class="sec-lede">الفرق الوحيد بينهما عدد البطاقات النشطة — لا ميزات محجوبة ولا رسائل محسوبة عليك.
         تبدأ بالأساسية، وإن تجاوزت ترقّي وقتها ونحسب الفرق بالتناسب. ولا يوجد تجديد تلقائي.</p>
       <div class="bill" role="group" aria-label="دورة الدفع">
-        <button type="button" data-b="m" aria-pressed="false">شهري</button>
+        <button type="button" data-b="q" aria-pressed="false">كل 3 أشهر</button>
         <button type="button" data-b="h" aria-pressed="false">كل 6 أشهر</button>
         <button type="button" data-b="y" aria-pressed="true">سنوي <em>الأوفر</em></button>
       </div>
@@ -1401,13 +1401,15 @@ footer{
       <div class="tier">
         <div class="nm">الأساسية</div>
         <div class="who">محل يبني قاعدة عملائه — حتى 300 بطاقة نشطة.</div>
-        <div class="amt"><span class="p" data-m="150" data-h="800" data-y="1,500">1,500</span> <small>ريال</small></div>
-        <div class="mo per-note" data-m="تدفع كل شهر" data-h="ما يعادل 133 ريالًا شهريًا" data-y="ما يعادل 125 ريالًا شهريًا">ما يعادل 125 ريالًا شهريًا</div>
+        <div class="amt"><span class="p" data-q="280" data-h="480" data-y="880">880</span> <small>ريال</small></div>
+        <div class="mo per-note" data-q="ما يعادل 93 ريالًا شهريًا" data-h="ما يعادل 80 ريالًا شهريًا" data-y="ما يعادل 73 ريالًا شهريًا">ما يعادل 73 ريالًا شهريًا</div>
         <ul>
           <li><b>حتى 300 بطاقة نشطة</b></li>
           <li>بطاقة بألوان محلك وشعارك</li>
           <li>تسجيل العميل بمسح باركود</li>
           <li>رصيد يشوفه العميل في بطاقته</li>
+          <li><b>باقات مدفوعة مقدمًا</b> — يشتري ثماني غسلات، وينزل رصيده مع كل زيارة</li>
+          <li><b>أختام</b> — يزور ست مرات فيأخذ السابعة مجانًا، بلا دفع مقدم</li>
           <li>إشعارات على شاشة القفل — بلا حد عددي</li>
           <li>رابط الملاحظات في ظهر البطاقة</li>
           <li>روابط حساباتك في التواصل</li>
@@ -1421,14 +1423,14 @@ footer{
         <span class="flag">الأكثر ملاءمة</span>
         <div class="nm">الاحترافية</div>
         <div class="who">محل كبر — بطاقات بلا حد ولا مراقبة عدّاد.</div>
-        <div class="amt"><span class="p" data-m="200" data-h="1,100" data-y="2,000">2,000</span> <small>ريال</small></div>
-        <div class="mo per-note" data-m="تدفع كل شهر" data-h="ما يعادل 183 ريالًا شهريًا" data-y="ما يعادل 167 ريالًا شهريًا">ما يعادل 167 ريالًا شهريًا</div>
+        <div class="amt"><span class="p" data-q="360" data-h="640" data-y="1,200">1,200</span> <small>ريال</small></div>
+        <div class="mo per-note" data-q="ما يعادل 120 ريالًا شهريًا" data-h="ما يعادل 107 ريالات شهريًا" data-y="ما يعادل 100 ريال شهريًا">ما يعادل 100 ريال شهريًا</div>
         <ul>
           <li class="plus">كل ما في الأساسية، وزيادة:</li>
           <li><b>بطاقات نشطة بلا حد</b></li>
           <li>أولوية في الدعم</li>
           <li class="plus">وفي الإصدار الثاني — تُضاف للباقتين بلا مقابل حين تجهز:</li>
-          <li class="soon">باقات واشتراكات مدفوعة مقدمًا</li>
+          <li class="soon">اشتراك شهري غير محدود</li>
           <li class="soon">تذكير الغياب تلقائيًا</li>
           
           <li class="soon">طلب تقييم قوقل بعد الخدمة</li>
@@ -1470,7 +1472,7 @@ footer{
       <div class="roi-out" id="roi-out" aria-live="polite">
         <div class="roi-line">
           <span class="k">تكلفة قُرب عليك</span>
-          <span class="v"><b id="roi-cost">100</b> ريال في الشهر <em id="roi-plan">(بالسعر التأسيسي 1,200 للسنة)</em></span>
+          <span class="v"><b id="roi-cost">60</b> ريال في الشهر <em id="roi-plan">(بالسعر التأسيسي 720 للسنة)</em></span>
         </div>
         <div class="roi-line hero">
           <span class="k">يكفي أن يرجع لك</span>
@@ -1499,10 +1501,10 @@ footer{
     <div class="founding rv">
       <div>
         <h3>المقاعد التأسيسية — خمسة محلات فقط</h3>
-        <p>شهر أول مجاني، ثم <b>1,200 ريالًا للسنة</b> — <b>وتحصل على مزايا الباقة الاحترافية بسعر أقل من الأساسية، مدى اشتراكك</b>، ولا يرتفع سعرك مع أي زيادة قادمة. ومقابلها: تستخدمها فعليًا مع عملائك، وتصارحني برأيك، وتأذن بذكر اسم محلك في هذي الصفحة.</p>
+        <p>شهر أول مجاني، ثم <b>720 ريالًا للسنة</b> — <b>وتحصل على مزايا الباقة الاحترافية بسعر أقل من الأساسية، مدى اشتراكك</b>، ولا يرتفع سعرك مع أي زيادة قادمة. ومقابلها: تستخدمها فعليًا مع عملائك، وتصارحني برأيك، وتأذن بذكر اسم محلك في هذي الصفحة.</p>
       </div>
       <div class="f-amt">
-        <div class="n">1,200</div>
+        <div class="n">720</div>
         <div class="u">ريال / سنة</div>
       </div>
     </div>
@@ -1548,7 +1550,7 @@ footer{
       <a class="btn ghost" href="https://qurb-app.vercel.app/signup">أنشئ حسابك وجرّب اللوحة</a>
       <a class="btn ghost" href="guide.html">اقرأ دليل التجهيز</a>
     </div>
-    <p class="hint">أرسل لي اسم محلك ونوعه والمدينة، وأرد عليك بنفسي. واللوحة مفتوحة للتجربة الآن — بطاقة Google Wallet شغّالة اليوم، وبطاقة الآيفون (Apple Wallet) تُفعّل خلال أيام.</p>
+    <p class="hint">أرسل لي اسم محلك ونوعه والمدينة، وأرد عليك بنفسي. واللوحة مفتوحة للتجربة الآن — بطاقتا Apple Wallet وGoogle Wallet شغّالتان اليوم.</p>
   </div>
 </section>
 
@@ -1591,7 +1593,7 @@ footer{
       </details>
       <details>
         <summary>كم بتكلفني بعد التجربة؟</summary>
-        <p>باقتان، وتختار دورة الدفع: شهري أو كل 6 أشهر أو سنوي. سنويًا: الأساسية 1,500 والاحترافية 2,000. وأصحاب المقاعد الخمسة الأولى يدفعون 1,200 للسنة فقط بمزايا الاحترافية، مدى اشتراكهم. الشهر الأول مجاني في كل الحالات، ولا فيه تجديد تلقائي.</p>
+        <p>باقتان، وتختار دورة الدفع: كل 3 أشهر أو كل 6 أشهر أو سنوي. سنويًا: الأساسية 880 والاحترافية 1,200. وأصحاب المقاعد الخمسة الأولى يدفعون 720 للسنة فقط بمزايا الاحترافية، مدى اشتراكهم. الشهر الأول مجاني في كل الحالات، ولا فيه تجديد تلقائي.</p>
       </details>
       <details>
         <summary>أنا مشترك في منصة ولاء كبيرة، وش يفرق قُرب؟</summary>
@@ -1798,7 +1800,7 @@ addEventListener('scroll', function(){ nav.classList.toggle('stuck', scrollY > 1
     document.querySelectorAll('.tier .per-note').forEach(function(el){
       el.textContent = el.dataset[k];
     });
-    var unit = { m:'ريال / شهر', h:'ريال / 6 أشهر', y:'ريال / سنة' }[k];
+    var unit = { q:'ريال / 3 أشهر', h:'ريال / 6 أشهر', y:'ريال / سنة' }[k];
     document.querySelectorAll('.tier .amt small').forEach(function(el){
       el.textContent = unit;
     });
@@ -1909,7 +1911,7 @@ if (tgLink) tgLink.href = "https://t.me/" + TELEGRAM;
       oVisits = document.getElementById('roi-visits'), oSave = document.getElementById('roi-save'),
       oSaveRow = document.getElementById('roi-save-row');
 
-  var FOUNDING_YEAR = 1200;          /* السعر التأسيسي */
+  var FOUNDING_YEAR = 720;          /* السعر التأسيسي */
   var MONTH = Math.round(FOUNDING_YEAR / 12);
 
   function num(el, min, max, fallback){
