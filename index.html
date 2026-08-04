@@ -483,10 +483,6 @@ h2{font-size:clamp(24px,3.6vw,34px);font-weight:600;margin-bottom:18px;max-width
 .wp-st i{aspect-ratio:1;border-radius:50%;border:1.3px dashed rgba(255,255,255,.3);}
 .wp-st i.on{background:#fff;border-color:#fff;}
 .wp-cut{border-top:1.3px dashed rgba(255,255,255,.24);margin:0 -15px 12px;}
-.wp-code{height:46px;border-radius:6px;background:#fff;display:flex;align-items:center;justify-content:center;gap:2px;padding:0 14px;}
-.wp-code span{display:block;width:2px;background:#0E1512;height:60%;}
-.wp-code span:nth-child(3n){height:86%;width:3px;}
-.wp-code span:nth-child(4n){height:40%;}
 .wp-foot{text-align:center;font-size:9.5px;color:rgba(255,255,255,.5);margin-top:8px;}
 
 /* ظهر البطاقة */
@@ -1160,7 +1156,7 @@ footer{
         <ul class="wallet-notes">
           <li><b>اسم محلك وشعارك</b><span>البطاقة تحمل هويتك أنت، لا هوية قُرب.</span></li>
           <li><b>الرصيد ظاهر أمامه</b><span>يشوف كم زيارة باقية له في باقته بلا ما يسأل الموظف.</span></li>
-          <li><b>باركود عند الكاشير</b><span>موظفك يمسحه فيُخصم من الرصيد فورًا.</span></li>
+          <li><b>بلا مسح عند الدفع</b><span>ما يحتاج يطلع البطاقة أصلًا — يقول رقم جواله، وموظفك يسجّل الزيارة من اللوحة.</span></li>
           <li><b>قناتا التقييم معًا</b><span>ملاحظة خاصة تصلك أنت، ورابط تقييم قوقل معروض للجميع — بلا فلترة، التزامًا بسياسات قوقل.</span></li>
           <li><b>وفي ظهر البطاقة</b><span>حساباتك في التواصل ورقمك وموقعك — دائمًا في جيب عميلك.</span></li>
         </ul>
@@ -1197,8 +1193,7 @@ footer{
               <div class="wp-lbl">6 من 8 زيارات في باقتك</div>
               <div class="wp-st" id="wStamps"></div>
               <div class="wp-cut"></div>
-              <div class="wp-code" id="wCode"></div>
-              <div class="wp-foot">قدّم الرمز عند الكاشير</div>
+              <div class="wp-foot">قل رقم جوالك عند الدفع — لا مسح ولا رمز</div>
             </div>
           </div>
 
@@ -1812,18 +1807,11 @@ addEventListener('scroll', function(){ nav.classList.toggle('stuck', scrollY > 1
 /* ── المثال الحي في المحفظة ── */
 (function(){
   var st = document.getElementById('wStamps');
-  var cd = document.getElementById('wCode');
   if (st){
     var s = '';
     for (var i=0;i<8;i++) s += '<i class="'+(i<6?'on':'')+'"></i>';
     st.innerHTML = s;
   }
-  if (cd){
-    var c = '';
-    for (var j=0;j<56;j++) c += '<span></span>';
-    cd.innerHTML = c;
-  }
-
   var bF = document.getElementById('wFront');
   var bB = document.getElementById('wBack');
   var pF = document.getElementById('wPassFront');
