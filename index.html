@@ -98,7 +98,7 @@
   --pine:#14594A;
   --pine-lift:#1C7862;
   --amber:#C98A2B;
-  --muted:#67736C;
+  --muted:#4F5B53;
 }
 *{box-sizing:border-box;}
 html{
@@ -901,6 +901,27 @@ footer{
   .roi-line.hero{margin:0 -18px;}
 }
 
+/* ── نموذج التواصل ── */
+.lead{max-width:620px;margin:26px auto 0;text-align:start;}
+.lead-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
+.lead label{display:block;}
+.lead label > span{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin-bottom:5px;}
+.lead label > span em{font-style:normal;color:var(--muted);font-weight:400;}
+.lead input{
+  width:100%;border:1px solid var(--line);border-radius:11px;padding:11px 14px;
+  font:inherit;font-size:15px;background:#fff;color:var(--ink);
+}
+.lead input:focus{border-color:var(--pine);outline:2px solid rgba(20,89,74,.18);outline-offset:1px;}
+.lead input::placeholder{color:#8A948C;}
+.lead-full{display:block;margin-bottom:14px;}
+#ld-website{position:absolute;inset-inline-start:-9999px;width:1px;height:1px;opacity:0;}
+.lead > .btn{width:100%;margin-top:2px;}
+.lead-msg{font-size:13.5px;margin:12px 0 0;line-height:1.7;}
+.lead-msg.ok{color:#14594A;font-weight:600;}
+.lead-msg.err{color:#9E3B2E;font-weight:600;}
+.lead-fine{font-size:12px;color:var(--muted);margin:10px 0 0;text-align:center;}
+@media (max-width:560px){ .lead-row{grid-template-columns:1fr;} }
+
 /* حارس: لو تعطّل السكربت لأي سبب، يبقى المحتوى ظاهرًا — لا صفحة بيضاء أبدًا */
 .no-js .rv{opacity:1 !important;transform:none !important;}
 </style>
@@ -1550,7 +1571,38 @@ footer{
       <a class="btn ghost" href="https://qurb-app.vercel.app/signup">أنشئ حسابك وجرّب اللوحة</a>
       <a class="btn ghost" href="guide.html">اقرأ دليل التجهيز</a>
     </div>
-    <p class="hint">أرسل لي اسم محلك ونوعه والمدينة، وأرد عليك بنفسي. واللوحة مفتوحة للتجربة الآن — بطاقتا Apple Wallet وGoogle Wallet شغّالتان اليوم.</p>
+    <p class="hint">أو اترك بياناتك هنا وأتواصل معك بنفسي. واللوحة مفتوحة للتجربة الآن — بطاقتا Apple Wallet وGoogle Wallet شغّالتان اليوم.</p>
+
+    <form class="lead rv" id="leadForm" novalidate>
+      <div class="lead-row">
+        <label>
+          <span>اسمك</span>
+          <input id="ld-name" name="name" type="text" autocomplete="name" required maxlength="60" placeholder="عبيد">
+        </label>
+        <label>
+          <span>رقم جوالك</span>
+          <input id="ld-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" required placeholder="05xxxxxxxx">
+        </label>
+      </div>
+      <div class="lead-row">
+        <label>
+          <span>نوع المحل</span>
+          <input id="ld-type" name="shop_type" type="text" maxlength="40" placeholder="مغسلة · مقهى · صالون">
+        </label>
+        <label>
+          <span>المدينة</span>
+          <input id="ld-city" name="city" type="text" maxlength="40" placeholder="جدة">
+        </label>
+      </div>
+      <label class="lead-full">
+        <span>شيء تحب أعرفه؟ <em>(اختياري)</em></span>
+        <input id="ld-note" name="note" type="text" maxlength="300" placeholder="عندي 200 عميل وأبغى أرجّعهم">
+      </label>
+      <input id="ld-website" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn" type="submit" id="ld-send">أرسل بياناتي</button>
+      <p class="lead-msg" id="ld-msg" role="status" aria-live="polite"></p>
+      <p class="lead-fine">رقمك يصلني أنا فقط، ولا يُشارك مع أي جهة.</p>
+    </form>
   </div>
 </section>
 
@@ -1988,6 +2040,54 @@ if (tgLink) tgLink.href = "https://t.me/" + TELEGRAM;
 
 /* شبكة أمان: أي عنصر لم يظهر خلال ثانيتين يُظهَر قسرًا */
 setTimeout(function(){
+
+/* ── نموذج التواصل: يرسل للوحة، والبريد معطّل فلا نعتمد عليه ── */
+(function(){
+  var f = document.getElementById('leadForm');
+  if(!f) return;
+  var msg = document.getElementById('ld-msg');
+  var btn = document.getElementById('ld-send');
+  var API = 'https://qurb-app.vercel.app/api/lead';
+
+  function say(text, cls){ msg.textContent = text; msg.className = 'lead-msg ' + cls; }
+
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('ld-name').value.trim();
+    var phone = document.getElementById('ld-phone').value.replace(/\D/g,'');
+    if(phone.indexOf('966') === 0) phone = '0' + phone.slice(3);
+    if(phone.length === 9 && phone[0] === '5') phone = '0' + phone;
+
+    if(name.length < 2){ say('اكتب اسمك أولًا', 'err'); return; }
+    if(!/^05\d{8}$/.test(phone)){ say('رقم الجوال غير صحيح — مثال: 0551234567', 'err'); return; }
+
+    btn.disabled = true; say('جارٍ الإرسال…', '');
+
+    fetch(API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: name,
+        phone: phone,
+        shop_type: document.getElementById('ld-type').value,
+        city: document.getElementById('ld-city').value,
+        note: document.getElementById('ld-note').value,
+        website: document.getElementById('ld-website').value
+      })
+    }).then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ return { ok: r.ok, j: j }; }); })
+     .then(function(res){
+       if(res.ok && res.j.ok){
+         f.reset();
+         say('وصلني طلبك — أتواصل معك خلال يوم إن شاء الله 🤍', 'ok');
+       } else {
+         say('تعذّر الإرسال. راسلني على تيليجرام وأرد عليك فورًا.', 'err');
+       }
+     })
+     .catch(function(){ say('تعذّر الاتصال. راسلني على تيليجرام وأرد عليك فورًا.', 'err'); })
+     .then(function(){ btn.disabled = false; });
+  });
+})();
+
   document.querySelectorAll('.rv:not(.in)').forEach(function(el){ el.classList.add('in'); });
 }, 2000);
 </script>
