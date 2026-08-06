@@ -696,12 +696,16 @@ h2{font-size:clamp(24px,3.6vw,34px);font-weight:600;margin-bottom:18px;max-width
 .tier .amt small{font-size:14px;font-weight:500;color:var(--muted);}
 .tier .mo{font-size:13px;color:var(--muted);margin-top:7px;}
 .tier ul{list-style:none;margin:20px 0 0;padding:0;border-top:1px solid var(--line-soft);}
+/* تدفق طبيعي لا شبكة: العنصر الواحد قد يحمل <b> ونصًّا بعده، والشبكة
+   كانت تعتبر كلًّا منهما خلية مستقلة فيهبط النص إلى عمود الـ17px ويتكسّر
+   كلمةً في كل سطر. العلامة صارت مطلقة الموضع فيبقى المحتوى سطرًا متصلًا. */
 .tier li{
   padding:9px 0;font-size:14.5px;color:var(--ink-2);
-  display:grid;grid-template-columns:17px minmax(0,1fr);gap:9px;align-items:start;
+  position:relative;padding-inline-start:26px;line-height:1.75;
 }
 .tier li::before{
-  content:"";width:9px;height:5px;margin-top:8px;margin-inline-start:4px;
+  content:"";position:absolute;inset-inline-start:4px;top:17px;
+  width:9px;height:5px;
   border-inline-start:1.6px solid var(--pine);border-bottom:1.6px solid var(--pine);
   transform:rotate(-45deg);
 }
