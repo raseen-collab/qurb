@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#F6F2E8">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%2314594A'/%3E%3Crect x='17' y='22' width='30' height='22' rx='5' fill='none' stroke='%23F0F3EE' stroke-width='3.2'/%3E%3Cpath d='M17 29h30' stroke='%23F0F3EE' stroke-width='4.4'/%3E%3Ccircle cx='48' cy='18' r='8' fill='%23C98A2B' stroke='%2314594A' stroke-width='3'/%3E%3C/svg%3E">
-<link rel="canonical" href="https://qurb.com.sa/">
+<link rel="canonical" href="https://qurbcard.vercel.app/">
 
 <title>قُرب | بطاقة محلك في محفظة جوال عميلك — بدون تطبيق</title>
 <meta name="description" content="قُرب يضع بطاقة محلك في Apple Wallet و Google Wallet، فتوصل رسالتك إلى شاشة قفل عميلك بدون تطبيق وبدون رسائل مدفوعة. للمغاسل والصالونات والمقاهي والمحلات الخدمية في السعودية.">
@@ -17,14 +17,14 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_SA">
 <meta property="og:site_name" content="قُرب">
-<meta property="og:url" content="https://qurb.com.sa/">
+<meta property="og:url" content="https://qurbcard.vercel.app/">
 <meta property="og:title" content="قُرب | بطاقة محلك في محفظة جوال عميلك">
 <meta property="og:description" content="بطاقة تسكن محفظة جوال عميلك من أول زيارة، فتوصل رسالتك إلى شاشة قفله — بدون تطبيق وبدون تكلفة على كل رسالة.">
-<meta property="og:image" content="https://qurb.com.sa/logo.png">
+<meta property="og:image" content="https://qurbcard.vercel.app/logo.png">
 <meta property="og:image:width" content="660">
 <meta property="og:image:height" content="660">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://qurb.com.sa/logo.png">
+<meta name="twitter:image" content="https://qurbcard.vercel.app/logo.png">
 <meta name="twitter:title" content="قُرب | بطاقة محلك في محفظة جوال عميلك">
 <meta name="twitter:description" content="بدون تطبيق، وبدون تكلفة على كل رسالة. للمحلات الخدمية الصغيرة في السعودية.">
 
@@ -505,6 +505,30 @@ h2{font-family:'Tajawal','Readex Pro',sans-serif;font-size:clamp(25px,3.7vw,36px
 }
 
 /* ── services roadmap ── */
+/* ═══ رسم اللوحة ═══ */
+.dash{display:grid;grid-template-columns:188px minmax(0,1fr);margin-top:34px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--paper-2);box-shadow:0 1px 2px rgba(14,21,18,.04),0 26px 54px -34px rgba(12,60,44,.45);}
+.dash-side{background:var(--paper);border-inline-end:1px solid var(--line);padding:16px 12px;display:flex;flex-direction:column;gap:3px;}
+.dash-brand{display:flex;align-items:center;gap:8px;font-family:"Readex Pro",sans-serif;font-weight:600;font-size:15px;margin-bottom:12px;padding-inline-start:6px;}
+.dmk{width:17px;height:17px;border-radius:6px;background:var(--pine);flex:none;}
+.dash-item{font-size:13px;color:var(--ink-2);padding:8px 10px;border-radius:8px;}
+.dash-item.on{background:var(--pine);color:#fff;font-weight:600;}
+.dash-main{padding:18px 18px 20px;min-width:0;}
+.dash-h{font-family:"Readex Pro",sans-serif;font-weight:600;font-size:17px;}
+.dash-sub{font-size:12.5px;color:var(--muted);margin:3px 0 14px;}
+.dash-row{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid var(--line-soft);border-radius:10px;padding:11px 13px;margin-bottom:8px;background:#fff;}
+.dash-nm{font-size:14px;font-weight:600;}
+.dash-ph{font-size:12px;color:var(--muted);direction:ltr;text-align:start;}
+.dash-bal{font-family:"Readex Pro",sans-serif;font-size:15px;font-weight:700;color:var(--pine);white-space:nowrap;}
+.dash-btn{background:var(--pine);color:#fff;font-size:12.5px;font-weight:600;border-radius:8px;padding:7px 12px;white-space:nowrap;}
+.dash-cap{font-size:12.5px;color:var(--muted);margin-top:11px;text-align:center;}
+.svc.lite h3{padding-inline-end:0;}
+@media (max-width:900px){
+  .dash{grid-template-columns:1fr;}
+  .dash-side{flex-direction:row;overflow-x:auto;gap:6px;border-inline-end:0;border-bottom:1px solid var(--line);padding:10px;}
+  .dash-brand{display:none;}
+  .dash-item{white-space:nowrap;font-size:12.5px;padding:7px 11px;}
+  .dash-row{flex-wrap:wrap;gap:8px;}
+}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px;}
 .svc{
   background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;
@@ -925,7 +949,7 @@ footer{
     <div class="nav-mid">
       <a href="#how">كيف تشتغل</a>
       <a href="#diff">وش يفرقنا</a>
-      <a href="#services">الخدمات</a>
+      <a href="#services">اللوحة</a>
       <a href="#pricing">الباقات</a>
       <a href="#roi">الحاسبة</a>
       <a href="#faq-sec">الأسئلة</a>
@@ -1234,92 +1258,94 @@ footer{
 <section class="faq" id="services">
   <div class="wrap">
     <div class="rv">
-      <div class="kicker">الخدمات</div>
-      <h2>كل ما تحتاجه لإرجاع عميلك… في مكان واحد</h2>
-      <p class="sec-lede">البطاقة واحدة في جوال عميلك — واللي يتغير هو الشي اللي تحطه فيها. هذي المهام اللي أشتغل عليها.</p>
+      <div class="kicker">لوحة التحكم</div>
+      <h2>لوحتك: كل شي في شاشة وحدة</h2>
+      <p class="sec-lede">تفتحها من جوالك أو من الكمبيوتر — بلا تحميل ولا تركيب ولا ربط بأي جهاز.</p>
     </div>
 
+    <div class="dash rv" role="img" aria-label="رسم مبسّط للوحة تحكم قُرب: قائمة جانبية وشاشة العملاء">
+      <div class="dash-side">
+        <div class="dash-brand"><span class="dmk" aria-hidden="true"></span> قُرب</div>
+        <span class="dash-item">نظرة عامة</span>
+        <span class="dash-item on">العملاء</span>
+        <span class="dash-item">الكاشير</span>
+        <span class="dash-item">الإحصائيات</span>
+        <span class="dash-item">الإرسال</span>
+        <span class="dash-item">الدعاية</span>
+        <span class="dash-item">الإحالات</span>
+        <span class="dash-item">تصميم البطاقة</span>
+      </div>
+      <div class="dash-main">
+        <div class="dash-h">العملاء</div>
+        <div class="dash-sub">كل من أضاف بطاقتك — سجّل الزيارة وينزل الرصيد وتتحدث البطاقة في جواله فورًا.</div>
+
+        <div class="dash-row">
+          <div><div class="dash-nm">أبو خالد</div><div class="dash-ph">05•••1482</div></div>
+          <div class="dash-bal">5 من 8</div>
+          <span class="dash-btn">سجّل زيارة</span>
+        </div>
+        <div class="dash-row">
+          <div><div class="dash-nm">نورة</div><div class="dash-ph">05•••7093</div></div>
+          <div class="dash-bal">🎁 هديتها جاهزة</div>
+          <span class="dash-btn">سلّمت الهدية</span>
+        </div>
+        <div class="dash-row">
+          <div><div class="dash-nm">فهد</div><div class="dash-ph">05•••2264</div></div>
+          <div class="dash-bal">1 من 8</div>
+          <span class="dash-btn">سجّل زيارة</span>
+        </div>
+      </div>
+    </div>
+    <p class="dash-cap">رسم مبسّط للوحة — الأسماء والأزرار كما هي فيها.</p>
+
     <div class="svc-grid rv">
-      <div class="svc">
-        <span class="tag now">جاهز</span>
-        <div class="sym">🎫</div>
-        <h3>بطاقة بهوية محلك</h3>
-        <p>بألوانك وشعارك في محفظة جوال عميلك — بلا تطبيق وبلا حساب.</p>
-        <div class="how"><b>كيف؟</b> العميل يصوّر باركود عند الكاشير، يكتب اسمه ورقمه، وتدخل البطاقة جواله في ثوانٍ.</div>
+      <div class="svc lite">
+        <div class="sym">🧾</div>
+        <h3>دفتر الباقات</h3>
+        <p>رصيد <b>ينزل</b> مع كل زيارة، لا نقاط تتجمّع. أو أختام تصاعدية — أنت تختار من الإعدادات.</p>
       </div>
 
-      <div class="svc">
-        <span class="tag now">جاهز</span>
-        <div class="sym">🔔</div>
-        <h3>إشعار على شاشة القفل</h3>
-        <p>«طلبك جاهز»، عرض، أو تذكير — بلا تكلفة على كل رسالة.</p>
-        <div class="how"><b>كيف؟</b> من شاشتك: تختار العميل أو الفئة، تكتب السطر (أو تأخذه من المستشار)، وتضغط إرسال.</div>
-      </div>
-
-      <div class="svc">
-        <span class="tag now">جاهز</span>
-        <div class="sym">🔢</div>
-        <h3>رصيد يشوفه العميل</h3>
-        <p>باقته المدفوعة أو أختامه — ظاهرة في بطاقته دائمًا.</p>
-        <div class="how"><b>كيف؟</b> عند كل زيارة موظفك يبحث بالرقم ويضغط «تسجيل زيارة» — فينزل رصيد الباقة أو يزيد ختم، وتتحدث البطاقة في جواله فورًا. تختار النمط من الإعدادات: باقة مدفوعة مقدمًا أو أختام تصاعدية.</div>
-      </div>
-
-      <div class="svc">
-        <span class="tag now">جاهز</span>
-        <div class="sym">💬</div>
-        <h3>تقييم وملاحظات</h3>
-        <p>تعرف المشكلة قبل ما تصير تقييمًا عامًا أمام الجميع.</p>
-        <div class="how"><b>كيف؟</b> في ظهر البطاقة رابطان دائمان: ملاحظة خاصة تصلك أنت وحدك، ورابط تقييم قوقل للجميع — بلا فلترة.</div>
-      </div>
-
-      <div class="svc">
-        <span class="tag now">جاهز</span>
-        <div class="sym">📱</div>
-        <h3>حساباتك في جيبه</h3>
-        <p>كل عميل يسجّل يصير متابعًا محتملًا لحساباتك.</p>
-        <div class="how"><b>كيف؟</b> إنستغرام وسنابتشات ورقمك وموقعك روابط ثابتة في ظهر البطاقة — يضغط فيفتح حسابك مباشرة.</div>
-      </div>
-
-      <div class="svc">
-        <span class="tag now">جاهز</span>
-        <div class="sym">🤝</div>
-        <h3>بطاقة الإحالة</h3>
-        <p>عميلك الراضي يجيب لك عميلًا، وأنت تعرف مين جاب مين.</p>
-        <div class="how"><b>كيف؟</b> في ظهر بطاقة كل عميل رابط دعوة خاص فيه يرسله لصاحبه في واتساب. أول ما يسجّل صاحبه <b>ويجي المحل فعلًا</b>، يزيد رصيد الاثنين — المكافأة على الزيارة لا على التسجيل، عشان ما تنصنع حسابات وهمية.</div>
-      </div>
-
-      <div class="svc">
-        <span class="tag now">جاهز</span>
+      <div class="svc lite">
         <div class="sym">🖥️</div>
-        <h3>وضع الكاشير</h3>
-        <p>شاشة واحدة لموظفك: يبحث بآخر أرقام الجوال ويسجّل الزيارة — بلا حساب وبلا وصول لبقية لوحتك.</p>
-        <div class="how"><b>كيف؟</b> تفتح الرابط على أي جهاز عند الكاشير وتدخل رمزًا من أربعة أرقام مرة واحدة. يبقى الجهاز مفتوحًا على شاشة التسجيل وحدها، وتفصله متى شئت.</div>
+        <h3>شاشة الكاشير</h3>
+        <p>موظفك يبحث بآخر أربعة أرقام ويسجّل — بلا حساب له، وبلا وصول لأرقام عملائك ولا لإعداداتك.</p>
       </div>
 
-      <div class="svc">
-        <span class="tag now">جاهز</span>
+      <div class="svc lite">
+        <div class="sym">🔔</div>
+        <h3>الإرسال</h3>
+        <p>رسالتك على شاشة قفل عملائك، بفئات جاهزة: الغائبون، ورصيدهم قارب، وهديتهم جاهزة. وإن ما دريت وش تكتب، المستشار يكتب لك ثلاث صيغ ويقترح الوقت.</p>
+      </div>
+
+      <div class="svc lite">
         <div class="sym">📊</div>
-        <h3>أرقام محلك الحقيقية</h3>
-        <p>معدل عودة العملاء، وأيام وساعات الذروة، ومن كان منتظمًا ثم اختفى.</p>
-        <div class="how"><b>كيف؟</b> محسوبة من زيارات محلك أنت لا من متوسطات سوق، وبتوقيت الرياض. ورقم «كانوا منتظمين ثم اختفوا» تضغطه فيفتح الإرسال وهؤلاء محددون جاهزين.</div>
+        <h3>أرقام محلك</h3>
+        <p>معدل العودة، وأيام وساعات الذروة، ومن كان منتظمًا ثم اختفى — محسوبة من زياراتك أنت لا من متوسطات سوق.</p>
       </div>
 
-      <div class="svc svc-adv">
-        <span class="tag now">جاهز</span>
-        <div class="sym">🧠</div>
-        <h3>المستشار الذكي</h3>
-        <p>ما عاد تحتار وش تكتب ولا متى ترسل.</p>
-        <div class="how"><b>كيف؟</b> تختار حالة العميل (غايب، باقته تنتهي…) فيكتب لك ثلاث صيغ بلهجة عملائك ويقترح الوقت.</div>
+      <div class="svc lite">
+        <div class="sym">📣</div>
+        <h3>الدعاية</h3>
+        <p>منشور جاهز لكل قناة، وصورة بألوان بطاقتك وعليها رمز التسجيل — تنسخ وتنشر.</p>
+      </div>
+
+      <div class="svc lite">
+        <div class="sym">🤝</div>
+        <h3>الإحالة</h3>
+        <p>كل عميل معه رابط دعوة خاص، والمكافأة تنزل للاثنين بعد <b>أول زيارة فعلية</b> لا بمجرد التسجيل.</p>
       </div>
     </div>
 
     <p class="svc-more">
-      ومعها في الباقات: دليل تجهيز ودعم مباشر. وفي الإصدار الثاني: تذكير الغياب تلقائيًا
-      والاشتراك الشهري غير المحدود وطلب التقييم بعد الخدمة. وقادم بعدها: إدارة الفروع وحسابات الشركات.
+      ومعها في اللوحة: ملاحظات عملائك ورابط تقييم قوقل، وتصميم البطاقة بألوانك وشعارك،
+      وتذكير الغياب تلقائيًا، ودليل تجهيز ودعم مباشر.
+      وفي الإصدار الثاني: طلب التقييم بعد الخدمة. وقادم بعدها: إدارة الفروع وحسابات الشركات.
     </p>
 
     <div class="svc-ask rv">
-      <b>وما لا يفعله قُرب — بصراحة:</b> لا ربط مع أنظمة الكاشير، ولا تطبيق مستقل يحمّله عميلك. وإدارة الفروع وحسابات الشركات والتقارير ليست جاهزة اليوم — موسومة «لاحقًا»، ولن أحاسبك عليها قبل أن تجهز. قُرب يفعل شيئًا واحدًا الآن: يوصلك لعميلك بعد ما يطلع من الباب. ولو المنصة اللي عندك تخدمك فعلًا، ابقَ عليها.
+      <b>وما لا يفعله قُرب — بصراحة:</b> لا ربط مع أنظمة الكاشير، ولا تطبيق مستقل يحمّله عميلك،
+      ولا إدارة فروع ولا حسابات موظفين اليوم. قُرب يفعل شيئًا واحدًا: يوصلك لعميلك بعد ما يطلع من الباب.
+      ولو المنصة اللي عندك تخدمك فعلًا، ابقَ عليها.
     </div>
   </div>
 </section>
@@ -1408,8 +1434,7 @@ footer{
           <li><b>بطاقات نشطة بلا حد</b></li>
           <li>أولوية في الدعم</li>
           <li class="plus">وفي الإصدار الثاني — تُضاف للباقتين بلا مقابل حين تجهز:</li>
-          <li class="soon">اشتراك شهري غير محدود</li>
-          <li class="soon">تذكير الغياب تلقائيًا</li>
+          <li>تذكير الغياب تلقائيًا</li>
           
           <li class="soon">طلب تقييم قوقل بعد الخدمة</li>
         </ul>
@@ -1628,8 +1653,7 @@ footer{
       <div class="f-col">
         <h4>الموقع</h4>
         <a href="#how">كيف تشتغل</a>
-        <a href="#services">المزايا</a>
-        <a href="#services">المستشار الذكي</a>
+        <a href="#services">مزايا اللوحة</a>
         <a href="#pricing">الباقات</a>
       <a href="#roi">الحاسبة</a>
         <a href="#faq-sec">الأسئلة الشائعة</a>
