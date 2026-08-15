@@ -169,6 +169,10 @@ nav.stuck .logo .mk::after{animation:pulse 2.6s ease-in-out infinite;}
 .nav-mid{display:flex;gap:26px;}
 .nav-mid a{font-size:14px;color:var(--ink-2);text-decoration:none;border-bottom:1.5px solid transparent;padding-bottom:2px;transition:.2s;}
 .nav-mid a:hover{color:var(--pine);border-bottom-color:var(--amber);}
+/* بين 761 و~800px تظهر روابط القائمة كاملة ولا تتّسع: مجموع الأعمدة
+   الثلاثة يفوق العرض 5px فينزلق .nav-end خارج الحافة (وفي RTL هذا
+   تمرير أفقي حقيقي). تضييق الفراغ في هذا النطاق يكفي بلا إخفاء شيء. */
+@media (max-width:900px){.nav-mid{gap:16px;}}
 @media (max-width:760px){.nav-mid{display:none;}}
 .nav-cta{
   font-size:14px;text-decoration:none;background:var(--ink);color:var(--paper);
@@ -183,7 +187,11 @@ nav.stuck .logo .mk::after{animation:pulse 2.6s ease-in-out infinite;}
 .nav-login:hover{color:var(--pine);border-bottom-color:var(--amber);}
 @media (max-width:520px){.nav-login{display:none;}}
 
-.hero{padding:44px 0 76px;position:relative;}
+/* 🐞 الدائرتان الزخرفيتان (::before و ::after) قطرهما 640px ومُوضَعتان
+   بـ inset-inline-start/-end بنسب سالبة. في RTL تخرجان عن يمين الصفحة
+   فتصنعان تمريرًا أفقيًا في الصفحة كلها: 40px على 430px و179px على
+   1280px. القصّ هنا يحبسهما داخل الهيرو ولا يمسّ أي محتوى. */
+.hero{padding:44px 0 76px;position:relative;overflow:hidden;}
 .hero::before{
   content:"";position:absolute;inset-inline-end:-14%;top:-16%;
   width:640px;height:640px;border-radius:50%;
@@ -796,7 +804,7 @@ footer{
 .fmk::before{content:"";width:13px;height:10px;border-radius:2px;border:1.4px solid rgba(240,246,242,.9);border-top-width:3.5px;}
 .fmk::after{content:"";position:absolute;top:-2px;inset-inline-end:-2px;width:9px;height:9px;border-radius:50%;background:var(--amber);}
 .f-brand p{margin:0;max-width:34ch;line-height:1.8;font-size:13.5px;}
-.f-col h4{
+.f-col h3,.f-col h4{
   font-family:"Readex Pro",sans-serif;font-weight:600;font-size:14px;color:#fff;
   margin:0 0 14px;padding-bottom:10px;border-bottom:1px solid rgba(237,244,240,.16);
 }
@@ -899,6 +907,7 @@ footer{
 .roi-out{background:var(--paper-2);border:1px solid var(--line-soft);border-radius:14px;padding:6px 18px;}
 .roi-line{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap;padding:13px 0;border-bottom:1px solid var(--line-soft);}
 .roi-line:last-child{border-bottom:none;}
+.roi-line .k,.roi-line .v{min-width:0;}
 .roi-line .k{font-size:13.5px;color:var(--muted);}
 .roi-line .v{font-size:14.5px;color:var(--ink-2);}
 .roi-line .v b{font-size:19px;color:var(--pine);font-family:"Readex Pro",sans-serif;}
@@ -928,7 +937,7 @@ footer{
 .lead input:focus{border-color:var(--pine);outline:2px solid rgba(20,89,74,.18);outline-offset:1px;}
 .lead input::placeholder{color:#8A948C;}
 .lead-full{display:block;margin-bottom:14px;}
-#ld-website{position:absolute;inset-inline-start:-9999px;width:1px;height:1px;opacity:0;}
+#ld-website{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0;opacity:0;}
 .lead > .btn{width:100%;margin-top:2px;}
 .lead-msg{font-size:13.5px;margin:12px 0 0;line-height:1.7;}
 .lead-msg.ok{color:#12503A;font-weight:600;}
@@ -1652,7 +1661,7 @@ footer{
       </div>
 
       <div class="f-col">
-        <h4>الموقع</h4>
+        <h3>الموقع</h3>
         <a href="#how">كيف تشتغل</a>
         <a href="#services">مزايا اللوحة</a>
         <a href="#pricing">الباقات</a>
@@ -1664,14 +1673,14 @@ footer{
       </div>
 
       <div class="f-col">
-        <h4>الثقة</h4>
+        <h3>الثقة</h3>
         <a href="privacy.html">سياسة الخصوصية</a>
         <a href="terms.html">الشروط والأحكام</a>
         <span class="f-note">وثيقة عمل حر رقم<br><b id="flNo">FL-763162251</b></span>
       </div>
 
       <div class="f-col">
-        <h4>تواصل معي</h4>
+        <h3>تواصل معي</h3>
         <a id="tgFoot" href="https://t.me/qurb_sa" target="_blank" rel="noopener">تيليجرام — أرد بنفسي</a>
         <span class="f-note">من 4 العصر إلى 11 مساءً<br>كل أيام الأسبوع</span>
       </div>
