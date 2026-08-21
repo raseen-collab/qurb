@@ -554,6 +554,42 @@ h2{font-family:'Tajawal','Readex Pro',sans-serif;font-size:clamp(25px,3.7vw,36px
 }
 .how b{color:var(--pine);font-family:"Readex Pro",sans-serif;font-weight:600;margin-inline-end:4px;}
 .how a{color:var(--pine);font-weight:500;}
+/* ── النظامان: بطاقتان محاكاتان بالHTML (العربية داخل SVG تنقلب في RTL) ── */
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px;}
+.mode{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;
+  box-shadow:0 1px 2px rgba(14,21,18,.04),0 14px 34px -30px rgba(14,21,18,.28);}
+.mode-art{background:var(--paper-2);border:1px solid var(--line-soft);border-radius:12px;
+  padding:16px;margin-bottom:16px;}
+.mcard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 15px;
+  position:relative;overflow:hidden;box-shadow:0 8px 22px -18px rgba(14,21,18,.4);}
+.mbar{position:absolute;inset-inline:0;top:0;height:4px;display:block;}
+.mbar.green{background:var(--pine);} .mbar.gold{background:var(--amber);}
+.mshop{font-size:12.5px;color:var(--muted);margin-top:6px;}
+.mbig{font-family:"Readex Pro",sans-serif;font-size:17px;font-weight:600;color:var(--pine);margin-top:4px;}
+.mlbl{font-size:11.5px;color:var(--muted);margin-top:8px;}
+.mamt{font-family:"Readex Pro",sans-serif;font-size:34px;font-weight:700;color:var(--pine);line-height:1.15;}
+.mamt small{font-size:15px;font-weight:500;color:var(--ink-2);}
+.mstamps{display:flex;gap:7px;margin-top:12px;flex-wrap:wrap;}
+.mstamps i{width:22px;height:22px;border-radius:50%;border:1.5px dashed #C9CFC9;display:block;}
+.mstamps i.on{background:var(--pine);border:1.5px solid var(--pine);}
+.mrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:10px;}
+.mpill{background:#FBF4E4;border:1px solid #E4CE9B;color:#8A5E1A;border-radius:9px;
+  padding:5px 11px;font-size:12px;font-weight:700;}
+.mcalc{font-size:12px;color:var(--muted);}
+.mcalc b{color:var(--pine);font-family:"Readex Pro",sans-serif;}
+.mfoot{margin-top:12px;padding-top:10px;border-top:1px dashed var(--line-soft);
+  font-size:11.5px;color:var(--muted);}
+.mode h3{font-size:17px;margin:0 0 6px;}
+.mode p{font-size:14.5px;color:var(--ink-2);margin:0 0 10px;line-height:1.8;}
+.mode .fit{font-size:13.5px;color:var(--pine);font-weight:600;margin:0;}
+.mode .fit span{color:var(--muted);font-weight:400;}
+@media (max-width:760px){ .modes{grid-template-columns:1fr;} }
+
+/* ── أيقونات SVG: بديل الإيموجي، تتبع لون العلامة ولا تتغيّر بين الأجهزة ── */
+.svc .sym svg{width:21px;height:21px;stroke:var(--pine);fill:none;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round;}
+.svc-adv .sym svg{stroke:var(--amber);}
+.svc.later .sym svg{stroke:var(--muted);}
 .svc .sym{
   width:42px;height:42px;border-radius:12px;flex:none;
   background:linear-gradient(145deg,rgba(20,89,74,.14),rgba(20,89,74,.05));
@@ -958,6 +994,7 @@ footer{
     <div class="nav-mid">
       <a href="#how">كيف تشتغل</a>
       <a href="#diff">وش يفرقنا</a>
+      <a href="#modes">النظامان</a>
       <a href="#services">اللوحة</a>
       <a href="#pricing">الباقات</a>
       <a href="#roi">الحاسبة</a>
@@ -978,8 +1015,8 @@ footer{
       <span class="badge"><span class="dot"></span> تحت التطوير — نختار أول خمسة محلات</span>
       <h1>عميلك يطلع من محلك، <i>وتنقطع الصلة.</i></h1>
       <p class="lede">
-        بطاقة محلك تسكن محفظة جواله من أول زيارة — بدون تطبيق يحمّله.
-        وبعدها توصله رسالتك على شاشة القفل، بدون تكلفة لكل رسالة.
+        بطاقة محلك في محفظة جواله من أول زيارة — بلا تطبيق يحمّله،
+        ورسالتك تصله على شاشة القفل بلا تكلفة لكل رسالة.
       </p>
       <div class="actions">
         <a class="btn" href="#pilot">احجز مقعدًا تأسيسيًا</a>
@@ -1223,31 +1260,31 @@ footer{
     <div class="svc-grid rv">
       <div class="svc">
         <span class="tag now">جاهز</span>
-        <div class="sym">📉</div>
+        <div class="sym" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M7 15h5"/><circle cx="16.5" cy="15" r="1.4" fill="currentColor" stroke="none"/><path d="M7 9.5h10"/></svg></div>
         <h3>رصيد بريال حقيقي، لا نقاط غامضة</h3>
-        <p>نظامان تختار بينهما بضغطة: <b>أختام</b> — يزور ست مرات فالسابعة عليك؛ أو <b>استرداد نقدي</b> — نسبة من كل فاتورة ترجع رصيدًا في بطاقته يصرفه متى شاء.</p>
-        <div class="how"><b>ليه يفرق؟</b> عميلك يرى رقمًا يفهمه — «رصيدك 45 ريالًا» أو «باقي ختمان» — لا نقاطًا يحتاج آلة حاسبة ليعرف قيمتها. والرصيد المرئي في جيبه هو أقوى سبب يرجعه لك.</div>
+        <p>أختام تعدّ الزيارات، أو استرداد نقدي يرجع نسبة من كل فاتورة رصيدًا بريال.</p>
+        <div class="how"><b>ليه يفرق؟</b> عميلك يرى رقمًا يفهمه فورًا — «رصيدك 45 ريالًا» أو «باقي ختمان» — لا نقاطًا يحتاج آلة حاسبة ليقدّر قيمتها.</div>
       </div>
 
       <div class="svc">
         <span class="tag now">جاهز</span>
-        <div class="sym">🚫</div>
+        <div class="sym" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 18 18 6"/></svg></div>
         <h3>لا مسح باركود عند الدفع</h3>
         <p>الموظف يبحث بآخر أرقام جوال العميل — ما فيه شاشة تُمسح ولا كاميرا تفشل في الشمس.</p>
-        <div class="how"><b>ليه يفرق؟</b> أكثر شكوى سمعتها من صاحب محل: «الباركود يشتغل مرة ويخذلنا مرة». هنا الباركود يُمسح مرة واحدة يوم التسجيل من ورقة مطبوعة — وبعدها أبدًا.</div>
+        <div class="how"><b>ليه يفرق؟</b> أكثر شكوى سمعتها: «الباركود يشتغل مرة ويخذلنا مرة». هنا يُمسح مرة واحدة يوم التسجيل — وبعدها أبدًا.</div>
       </div>
 
       <div class="svc">
         <span class="tag now">جاهز</span>
-        <div class="sym">🖥️</div>
+        <div class="sym" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2.5"/><path d="M9 20h6M12 16v4"/></svg></div>
         <h3>شاشة كاشير مستقلة</h3>
-        <p>جهاز واحد عند الكاشير يفتح مرة برمز، ويسجّل الزيارات — وما يوصل لبيانات عملائك ولا إعداداتك ولا الإرسال.</p>
+        <p>جهاز يفتح مرة برمز ويسجّل الزيارات فقط — بلا وصول لبيانات عملائك ولا إعداداتك.</p>
         <div class="how"><b>ليه يفرق؟</b> موظفك يشتغل بلا حسابك وبلا صلاحياتك. وإن ترك العمل، تفصل كل الأجهزة بضغطة واحدة من لوحتك.</div>
       </div>
 
       <div class="svc">
         <span class="tag now">جاهز</span>
-        <div class="sym">⚖️</div>
+        <div class="sym" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M6 20h12"/><path d="M4 9h16"/><path d="M4 9 2 14h4zM20 9l-2 5h4z"/></svg></div>
         <h3>نعرض لك من حذف بطاقتك</h3>
         <p>رقم صريح في لوحتك: كم بطاقة حيّة وكم حُذفت.</p>
         <div class="how"><b>ليه يفرق؟</b> لأنه المقياس الوحيد الصادق: إذا ارتفع الحذف بعد رسالة، فرسالتك أزعجت الناس. غيرنا يخفي هذا الرقم — نحن نضعه أمامك لأنه يخصّك.</div>
@@ -1255,10 +1292,59 @@ footer{
 
       <div class="svc">
         <span class="tag now">جاهز</span>
-        <div class="sym">🔒</div>
+        <div class="sym" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10" width="15" height="10" rx="2.5"/><path d="M8 10V7.5a4 4 0 0 1 8 0V10"/></svg></div>
         <h3>بيانات عملائك ما تغادر لوحتك</h3>
         <p>المستشار الذي يكتب لك الرسائل يشتغل داخل اللوحة نفسها — بلا خدمة ذكاء خارجية.</p>
         <div class="how"><b>ليه يفرق؟</b> أسماء عملائك وأرقامهم وسجل زياراتهم لا تُرسل لأي طرف ثالث، ولا تُستخدم في تدريب أي نظام.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="modes">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kicker">النظامان</div>
+      <h2>اختر كيف تكافئ عملاءك — بضغطة</h2>
+      <p class="sec-lede">نظامان فقط، لا تعقيد ولا جداول. تبدّل بينهما من الإعدادات متى شئت.</p>
+    </div>
+
+    <div class="modes rv">
+      <div class="mode">
+        <div class="mode-art">
+          <div class="mcard">
+            <span class="mbar green"></span>
+            <div class="mshop">مقهى الموسم</div>
+            <div class="mbig">6 من 8 — والثامنة علينا</div>
+            <div class="mstamps" aria-hidden="true">
+              <i class="on"></i><i class="on"></i><i class="on"></i>
+              <i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i>
+            </div>
+            <div class="mfoot">قل رقم جوالك عند الدفع</div>
+          </div>
+        </div>
+        <h3>أختام — تكافئ التكرار</h3>
+        <p>كل زيارة ختم، وعند الهدف هدية. بلا مبالغ ولا حسابات — ثانية واحدة عند الكاشير.</p>
+        <p class="fit">يناسب: <span>المقاهي والحلاقة والوجبات، حيث الفواتير متقاربة.</span></p>
+      </div>
+
+      <div class="mode">
+        <div class="mode-art">
+          <div class="mcard">
+            <span class="mbar gold"></span>
+            <div class="mshop">مغسلة الصفوة</div>
+            <div class="mlbl">رصيدك</div>
+            <div class="mamt">45 <small>ريالًا</small></div>
+            <div class="mrow">
+              <span class="mpill">اخصم من رصيدي</span>
+              <span class="mcalc">فاتورة 200 ← <b>+10</b></span>
+            </div>
+            <div class="mfoot">تصرفه متى شئت — كليًّا أو جزئيًّا</div>
+          </div>
+        </div>
+        <h3>استرداد نقدي — يكافئ الإنفاق</h3>
+        <p>نسبة تحدّدها من كل فاتورة ترجع رصيدًا بريال حقيقي في بطاقته، يصرفه عندك متى شاء.</p>
+        <p class="fit">يناسب: <span>المغاسل والصالونات والمطاعم، حيث الفواتير متفاوتة.</span></p>
       </div>
     </div>
   </div>
@@ -1309,37 +1395,37 @@ footer{
 
     <div class="svc-grid rv">
       <div class="svc lite">
-        <div class="sym">🧾</div>
+        <div class="sym" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></div>
         <h3>دفتر الولاء</h3>
         <p><b>أختام</b> تتجمّع نحو هدية، أو <b>استرداد نقدي</b> يرجع جزءًا من كل فاتورة رصيدًا — أنت تختار من الإعدادات.</p>
       </div>
 
       <div class="svc lite">
-        <div class="sym">🖥️</div>
+        <div class="sym" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2.5"/><path d="M9 20h6M12 16v4"/></svg></div>
         <h3>شاشة الكاشير</h3>
         <p>موظفك يبحث بآخر أربعة أرقام ويسجّل — بلا حساب له، وبلا وصول لأرقام عملائك ولا لإعداداتك.</p>
       </div>
 
       <div class="svc lite">
-        <div class="sym">🔔</div>
+        <div class="sym" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 1 1 12 0v5l1.5 2.5h-15z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></div>
         <h3>الإرسال</h3>
         <p>رسالتك على شاشة قفل عملائك، بفئات جاهزة: الغائبون، ورصيدهم قارب، وهديتهم جاهزة. وإن ما دريت وش تكتب، المستشار يكتب لك ثلاث صيغ ويقترح الوقت.</p>
       </div>
 
       <div class="svc lite">
-        <div class="sym">📊</div>
+        <div class="sym" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16"/><path d="M7 20v-6M12 20V6M17 20v-9"/></svg></div>
         <h3>أرقام محلك</h3>
         <p>معدل العودة، وأيام وساعات الذروة، ومن كان منتظمًا ثم اختفى — محسوبة من زياراتك أنت لا من متوسطات سوق.</p>
       </div>
 
       <div class="svc lite">
-        <div class="sym">📣</div>
+        <div class="sym" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4a1 1 0 0 0 1 1h3l7 4V5L8 9H5a1 1 0 0 0-1 1z"/><path d="M18.5 9.5a4 4 0 0 1 0 5"/></svg></div>
         <h3>الدعاية</h3>
         <p>منشور جاهز لكل قناة، وصورة بألوان بطاقتك وعليها رمز التسجيل — تنسخ وتنشر.</p>
       </div>
 
       <div class="svc lite">
-        <div class="sym">🤝</div>
+        <div class="sym" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12.5 7 9l3 2.5 3-2.5 4 3.5"/><path d="M7 9V6.5h4M17 12.5V16h-4"/><path d="M10 16.5l2 1.5 2-1.5"/></svg></div>
         <h3>الإحالة</h3>
         <p>كل عميل معه رابط دعوة خاص، والمكافأة تنزل للاثنين بعد <b>أول زيارة فعلية</b> لا بمجرد التسجيل.</p>
       </div>
