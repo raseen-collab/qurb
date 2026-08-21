@@ -554,12 +554,56 @@ h2{font-family:'Tajawal','Readex Pro',sans-serif;font-size:clamp(25px,3.7vw,36px
 }
 .how b{color:var(--pine);font-family:"Readex Pro",sans-serif;font-weight:600;margin-inline-end:4px;}
 .how a{color:var(--pine);font-weight:500;}
-/* ── النظامان: بطاقتان محاكاتان بالHTML (العربية داخل SVG تنقلب في RTL) ── */
+/* ══ حياة الصفحة: تدرّجات هادئة، وتنقّل يعرف أين أنت ══
+   كلها CSS خالص أو JS خفيف، وكلها تُطفأ لمن يطلب تقليل الحركة. */
+
+/* 1) الأقسام تتناوب بخلفيات دافئة بدل السطح الواحد */
+#how{background:linear-gradient(180deg,#F6F2E8 0%,#FFFDF7 100%);}
+#start{background:linear-gradient(180deg,#FFFDF7 0%,#F3F6F1 100%);}
+#pricing{background:linear-gradient(180deg,#F3F6F1 0%,#FFFDF7 100%);}
+
+/* 2) الكيكر يتلوّن بحسب قسمه — إيقاع لوني بدل الأخضر المتكرر */
+#modes .kicker,#pricing .kicker{color:var(--amber);}
+#modes .kicker::before,#pricing .kicker::before{background:var(--amber);}
+
+/* 3) لمعة خلف البطل تتنفّس ببطء */
+.hero::after{
+  content:"";position:absolute;inset-inline-start:-12%;top:-22%;
+  width:58%;aspect-ratio:1;border-radius:50%;pointer-events:none;z-index:0;
+  background:radial-gradient(circle,rgba(20,89,74,.10),rgba(194,149,44,.07) 45%,transparent 70%);
+  animation:glow 14s ease-in-out infinite;
+}
+.hero > .wrap{position:relative;z-index:1;}
+@keyframes glow{0%,100%{transform:translate3d(0,0,0) scale(1);opacity:.85}
+  50%{transform:translate3d(3%,4%,0) scale(1.12);opacity:1}}
+
+/* 4) القسم الحالي يُضاء في شريط التنقل */
+.nav-mid a.here{color:var(--pine);border-bottom-color:var(--pine);font-weight:600;}
+
+/* 5) خطوات «كيف تشتغل» ترتفع عند المرور */
+.vstep{transition:transform .3s cubic-bezier(.2,.7,.3,1);}
+.vstep:hover{transform:translateY(-4px);}
+
+@media (prefers-reduced-motion:reduce){
+  .hero::after{animation:none;}
+  .vstep,.mode{transition:none;}
+  .mstamps i.just,.mamt.pop{animation:none;}
+}
+
+/* ── النظامان: بطاقتان حيّتان يجرّبهما الزائر بنفسه ── */
+#modes{background:linear-gradient(180deg,#FFFDF7 0%,#F4F7F2 100%);}
 .modes{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px;}
 .mode{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;
-  box-shadow:0 1px 2px rgba(14,21,18,.04),0 14px 34px -30px rgba(14,21,18,.28);}
-.mode-art{background:var(--paper-2);border:1px solid var(--line-soft);border-radius:12px;
-  padding:16px;margin-bottom:16px;}
+  position:relative;overflow:hidden;
+  box-shadow:0 1px 2px rgba(14,21,18,.04),0 14px 34px -30px rgba(14,21,18,.28);
+  transition:transform .3s cubic-bezier(.2,.7,.3,1),box-shadow .3s,border-color .3s;}
+.mode:hover{transform:translateY(-3px);box-shadow:0 1px 2px rgba(14,21,18,.04),0 26px 50px -30px rgba(20,89,74,.4);}
+.mode::before{content:"";position:absolute;inset-inline:0;top:0;height:4px;}
+.mode.st::before{background:linear-gradient(90deg,var(--pine),var(--pine-lift));}
+.mode.cb::before{background:linear-gradient(90deg,var(--amber),#E0B85A);}
+.mode-art{background:linear-gradient(160deg,#FFFDF7,#F2F6F1);border:1px solid var(--line-soft);
+  border-radius:12px;padding:16px;margin-bottom:16px;}
+.mode.cb .mode-art{background:linear-gradient(160deg,#FFFDF7,#FBF4E4);}
 .mcard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 15px;
   position:relative;overflow:hidden;box-shadow:0 8px 22px -18px rgba(14,21,18,.4);}
 .mbar{position:absolute;inset-inline:0;top:0;height:4px;display:block;}
@@ -569,9 +613,14 @@ h2{font-family:'Tajawal','Readex Pro',sans-serif;font-size:clamp(25px,3.7vw,36px
 .mlbl{font-size:11.5px;color:var(--muted);margin-top:8px;}
 .mamt{font-family:"Readex Pro",sans-serif;font-size:34px;font-weight:700;color:var(--pine);line-height:1.15;}
 .mamt small{font-size:15px;font-weight:500;color:var(--ink-2);}
+.mamt.pop{animation:mpop .45s cubic-bezier(.2,.9,.3,1);}
+@keyframes mpop{0%{transform:scale(1)}45%{transform:scale(1.13);color:var(--amber)}100%{transform:scale(1)}}
 .mstamps{display:flex;gap:7px;margin-top:12px;flex-wrap:wrap;}
-.mstamps i{width:22px;height:22px;border-radius:50%;border:1.5px dashed #C9CFC9;display:block;}
-.mstamps i.on{background:var(--pine);border:1.5px solid var(--pine);}
+.mstamps i{width:22px;height:22px;border-radius:50%;border:1.5px dashed #C9CFC9;display:block;
+  transition:background .3s,border-color .3s,transform .3s;}
+.mstamps i.on{background:var(--pine);border:1.5px solid var(--pine);transform:scale(1.06);}
+.mstamps i.just{animation:stamp .45s cubic-bezier(.2,.9,.3,1);}
+@keyframes stamp{0%{transform:scale(.3);opacity:.3}60%{transform:scale(1.25)}100%{transform:scale(1.06)}}
 .mrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:10px;}
 .mpill{background:#FBF4E4;border:1px solid #E4CE9B;color:#8A5E1A;border-radius:9px;
   padding:5px 11px;font-size:12px;font-weight:700;}
@@ -579,10 +628,27 @@ h2{font-family:'Tajawal','Readex Pro',sans-serif;font-size:clamp(25px,3.7vw,36px
 .mcalc b{color:var(--pine);font-family:"Readex Pro",sans-serif;}
 .mfoot{margin-top:12px;padding-top:10px;border-top:1px dashed var(--line-soft);
   font-size:11.5px;color:var(--muted);}
+.mfoot.win{color:var(--amber);font-weight:700;}
 .mode h3{font-size:17px;margin:0 0 6px;}
 .mode p{font-size:14.5px;color:var(--ink-2);margin:0 0 10px;line-height:1.8;}
 .mode .fit{font-size:13.5px;color:var(--pine);font-weight:600;margin:0;}
 .mode .fit span{color:var(--muted);font-weight:400;}
+/* أدوات التجربة */
+.mtry{margin-top:14px;padding-top:14px;border-top:1px dashed var(--line-soft);}
+.mtry-h{font-size:12px;color:var(--muted);margin:0 0 9px;}
+.mbtn{border:none;border-radius:11px;padding:11px 16px;font:inherit;font-size:14px;font-weight:700;
+  cursor:pointer;background:var(--pine);color:#fff;transition:transform .15s,filter .2s;}
+.mbtn:hover{filter:brightness(1.08);} .mbtn:active{transform:scale(.97);}
+.mbtn.ghost{background:transparent;color:var(--muted);border:1px solid var(--line);font-weight:500;
+  padding:11px 13px;}
+.mbtns{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+.mrange{width:100%;accent-color:var(--amber);margin:4px 0 2px;}
+.mrate{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;}
+.mrate button{border:1px solid var(--line);background:#fff;color:var(--ink-2);border-radius:9px;
+  padding:6px 12px;font:inherit;font-size:12.5px;font-weight:600;cursor:pointer;transition:all .2s;}
+.mrate button[aria-pressed="true"]{background:var(--amber);border-color:var(--amber);color:#fff;}
+.mval{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);}
+.mval b{color:var(--pine);font-family:"Readex Pro",sans-serif;font-size:14px;}
 @media (max-width:760px){ .modes{grid-template-columns:1fr;} }
 
 /* ── أيقونات SVG: بديل الإيموجي، تتبع لون العلامة ولا تتغيّر بين الأجهزة ── */
@@ -1310,7 +1376,7 @@ footer{
     </div>
 
     <div class="modes rv">
-      <div class="mode">
+      <div class="mode st">
         <div class="mode-art">
           <div class="mcard">
             <span class="mbar green"></span>
@@ -1320,24 +1386,31 @@ footer{
               <i class="on"></i><i class="on"></i><i class="on"></i>
               <i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i>
             </div>
-            <div class="mfoot">قل رقم جوالك عند الدفع</div>
+            <div class="mfoot" id="stFoot">قل رقم جوالك عند الدفع</div>
           </div>
         </div>
         <h3>أختام — تكافئ التكرار</h3>
         <p>كل زيارة ختم، وعند الهدف هدية. بلا مبالغ ولا حسابات — ثانية واحدة عند الكاشير.</p>
         <p class="fit">يناسب: <span>المقاهي والحلاقة والوجبات، حيث الفواتير متقاربة.</span></p>
+        <div class="mtry">
+          <p class="mtry-h">جرّبها: اضغط وشوف ما يراه عميلك ↑</p>
+          <div class="mbtns">
+            <button type="button" class="mbtn" id="stAdd">سجّل زيارة</button>
+            <button type="button" class="mbtn ghost" id="stReset">إعادة</button>
+          </div>
+        </div>
       </div>
 
-      <div class="mode">
+      <div class="mode cb">
         <div class="mode-art">
           <div class="mcard">
             <span class="mbar gold"></span>
             <div class="mshop">مغسلة الصفوة</div>
             <div class="mlbl">رصيدك</div>
-            <div class="mamt">45 <small>ريالًا</small></div>
+            <div class="mamt" id="cbAmt">10 <small>ريالات</small></div>
             <div class="mrow">
               <span class="mpill">اخصم من رصيدي</span>
-              <span class="mcalc">فاتورة 200 ← <b>+10</b></span>
+              <span class="mcalc" id="cbCalc">فاتورة 200 ← <b>+10</b></span>
             </div>
             <div class="mfoot">تصرفه متى شئت — كليًّا أو جزئيًّا</div>
           </div>
@@ -1345,6 +1418,17 @@ footer{
         <h3>استرداد نقدي — يكافئ الإنفاق</h3>
         <p>نسبة تحدّدها من كل فاتورة ترجع رصيدًا بريال حقيقي في بطاقته، يصرفه عندك متى شاء.</p>
         <p class="fit">يناسب: <span>المغاسل والصالونات والمطاعم، حيث الفواتير متفاوتة.</span></p>
+        <div class="mtry">
+          <p class="mtry-h">جرّبها: حرّك قيمة الفاتورة وغيّر نسبتك ↑</p>
+          <label class="mval" for="cbBill"><span>قيمة الفاتورة</span> <b id="cbBillV">200 ريال</b></label>
+          <input class="mrange" id="cbBill" type="range" min="20" max="600" step="10" value="200"
+                 aria-label="قيمة الفاتورة">
+          <div class="mrate" role="group" aria-label="نسبة الاسترداد">
+            <button type="button" data-r="3">3%</button>
+            <button type="button" data-r="5" aria-pressed="true">5%</button>
+            <button type="button" data-r="10">10%</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -2161,6 +2245,107 @@ setTimeout(function(){
 
   document.querySelectorAll('.rv:not(.in)').forEach(function(el){ el.classList.add('in'); });
 }, 2000);
+
+/* ── النظامان: تجربة حيّة داخل الصفحة ──
+   بلا مكتبات ولا نداءات — الزائر يرى ما يراه عميله فعلًا.
+   كل شيء داخل try لأن قسمًا تفاعليًّا يجب ألا يُسقط الصفحة أبدًا. */
+(function(){
+  try{
+    /* أ) بطاقة الأختام: كل ضغطة تُشعل ختمًا، والثامن يفتح الهدية */
+    var GOAL = 8, on = 6;
+    var wrap = document.querySelector('#modes .mstamps');
+    var big  = document.querySelector('#modes .mbig');
+    var foot = document.getElementById('stFoot');
+    var add  = document.getElementById('stAdd');
+    var rst  = document.getElementById('stReset');
+
+    function paint(justIdx){
+      if(!wrap) return;
+      var cells = wrap.querySelectorAll('i');
+      for(var i=0;i<cells.length;i++){
+        var isOn = (cells.length - i) <= on;      /* RTL: الامتلاء من اليمين */
+        cells[i].className = isOn ? 'on' : '';
+        if(justIdx !== undefined && i === justIdx) cells[i].className = 'on just';
+      }
+      if(on >= GOAL){
+        big.textContent = 'اكتملت — هديتك جاهزة 🎁';
+        foot.textContent = 'قل رقم جوالك واستلمها';
+        foot.classList.add('win');
+        add.disabled = true; add.style.opacity = '.5';
+      }else{
+        big.textContent = on + ' من ' + GOAL + ' — والثامنة علينا';
+        foot.textContent = 'قل رقم جوالك عند الدفع';
+        foot.classList.remove('win');
+        add.disabled = false; add.style.opacity = '';
+      }
+    }
+    if(add) add.addEventListener('click', function(){
+      if(on >= GOAL) return;
+      on++;
+      var cells = wrap.querySelectorAll('i');
+      paint(cells.length - on);
+    });
+    if(rst) rst.addEventListener('click', function(){ on = 6; paint(); });
+
+    /* ب) بطاقة الاسترداد: الفاتورة × النسبة = رصيد يظهر فورًا */
+    var bill = document.getElementById('cbBill'),
+        billV= document.getElementById('cbBillV'),
+        amt  = document.getElementById('cbAmt'),
+        calc = document.getElementById('cbCalc'),
+        rate = 5;
+
+    function riyalWord(n){
+      if(n === 1) return 'ريال';
+      if(n === 2) return 'ريالان';
+      if(n >= 3 && n <= 10) return 'ريالات';
+      return 'ريالًا';
+    }
+    function runCb(){
+      if(!bill) return;
+      var b = Number(bill.value) || 0;
+      var back = Math.floor(b * rate / 100);
+      billV.textContent = b + ' ريال';
+      amt.innerHTML = back + ' <small>' + riyalWord(back) + '</small>';
+      calc.innerHTML = 'فاتورة ' + b + ' ← <b>+' + back + '</b>';
+      amt.classList.remove('pop');
+      void amt.offsetWidth;               /* إعادة تشغيل الحركة */
+      amt.classList.add('pop');
+    }
+    if(bill){ bill.addEventListener('input', runCb); }
+    var rbs = document.querySelectorAll('.mrate button');
+    for(var j=0;j<rbs.length;j++){
+      rbs[j].addEventListener('click', function(){
+        rate = Number(this.getAttribute('data-r')) || 5;
+        for(var k=0;k<rbs.length;k++) rbs[k].setAttribute('aria-pressed', rbs[k]===this ? 'true':'false');
+        runCb();
+      });
+    }
+    runCb();
+  }catch(e){ /* التجربة كمالية — الصفحة تبقى كاملة بدونها */ }
+})();
+
+/* ── التنقل يعرف أين أنت: يضيء القسم الظاهر حاليًا ── */
+(function(){
+  try{
+    var links = [].slice.call(document.querySelectorAll('.nav-mid a[href^="#"]'));
+    if(!links.length || !('IntersectionObserver' in window)) return;
+    var map = {};
+    links.forEach(function(a){
+      var el = document.querySelector(a.getAttribute('href'));
+      if(el) map[el.id] = a;
+    });
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        links.forEach(function(a){ a.classList.remove('here'); });
+        if(map[en.target.id]) map[en.target.id].classList.add('here');
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    Object.keys(map).forEach(function(id){
+      var el = document.getElementById(id); if(el) spy.observe(el);
+    });
+  }catch(e){ /* تحسين كمالي */ }
+})();
 </script>
 </body>
 </html>
