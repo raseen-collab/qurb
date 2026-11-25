@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light only">
-<meta name="theme-color" content="#ECEFE9">
+<meta name="theme-color" content="#0B5B3C">
 <meta name="robots" content="index,follow">
 <title>الشروط والأحكام — قُرب</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%2314594A'/%3E%3Crect x='17' y='22' width='30' height='22' rx='5' fill='none' stroke='%23F0F3EE' stroke-width='3.2'/%3E%3Cpath d='M17 29h30' stroke='%23F0F3EE' stroke-width='4.4'/%3E%3Ccircle cx='48' cy='18' r='8' fill='%23C98A2B' stroke='%2314594A' stroke-width='3'/%3E%3C/svg%3E">
@@ -23,52 +23,96 @@
 <meta name="twitter:description" content="ما يُسلَّم في قُرب، والمدد، والدفع والإلغاء، وحدود الخدمة — مكتوبة بلا غموض.">
 <link rel="canonical" href="https://qurbcard.vercel.app/terms.html">
 <meta name="description" content="ما يُسلَّم في قُرب، والمدد، والدفع والإلغاء، وحدود الخدمة — مكتوبة بلا غموض.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:light only;--ink:#0E1512;--ink-2:#28322D;--paper:#ECEFE9;--paper-2:#F7F8F4;--line:#C6CDBF;--line-soft:#DEE2D8;--pine:#14594A;--amber:#C98A2B;--muted:#67736C;}
-*{box-sizing:border-box;}
-html,body{margin:0;background:var(--paper);color:var(--ink);}
-body{font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;font-size:16px;line-height:1.85;-webkit-text-size-adjust:100%;}
-h1,h2{font-family:"Readex Pro",sans-serif;margin:0;letter-spacing:-.02em;line-height:1.32;}
-a{color:var(--pine);}
-:focus-visible{outline:2px solid var(--amber);outline-offset:3px;}
-.wrap{max-width:760px;margin:0 auto;padding:0 22px;}
-nav{border-bottom:1px solid var(--line);background:var(--paper);}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px;}
-.logo{font-family:"Readex Pro",sans-serif;font-weight:700;font-size:21px;text-decoration:none;color:var(--ink);}
-.logo i{font-style:normal;color:var(--pine);}
-nav a.back{font-size:14px;text-decoration:none;color:var(--ink-2);}
-nav a.back:hover{color:var(--pine);}
-header{padding:52px 0 30px;}
-h1{font-size:clamp(27px,4.4vw,38px);font-weight:600;}
-.meta{color:var(--muted);font-size:14px;margin-top:12px;}
-.lede{font-size:17px;color:var(--ink-2);margin:22px 0 0;}
-main{padding-bottom:70px;}
-section.blk{padding-top:38px;}
-h2{font-size:20px;font-weight:600;margin-bottom:12px;}
-h2 span{color:var(--amber);font-weight:400;margin-inline-end:8px;font-family:"Readex Pro",sans-serif;}
-p{margin:0 0 14px;}
-ul{margin:0 0 14px;padding-inline-start:22px;}
-li{margin-bottom:8px;}
-.box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin:18px 0;}
-.box.warn{border-inline-start:3px solid var(--amber);}
-.box.key{border-inline-start:3px solid var(--pine);}
-.box p:last-child{margin-bottom:0;}
-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);font-size:14.5px;margin:16px 0;}
-th,td{border-bottom:1px solid var(--line-soft);padding:11px 13px;text-align:start;vertical-align:top;}
-th{font-family:"Readex Pro",sans-serif;font-weight:600;font-size:13.5px;color:var(--muted);background:var(--paper-2);}
-tr:last-child td{border-bottom:none;}
-footer{border-top:1px solid var(--line);padding:30px 0 46px;font-size:13.5px;color:var(--muted);}
-footer a{color:var(--ink-2);}
+@font-face{font-family:"Lalezar";src:url("fonts/lalezar-arabic-400-normal.woff2") format("woff2");font-weight:400;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:"Lalezar";src:url("fonts/lalezar-latin-400-normal.woff2") format("woff2");font-weight:400;font-display:swap;unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:"Alexandria";src:url("fonts/alexandria-arabic-wght-normal.woff2") format("woff2");font-weight:100 900;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:"Alexandria";src:url("fonts/alexandria-latin-wght-normal.woff2") format("woff2");font-weight:100 900;font-display:swap;unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:"Shoulders";src:url("fonts/big-shoulders-display-latin-900-normal.woff2") format("woff2");font-weight:900;font-display:swap}
+@font-face{font-family:"Shoulders";src:url("fonts/big-shoulders-display-latin-700-normal.woff2") format("woff2");font-weight:700;font-display:swap}
+
+:root{color-scheme:only light;--paper:#FFFFFF;--ink:#0D1411;--ink-2:#2E3A34;--muted:#55635B;--shelf:#E4E9E3;--peg:#C5CEC6;--line:#C9D1CA;--line-soft:#E3E8E3;--green:#0B5B3C;--green-deep:#07402A;--yellow:#FFD60A;--yellow-deep:#E6BC00;--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+html,body{margin:0;color:var(--ink)}
+body{font-family:"Alexandria","Segoe UI",Tahoma,sans-serif;font-size:16.5px;line-height:1.95;background:var(--shelf) radial-gradient(#D5DCD6 1.2px,transparent 1.7px) 0 0/28px 28px}
+h1,h2,h3{font-family:"Lalezar","Alexandria",sans-serif;font-weight:400;margin:0;line-height:1.3;text-wrap:balance}
+a{color:var(--green);text-underline-offset:4px;text-decoration-thickness:1.5px}
+a:hover{color:var(--ink)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:4px}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 14px;padding-inline-start:24px}
+li{margin-bottom:8px}
+li::marker{color:var(--green);font-weight:700}
+.wrap{max-width:780px;margin:0 auto;padding:0 20px}
+/* الرف: شريط أخضر ثابت */
+nav:not(.toc),.top{position:sticky;top:0;z-index:20;background:var(--green);border-bottom:5px solid var(--green-deep)}
+nav:not(.toc) .wrap,.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;height:62px}
+.logo{font-family:"Lalezar",sans-serif;font-size:28px;line-height:1;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:9px;padding-top:4px}
+.logo:hover{color:var(--yellow)}
+.logo i{width:12px;height:12px;background:var(--yellow);border-radius:2px;transform:rotate(45deg);margin-top:-4px;flex:none}
+nav a.back{font-size:14px;font-weight:600;color:#DDEBE3;text-decoration:none}
+nav a.back:hover{color:var(--yellow)}
+nav :focus-visible,.top :focus-visible{outline-color:var(--yellow)}
+/* البطاقة: ورق أبيض معلّق بمشبك */
+.sheet{position:relative;background:var(--paper);border-radius:6px;box-shadow:0 1px 0 rgba(13,20,17,.08),0 22px 34px -22px rgba(13,20,17,.4)}
+.sheet::before{content:"";position:absolute;top:-16px;inset-inline-start:50%;width:40px;height:30px;margin-inline-start:-20px;border-radius:5px;background:#F6F8F5;border:1.5px solid rgba(13,20,17,.5);box-shadow:0 4px 6px -4px rgba(13,20,17,.4)}
+footer{margin-top:64px;background:var(--green-deep);color:#D5E3DB;padding:30px 0 50px;font-size:14px}
+footer a{color:#fff;font-weight:600}
+footer a:hover{color:var(--yellow)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+
+header:not(.top){padding:44px 0 6px}
+header:not(.top),main{position:relative}
+.crumb{font-size:13.5px;font-weight:600;color:var(--muted);margin-bottom:10px}
+.crumb a{color:var(--muted)}
+h1{font-size:clamp(2rem,5.6vw,3.1rem);line-height:1.25}
+.meta{color:var(--muted);font-size:14px;font-weight:500;margin:12px 0 0}
+.lede{font-size:18px;line-height:1.9;color:var(--ink-2);margin:18px 0 0;max-width:62ch}
+main{margin-top:44px;padding:8px 34px 40px;background:var(--paper);border-radius:6px;box-shadow:0 1px 0 rgba(13,20,17,.08),0 22px 34px -22px rgba(13,20,17,.4)}
+main::before{content:"";position:absolute;top:-16px;inset-inline-start:50%;width:40px;height:30px;margin-inline-start:-20px;border-radius:5px;background:#F6F8F5;border:1.5px solid rgba(13,20,17,.5);box-shadow:0 4px 6px -4px rgba(13,20,17,.4)}
+section.blk{padding-top:34px}
+section.blk+section.blk{margin-top:30px;border-top:2px dashed var(--line)}
+h2{font-size:clamp(1.45rem,3.6vw,1.8rem);margin-bottom:14px;display:flex;align-items:baseline;gap:12px}
+h2 span{font-family:"Shoulders",sans-serif;font-weight:900;font-size:1.5em;line-height:.9;color:var(--green);direction:ltr;unicode-bidi:isolate;flex:none}
+h3{font-family:"Alexandria",sans-serif;font-weight:800;font-size:18px;line-height:1.6;margin:22px 0 8px}
+main p,main li{color:var(--ink-2)}
+main b{color:var(--ink);font-weight:700}
+.box{border-radius:6px;padding:18px 20px;margin:18px 0;border:2px solid var(--ink)}
+.box.key{background:var(--paper);box-shadow:0 5px 0 var(--green)}
+.box.warn{background:var(--yellow);border-color:var(--yellow-deep);color:var(--ink)}
+.box.warn p,.box.warn li{color:var(--ink)}
+.box.warn a{color:var(--ink)}
+.box p:last-child,.box ul:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+th,td{padding:12px 10px;text-align:start;vertical-align:top;border-bottom:2px dotted var(--line)}
+th{font-weight:800;font-size:14px;color:var(--ink);border-bottom:2px solid var(--ink)}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:600;color:var(--ink)}
+/* قائمة المقالات */
+.post-list{list-style:none;padding:0;margin:0}
+.post-list li{margin:0;padding:26px 0;border-bottom:2px dashed var(--line)}
+.post-list li:last-child{border-bottom:0}
+.post-list li>a{font-family:"Lalezar","Alexandria",sans-serif;font-size:clamp(1.35rem,3.6vw,1.7rem);line-height:1.4;color:var(--ink);text-decoration:none}
+.post-list li>a:hover{color:var(--green);text-decoration:underline}
+.post-list p{margin:8px 0 10px}
+.tag{display:inline-block;background:var(--shelf);border-radius:4px;padding:2px 10px;font-size:13px;font-weight:600;color:var(--ink-2)}
+/* ملصق العرض */
+.cta-box{margin:36px 0 0;background:var(--yellow);border-radius:6px;padding:24px 24px 26px;transform:rotate(-.6deg);box-shadow:0 18px 26px -18px rgba(13,20,17,.5)}
+.cta-box b{display:block;font-family:"Lalezar","Alexandria",sans-serif;font-weight:400;font-size:clamp(1.4rem,3.8vw,1.75rem);line-height:1.4;color:var(--ink)}
+.cta-box p{margin:8px 0 16px;color:var(--ink)}
+.btn-p{display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:#fff;text-decoration:none;font-weight:700;font-size:16px;line-height:1.4;border-radius:9px;padding:14px 24px;box-shadow:0 12px 18px -10px rgba(13,20,17,.6);transition:transform .16s var(--ease)}
+.btn-p:hover{color:var(--yellow)}
+.btn-p:active{transform:translateY(2px)}
+.next{margin-top:30px;padding-top:20px;border-top:3px solid var(--ink);font-weight:600}
+@media (max-width:560px){main{padding:4px 20px 30px;margin-inline:-6px}body{font-size:16px}}
 </style>
 </head>
 <body>
 
 <nav>
   <div class="wrap">
-    <a class="logo" href="index.html">قُ<i>رب</i></a>
+    <a class="logo" href="index.html"><i aria-hidden="true"></i>قُرب</a>
     <a class="back" href="index.html">← رجوع للصفحة الرئيسية</a>
   </div>
 </nav>

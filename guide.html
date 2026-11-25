@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="only light">
 <title>دليل تجهيز بطاقتك في محلك — قُرب</title>
-<meta name="theme-color" content="#F6F2E8">
+<meta name="theme-color" content="#0B5B3C">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ar_SA">
@@ -23,105 +23,102 @@
 <link rel="canonical" href="https://qurbcard.vercel.app/guide.html">
 <meta name="description" content="خمس خطوات لتجهيز بطاقة قُرب في محلك: إنشاء الحساب، هوية البطاقة، الملصق، تدريب الموظف، وأسبوعك الأول.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%2314594A'/%3E%3Crect x='17' y='22' width='30' height='22' rx='5' fill='none' stroke='%23F0F3EE' stroke-width='3.2'/%3E%3Cpath d='M17 29h30' stroke='%23F0F3EE' stroke-width='4.4'/%3E%3Ccircle cx='48' cy='18' r='8' fill='%23C98A2B' stroke='%2314594A' stroke-width='3'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  color-scheme:only light;
-  --ink:#0E1512;--ink-2:#39433D;--paper:#EEF0EA;--card:#FFFFFF;
-  --line:#D3D8CC;--line-soft:#E2E5DC;--pine:#14594A;--pine-lift:#1C7862;
-  --amber:#C98A2B;--muted:#6A736C;
-  --sh:0 1px 2px rgba(14,21,18,.05),0 8px 24px rgba(14,21,18,.06);
-}
+@font-face{font-family:"Lalezar";src:url("fonts/lalezar-arabic-400-normal.woff2") format("woff2");font-weight:400;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:"Lalezar";src:url("fonts/lalezar-latin-400-normal.woff2") format("woff2");font-weight:400;font-display:swap;unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:"Alexandria";src:url("fonts/alexandria-arabic-wght-normal.woff2") format("woff2");font-weight:100 900;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:"Alexandria";src:url("fonts/alexandria-latin-wght-normal.woff2") format("woff2");font-weight:100 900;font-display:swap;unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:"Shoulders";src:url("fonts/big-shoulders-display-latin-900-normal.woff2") format("woff2");font-weight:900;font-display:swap}
+@font-face{font-family:"Shoulders";src:url("fonts/big-shoulders-display-latin-700-normal.woff2") format("woff2");font-weight:700;font-display:swap}
+
+:root{color-scheme:only light;--paper:#FFFFFF;--ink:#0D1411;--ink-2:#2E3A34;--muted:#55635B;--shelf:#E4E9E3;--peg:#C5CEC6;--line:#C9D1CA;--line-soft:#E3E8E3;--green:#0B5B3C;--green-deep:#07402A;--yellow:#FFD60A;--yellow-deep:#E6BC00;--ease:cubic-bezier(.16,1,.3,1)}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-html,body{margin:0;background:var(--paper);color:var(--ink)}
-body{font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;font-size:16px;line-height:1.9;-webkit-text-size-adjust:100%}
-h1,h2,h3{font-family:"Readex Pro",sans-serif;margin:0;letter-spacing:-.02em;line-height:1.35}
-a{color:var(--pine);text-decoration:none}
-a:hover{text-decoration:underline}
-:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
-@media (prefers-color-scheme:dark){html,body{background:var(--paper);color:var(--ink)}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+html,body{margin:0;color:var(--ink)}
+body{font-family:"Alexandria","Segoe UI",Tahoma,sans-serif;font-size:16.5px;line-height:1.95;background:var(--shelf) radial-gradient(#D5DCD6 1.2px,transparent 1.7px) 0 0/28px 28px}
+h1,h2,h3{font-family:"Lalezar","Alexandria",sans-serif;font-weight:400;margin:0;line-height:1.3;text-wrap:balance}
+a{color:var(--green);text-underline-offset:4px;text-decoration-thickness:1.5px}
+a:hover{color:var(--ink)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:4px}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 14px;padding-inline-start:24px}
+li{margin-bottom:8px}
+li::marker{color:var(--green);font-weight:700}
 .wrap{max-width:780px;margin:0 auto;padding:0 20px}
+/* الرف: شريط أخضر ثابت */
+nav:not(.toc),.top{position:sticky;top:0;z-index:20;background:var(--green);border-bottom:5px solid var(--green-deep)}
+nav:not(.toc) .wrap,.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;height:62px}
+.logo{font-family:"Lalezar",sans-serif;font-size:28px;line-height:1;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:9px;padding-top:4px}
+.logo:hover{color:var(--yellow)}
+.logo i{width:12px;height:12px;background:var(--yellow);border-radius:2px;transform:rotate(45deg);margin-top:-4px;flex:none}
+nav a.back{font-size:14px;font-weight:600;color:#DDEBE3;text-decoration:none}
+nav a.back:hover{color:var(--yellow)}
+nav :focus-visible,.top :focus-visible{outline-color:var(--yellow)}
+/* البطاقة: ورق أبيض معلّق بمشبك */
+.sheet{position:relative;background:var(--paper);border-radius:6px;box-shadow:0 1px 0 rgba(13,20,17,.08),0 22px 34px -22px rgba(13,20,17,.4)}
+.sheet::before{content:"";position:absolute;top:-16px;inset-inline-start:50%;width:40px;height:30px;margin-inline-start:-20px;border-radius:5px;background:#F6F8F5;border:1.5px solid rgba(13,20,17,.5);box-shadow:0 4px 6px -4px rgba(13,20,17,.4)}
+footer{margin-top:64px;background:var(--green-deep);color:#D5E3DB;padding:30px 0 50px;font-size:14px}
+.wrap>footer{padding:26px 24px 40px;border-radius:6px 6px 0 0}
+footer a{color:#fff;font-weight:600}
+footer a:hover{color:var(--yellow)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 
-/* ── الشريط ── */
-.top{position:sticky;top:0;z-index:20;background:rgba(238,240,234,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;height:62px}
-.logo{display:flex;align-items:center;gap:10px;font-family:"Readex Pro",sans-serif;font-weight:600;font-size:19px;color:var(--ink)}
-.logo:hover{text-decoration:none;opacity:.8}
-.mk{width:30px;height:30px;border-radius:9px;background:var(--pine);position:relative;flex:none}
-.mk::before{content:"";position:absolute;inset:7px 6px 11px 6px;border-radius:4px;background:#F0F3EE}
-.mk::after{content:"";position:absolute;top:-3px;left:-3px;width:12px;height:12px;border-radius:50%;background:var(--amber);border:2.5px solid var(--paper)}
-.print-btn{border:1px solid var(--line);background:#fff;border-radius:100px;padding:8px 18px;font:inherit;font-size:13.5px;font-weight:600;color:var(--ink-2);cursor:pointer;transition:.2s}
-.print-btn:hover{border-color:var(--pine);color:var(--pine)}
-
-/* ── الغلاف ── */
-.hero{padding:52px 0 34px}
-.hero h1{font-size:clamp(28px,6vw,40px)}
-.hero .sub{font-family:"Readex Pro",sans-serif;font-size:clamp(14px,3vw,17px);color:var(--pine);font-weight:600;margin-top:12px}
-.hero .lede{font-size:16.5px;color:var(--ink-2);margin:18px 0 0;max-width:60ch}
-
-/* ── الفهرس ── */
-.toc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 22px;margin:26px 0 0;box-shadow:var(--sh)}
-.toc b{display:block;font-family:"Readex Pro",sans-serif;font-size:14px;color:var(--muted);margin-bottom:10px}
-.toc ol{margin:0;padding-inline-start:20px;font-size:15px}
-.toc li{margin-bottom:5px}
-
-/* ── الأقسام ── */
-section{padding:38px 0 0}
-.eyebrow{font-size:12.5px;letter-spacing:.09em;color:var(--muted);font-weight:600;margin-bottom:6px}
-h2{font-size:clamp(21px,4.5vw,26px);padding-bottom:12px;border-bottom:2.5px solid var(--pine)}
-
-.step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-top:18px;box-shadow:var(--sh)}
-.step-h{display:flex;align-items:center;gap:14px;margin-bottom:10px}
-.num{width:36px;height:36px;flex:none;border-radius:50%;background:var(--pine);color:#fff;display:grid;place-items:center;font-family:"Readex Pro",sans-serif;font-weight:700;font-size:16px}
-.num.star{background:var(--amber)}
-.step-h h3{font-size:19px}
+.mk{width:12px;height:12px;background:var(--yellow);border-radius:2px;transform:rotate(45deg);margin-top:-4px;flex:none}
+.print-btn{border:0;background:var(--yellow);color:var(--ink);border-radius:9px;padding:9px 16px;font:inherit;font-size:14px;font-weight:700;line-height:1.4;cursor:pointer;box-shadow:0 3px 0 var(--yellow-deep);transition:transform .16s var(--ease)}
+.print-btn:active{transform:translateY(2px)}
+.hero{padding:46px 0 10px}
+.hero h1{font-size:clamp(2.1rem,6.2vw,3.3rem);line-height:1.25}
+.hero .sub{font-size:16px;font-weight:700;color:var(--green);margin-top:10px}
+.hero .lede{font-size:17.5px;color:var(--ink-2);margin:16px 0 0;max-width:60ch}
+.eyebrow{font-size:14px;font-weight:700;color:var(--green);margin-bottom:4px}
+.toc{position:relative;background:var(--paper);border-radius:6px;padding:20px 24px;margin:34px 0 0;box-shadow:0 1px 0 rgba(13,20,17,.08),0 22px 34px -22px rgba(13,20,17,.4)}
+.toc b{display:block;font-size:14px;font-weight:700;color:var(--muted);margin-bottom:8px}
+.toc ol{margin:0;font-size:16px}
+.toc li{margin-bottom:4px}
+.toc a{font-weight:600}
+section{padding:54px 0 0}
+h2{font-size:clamp(1.6rem,4.6vw,2.1rem);padding-bottom:10px;border-bottom:4px solid var(--ink)}
+.step{position:relative;background:var(--paper);border-radius:6px;padding:24px 24px 22px;margin-top:30px;box-shadow:0 1px 0 rgba(13,20,17,.08),0 22px 34px -22px rgba(13,20,17,.4)}
+.step::before{content:"";position:absolute;top:-14px;inset-inline-start:34px;width:36px;height:26px;border-radius:5px;background:#F6F8F5;border:1.5px solid rgba(13,20,17,.5);box-shadow:0 4px 6px -4px rgba(13,20,17,.4)}
+.step-h{display:flex;align-items:flex-end;gap:14px;margin-bottom:10px}
+.num{font-family:"Shoulders",sans-serif;font-weight:900;font-size:58px;line-height:.82;color:var(--ink);direction:ltr;unicode-bidi:isolate;flex:none;min-width:30px;text-align:center}
+.num.star{color:var(--green)}
+.step-h h3{font-family:"Alexandria",sans-serif;font-weight:800;font-size:20px;line-height:1.5}
 .step p{margin:0 0 10px;color:var(--ink-2)}
 .step p:last-child{margin-bottom:0}
-.step ul{margin:10px 0 0;padding-inline-start:20px;color:var(--ink-2)}
-.step li{margin-bottom:8px}
+.step ul{margin:10px 0 0;color:var(--ink-2)}
 .step li:last-child{margin-bottom:0}
-.step b{color:var(--ink)}
-
-code,.url{font-family:ui-monospace,"SF Mono",monospace;font-size:14px;direction:ltr;unicode-bidi:embed;
-  background:var(--paper);border:1px solid var(--line);border-radius:7px;padding:3px 9px;display:inline-block;color:var(--pine);font-weight:600}
-a.url:hover{background:#fff;text-decoration:none;border-color:var(--pine)}
-
-.note{border-radius:14px;padding:18px 22px;margin-top:18px;background:#fff;border:1px solid var(--line);border-inline-start:4px solid var(--pine)}
-.note.warn{background:#FBF6EC;border-color:#EBDCC2;border-inline-start-color:var(--amber)}
-.note b{display:block;font-family:"Readex Pro",sans-serif;font-size:16px;margin-bottom:5px}
-.note p{margin:0;color:var(--ink-2);font-size:15.5px}
-
-table{width:100%;border-collapse:collapse;margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:15px;box-shadow:var(--sh)}
-th{background:var(--pine);color:#fff;text-align:start;padding:12px 16px;font-family:"Readex Pro",sans-serif;font-weight:600;font-size:14.5px}
-td{border-bottom:1px solid var(--line-soft);padding:12px 16px;color:var(--ink-2);vertical-align:top}
-tr:last-child td{border-bottom:none}
-
-details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-top:12px}
-details[open]{border-color:var(--pine)}
-summary{font-family:"Readex Pro",sans-serif;font-weight:600;font-size:16px;cursor:pointer;color:var(--ink);list-style:none}
+.step b{color:var(--ink);font-weight:700}
+code,.url{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:14px;direction:ltr;unicode-bidi:isolate;background:var(--shelf);border-radius:5px;padding:2px 9px;display:inline-block;color:var(--ink);font-weight:600;text-decoration:none}
+a.url{border-bottom:2px solid var(--green)}
+a.url:hover{background:var(--yellow)}
+.note{border-radius:6px;padding:18px 22px;margin-top:22px;background:var(--paper);border:2px solid var(--ink);box-shadow:0 5px 0 var(--green)}
+.note.warn{background:var(--yellow);border-color:var(--yellow-deep);box-shadow:none}
+.note>b{display:block;font-size:17px;font-weight:800;margin-bottom:4px}
+.note p{margin:0;color:var(--ink-2);font-size:16px}
+.note.warn p{color:var(--ink)}
+table{width:100%;border-collapse:collapse;margin-top:22px;background:var(--paper);font-size:15.5px;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+caption{text-align:start;font-weight:700;padding:0 0 8px}
+th{text-align:start;padding:12px 14px;font-weight:800;font-size:14.5px;border-bottom:2px solid var(--ink)}
+td{border-bottom:2px dotted var(--line);padding:12px 14px;color:var(--ink-2);vertical-align:top}
+tr:last-child td{border-bottom:0}
+details{background:var(--paper);border-radius:6px;padding:16px 20px;margin-top:10px;box-shadow:0 1px 0 rgba(13,20,17,.08),0 12px 18px -16px rgba(13,20,17,.4)}
+summary{font-weight:700;font-size:16.5px;cursor:pointer;color:var(--ink);list-style:none;display:flex;justify-content:space-between;gap:14px}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+";float:left;color:var(--pine);font-size:20px;line-height:1}
-details[open] summary::after{content:"−"}
-details p{margin:10px 0 0;color:var(--ink-2);font-size:15.5px}
-
-footer{margin-top:52px;border-top:1px solid var(--line);padding:26px 0 60px;font-size:14px;color:var(--muted)}
-footer a{font-weight:600}
+summary::after{content:"";flex:none;width:11px;height:11px;border-right:3px solid var(--ink);border-bottom:3px solid var(--ink);transform:rotate(45deg);margin-top:5px;transition:transform .3s var(--ease)}
+details[open] summary::after{transform:rotate(-135deg);margin-top:11px}
+details p{margin:10px 0 0;color:var(--ink-2);font-size:16px}
 .contact{display:flex;flex-wrap:wrap;gap:10px 22px;margin-bottom:12px}
-
 @media print{
   .top,.print-btn,.toc{display:none}
   html,body{background:#fff;font-size:11pt}
   .wrap{max-width:100%;padding:0}
   .step,.note,table,details{box-shadow:none;break-inside:avoid;page-break-inside:avoid}
+  .step{border:1px solid var(--line)}.step::before{display:none}
   section{padding-top:22px}
   details{border:1px solid var(--line)}
   details p{display:block!important}
-  footer{page-break-inside:avoid}
+  footer{background:none;color:var(--ink);page-break-inside:avoid}footer a{color:var(--ink)}
 }
 </style>
 </head>
@@ -184,7 +181,7 @@ footer a{font-weight:600}
 
     <div class="step">
       <div class="step-h"><span class="num">2</span><h3>اضبط هوية بطاقتك</h3></div>
-      <p>من القائمة الجانبية اختر <b>الإعدادات</b>. المعاينة أمامك تتغيّر مع كل تعديل، فاعمل وأنت تنظر إليها.</p>
+      <p>من الشريط السفلي اضغط <b>المزيد</b> ثم <b>الإعدادات</b>. المعاينة أمامك تتغيّر مع كل تعديل، فاعمل وأنت تنظر إليها.</p>
       <ul>
         <li><b>اسم المحل:</b> صحّحه إن أخطأت في التسجيل.</li>
         <li><b>تسمية الرصيد:</b> بلغة عملائك لا بلغة الأنظمة.</li>
